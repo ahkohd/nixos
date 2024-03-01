@@ -17,6 +17,8 @@
     ./system/audio.nix
     ./system/apps/media/hyprshot.nix
     ./system/apps/filemanager/spacedrive.nix
+    ./system/sops.nix
+    ./system/services/runners/gh.nix
   ];
 
   # Bootloader.
