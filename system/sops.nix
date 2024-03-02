@@ -13,5 +13,4 @@
   # secrets
 
   sops.secrets.tn_token = { };
-  sops.secrets.tn_repo_url = { };
 }
