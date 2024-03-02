@@ -70,8 +70,6 @@ in {
 
     git-cliff
 
-    update-nix-fetchgit
-
     nvim-config
   ];
 }
