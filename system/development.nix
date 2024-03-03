@@ -63,8 +63,6 @@ in {
 
     jq
 
-    git-cliff
-
     nvim-config
 
     riff
