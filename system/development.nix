@@ -71,5 +71,7 @@ in {
     git-cliff
 
     nvim-config
+
+    riff
   ];
 }
