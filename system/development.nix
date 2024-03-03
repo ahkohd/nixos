@@ -4,6 +4,7 @@ let nvim-config = import ../packages/nvim-config.nix { inherit pkgs; };
 in {
   environment.systemPackages = with pkgs; [
     nodejs
+
     go
     gcc
     python3
@@ -45,12 +46,6 @@ in {
     # editors
 
     neovide
-
-    # package managers
-
-    nodePackages.pnpm
-
-    yarn
 
     python311Packages.pip
 
