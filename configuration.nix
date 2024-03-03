@@ -20,7 +20,6 @@
     ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
     ./system/services/runners/gh.nix
-    ./system/misc.nix
   ];
 
   # Bootloader.

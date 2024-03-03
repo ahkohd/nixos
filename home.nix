@@ -12,6 +12,7 @@
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix
     ./user/apps/editors/neovim/neovim.nix
+    ./user/apps/launcher/rofi/rofi.nix
     ./user/services/notification/dunst.nix
     ./user/wm/hyprland/hyprland.nix
     ./user/cli/tmux.nix
