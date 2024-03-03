@@ -12,6 +12,7 @@
     ./system/ssh.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
+    ./system/apps/launcher/rofi.nix
     ./system/services/audio/roon.nix
     ./system/development.nix
     ./system/audio.nix
@@ -19,6 +20,7 @@
     ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
     ./system/services/runners/gh.nix
+    ./system/misc.nix
   ];
 
   # Bootloader.

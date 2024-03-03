@@ -12,7 +12,6 @@
     wl-clipboard
     waypaper
     swaybg
-    rofi
   ];
 
   environment.sessionVariables = {
