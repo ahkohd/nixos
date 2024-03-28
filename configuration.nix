@@ -19,6 +19,7 @@
     ./system/apps/media/hyprshot.nix
     ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
+    ./system/vial.nix
     ./system/services/runners/gh.nix
   ];
 
