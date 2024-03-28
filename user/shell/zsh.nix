@@ -14,9 +14,9 @@ let
     pbcopy = "wl-copy";
     pbpaste = "wl-past";
     tree = "eza --tree --level=4";
-    cat = "bat --theme='mellow'";
+    cat = "bat --theme=ansi";
     f =
-      "fzf --preview 'bat --theme=mellow --color=always --style=header,grid --line-range :500 {}'";
+      "fzf --preview 'bat --theme=ansi --color=always --style=header,grid --line-range :500 {}'";
     x = "exit";
     cht = "~/.config/bin/.local/scripts/tmux-cht.sh";
     lg = "lazygit";

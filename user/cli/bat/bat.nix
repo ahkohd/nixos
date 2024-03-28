@@ -3,12 +3,6 @@
 {
   programs.bat = {
     enable = true;
-    config = { theme = "mellow"; };
-    themes = {
-      mellow = {
-        src = ./themes;
-        file = "mellow.tmTheme";
-      };
-    };
+    config = { theme = "ansi"; };
   };
 }
