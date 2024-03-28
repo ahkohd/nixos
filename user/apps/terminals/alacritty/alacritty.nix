@@ -39,8 +39,9 @@
         x: 0
         y: 0
     import:
-      - ~/.config/alacritty/themes/mellow.yml
+      - ~/.config/alacritty/themes/modus_vivendi.yml
   '';
 
-  home.file.".config/alacritty/themes/mellow.yml".source = ./themes/mellow.yml;
+  home.file.".config/alacritty/themes/modus_vivendi.yml".source =
+    ./themes/modus_vivendi.yml;
 }
