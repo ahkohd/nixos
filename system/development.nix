@@ -66,5 +66,7 @@ in {
     nvim-config
 
     riff
+
+    mprocs
   ];
 }
