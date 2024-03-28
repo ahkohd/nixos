@@ -11,6 +11,8 @@ in {
     rustup
     lua
 
+    tree-sitter
+
     # formatters & LSPs
 
     nixfmt
@@ -52,6 +54,7 @@ in {
     # tools
 
     ripgrep
+    fd
 
     fnm
 
@@ -68,5 +71,9 @@ in {
     riff
 
     mprocs
+
+    bandwhich
+
+    delta
   ];
 }
