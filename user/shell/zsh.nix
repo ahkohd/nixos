@@ -43,27 +43,9 @@ in {
         "zdharma-continuum/fast-syntax-highlighting"
         "nix-community/nix-zsh-completions"
         "wfxr/forgit"
-        "jeffreytse/zsh-vi-mode"
       ];
     };
     oh-my-zsh = { enable = true; };
-    initExtra = ''
-             # work around to make vi-mode work with fzf
-             # see: https://github.com/jeffreytse/zsh-vi-mode/issues/265
-
-             source ${zshExtensionsDir}/vi-mode.plugin.zsh
-      	if [ -n "''${commands[fzf-share]}" ]; then
-      	  source "$(fzf-share)/key-bindings.zsh"
-      	  source "$(fzf-share)/completion.zsh"
-      	fi
-
-             if ssh-add -l | grep -q "id_github";
-             then
-               # do nothing
-             else
-              ssh-add ~/.ssh/id_github;
-             fi
-    '';
   };
 
   programs.zoxide = {
