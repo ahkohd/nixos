@@ -39,7 +39,7 @@ in {
     antidote = {
       enable = true;
       plugins = [
-        "zsh-users/zsh-autosuggestions"
+        "marlonrichert/zsh-autocomplete"
         "zdharma-continuum/fast-syntax-highlighting"
         "nix-community/nix-zsh-completions"
         "wfxr/forgit"
