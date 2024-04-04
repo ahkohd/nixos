@@ -46,6 +46,14 @@ in {
       ];
     };
     oh-my-zsh = { enable = true; };
+    initExtra = ''
+      if ssh-add -l | grep -q "id_github";
+      then
+        # do nothing
+      else
+       ssh-add ~/.ssh/id_github;
+      fi
+    '';
   };
 
   programs.zoxide = {
@@ -56,7 +64,8 @@ in {
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
     icons = true;
   };
 
