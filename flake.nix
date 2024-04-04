@@ -3,11 +3,11 @@
   description = "Yay! A snow flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nur.url = "github:nix-community/NUR";
 
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -16,6 +16,8 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
@@ -44,7 +46,7 @@
 
         extraSpecialArgs = { inherit inputs; };
 
-        modules = [ ./home.nix ];
+        modules = [ ./home.nix (import ./overlays.nix) ];
       };
     };
 }

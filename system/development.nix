@@ -15,7 +15,7 @@ in {
 
     # formatters & LSPs
 
-    nixfmt
+    nixfmt-classic
 
     lua51Packages.luacheck
     lua51Packages.luarocks-nix
