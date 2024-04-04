@@ -7,6 +7,11 @@
       default = {
         id = 0;
         isDefault = true;
+        userChrome = ''
+          #forward-button, #back-button {
+            display: none;
+          }
+        '';
       };
     };
   };
