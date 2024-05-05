@@ -22,6 +22,7 @@
     ./system/appimage.nix
     ./system/vial.nix
     ./system/services/runners/gh.nix
+    ./system/services/bluetooth.nix
   ];
 
   # Bootloader.
