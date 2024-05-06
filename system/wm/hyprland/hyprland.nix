@@ -12,6 +12,7 @@
     wl-clipboard
     waypaper
     swaybg
+    nwg-displays
   ];
 
   environment.sessionVariables = {
