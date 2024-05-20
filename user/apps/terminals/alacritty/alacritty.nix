@@ -4,7 +4,7 @@
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [ "~/.config/alacritty/themes/oceanic_next.toml" ]
+    import = [ "~/.config/alacritty/themes/nordic.toml" ]
 
     [shell]
     program = "zsh"
@@ -49,6 +49,6 @@
     y = 0
   '';
 
-  home.file.".config/alacritty/themes/oceanic_next.toml".source =
-    ./themes/oceanic_next.toml;
+  home.file.".config/alacritty/themes/nordic.toml".source =
+    ./themes/nordic.toml;
 }
