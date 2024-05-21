@@ -18,6 +18,8 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    zjstatus.url = "github:dj95/zjstatus";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:

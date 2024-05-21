@@ -17,5 +17,7 @@ in {
     roon-server
 
     neovim-nightly-overlay.overlay
+
+    (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
   ];
 }

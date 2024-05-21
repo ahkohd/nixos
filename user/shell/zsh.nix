@@ -22,6 +22,7 @@ let
     lg = "lazygit";
     cd = "z";
     zz = "z -";
+    zj = "zellij";
   };
 
   zshExtensionsDir = "~/.nix-profile/share/oh-my-zsh/plugins/vi-mode";
