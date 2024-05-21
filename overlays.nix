@@ -13,10 +13,9 @@ let
     }).roon-server;
   });
 in {
-  nixpkgs.overlays = with inputs;
-    [
-      roon-server
+  nixpkgs.overlays = with inputs; [
+    roon-server
 
-      # neovim-nightly-overlay.overlay
-    ];
+    neovim-nightly-overlay.overlay
+  ];
 }
