@@ -31,6 +31,8 @@ in {
 
     neovide
 
+    yazi.overlays.default
+
     (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
   ];
 }

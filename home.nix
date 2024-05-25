@@ -17,6 +17,7 @@
     ./user/wm/hyprland/hyprland.nix
     ./user/cli/tmux.nix
     ./user/cli/zellij.nix
+    ./user/cli/yazi.nix
     ./user/fonts.nix
   ];
 

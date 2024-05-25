@@ -20,6 +20,8 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     zjstatus.url = "github:dj95/zjstatus";
+
+    yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
