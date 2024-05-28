@@ -25,6 +25,8 @@
 
   home.file.".config/git/delta.inc".text = ''
     [delta]
+      syntax-theme = Nord
+
       navigate = true
 
       file-added-label = [+]
