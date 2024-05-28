@@ -3,6 +3,6 @@
 {
   programs.bat = {
     enable = true;
-    config = { theme = "ansi"; };
+    config = { theme = "Nord"; };
   };
 }
