@@ -11,7 +11,7 @@
 
     [window]
     decorations = "None"
-    opacity = 0.7
+    opacity = 0.5
 
     [window.dimensions]
     columns = 140
