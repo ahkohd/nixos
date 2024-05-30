@@ -14,6 +14,7 @@
     ./system/apps/obsidian.nix
     ./system/services/audio/roon.nix
     ./system/development.nix
+    ./system/media.nix
     ./system/audio.nix
     ./system/apps/media/hyprshot.nix
     ./system/apps/filemanager/spacedrive.nix
