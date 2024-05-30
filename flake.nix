@@ -22,6 +22,8 @@
     zjstatus.url = "github:dj95/zjstatus";
 
     yazi.url = "github:sxyazi/yazi";
+
+    md-tui.url = "github:henriklovhaug/md-tui";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:

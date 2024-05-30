@@ -34,5 +34,7 @@ in {
     yazi.overlays.default
 
     (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
+
+    (final: prev: { md-tui = md-tui.packages.${prev.system}.default; })
   ];
 }
