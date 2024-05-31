@@ -3,8 +3,6 @@
 {
   programs.zellij = {
     enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
     settings = {
       theme = "nord";
       simplified_ui = true;
