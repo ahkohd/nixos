@@ -23,6 +23,7 @@ let
     cd = "z";
     zz = "z -";
     zj = "zellij";
+    mosh-server = "systemd-run --user --scope mosh-server";
   };
 
   zshExtensionsDir = "~/.nix-profile/share/oh-my-zsh/plugins/vi-mode";

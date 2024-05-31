@@ -10,6 +10,7 @@
     ./system/wm/hyprland/hyprland.nix
     ./system/shell/zsh.nix
     ./system/ssh.nix
+    ./system/mosh.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
     ./system/services/audio/roon.nix
@@ -118,7 +119,7 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 55000 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 60001 ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
