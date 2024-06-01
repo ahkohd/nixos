@@ -21,7 +21,6 @@
     ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
     ./system/appimage.nix
-    ./system/vial.nix
     ./system/services/runners/gh.nix
     ./system/services/bluetooth.nix
   ];
