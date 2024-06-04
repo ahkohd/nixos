@@ -3,7 +3,7 @@
 let nvim-config = import ../packages/nvim-config.nix { inherit pkgs; };
 in {
   environment.systemPackages = with pkgs; [
-    google-chrome
+    ungoogled-chromium
 
     nodejs_21
 
