@@ -5,9 +5,9 @@
     ./user/ssh.nix
     ./user/shell/zsh.nix
     ./user/gpg.nix
-    ./user/git.nix
     ./user/apps/browsers/firefox.nix
     ./user/apps/terminals/alacritty/alacritty.nix
+    ./user/cli/git/git.nix
     ./user/cli/lazygit.nix
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix

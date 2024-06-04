@@ -4,14 +4,15 @@
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [ "~/.config/alacritty/themes/nordic.toml" ]
+    import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
 
     [shell]
     program = "zsh"
 
     [window]
     decorations = "None"
-    opacity = 0.5
+    blur = true
+    opacity = 1.0
 
     [window.dimensions]
     columns = 140
@@ -49,6 +50,6 @@
     y = 0
   '';
 
-  home.file.".config/alacritty/themes/nordic.toml".source =
-    ./themes/nordic.toml;
+  home.file.".config/alacritty/themes/gruvbox.toml".source =
+    ./themes/gruvbox.toml;
 }

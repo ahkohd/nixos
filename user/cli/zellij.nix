@@ -4,7 +4,7 @@
   programs.zellij = {
     enable = true;
     settings = {
-      theme = "nord";
+      theme = "gruvbox-dark";
       simplified_ui = true;
       default_shell = "zsh";
       pane_frames = false;
@@ -24,7 +24,7 @@
 
                     border_enabled  "false"
                     border_char     "─"
-                    border_format   "#[fg=#6C7086]{char}"
+                    border_format   "#[fg=#D5C4A1]{char}"
                     border_position "top"
 
                     mode_normal        "⚡"
@@ -42,8 +42,8 @@
                     mode_prompt        ""
                     mode_tmux          ""
 
-                    tab_normal   "#[fg=#6C7086] {name} "
-                    tab_active   "#[fg=#9399B2,bold,italic] {name} "
+                    tab_normal   "#[fg=#7C6F64] {name} "
+                    tab_active   "#[fg=#7C6F64,bold,italic] {name} "
                 }
             }
             children

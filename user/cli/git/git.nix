@@ -23,17 +23,6 @@
     includes = [{ path = "~/.config/git/delta.inc"; }];
   };
 
-  home.file.".config/git/delta.inc".text = ''
-    [delta]
-      syntax-theme = Nord
-
-      navigate = true
-
-      file-added-label = [+]
-      file-copied-label = [==]
-      file-modified-label = [*]
-      file-removed-label = [-]
-      file-renamed-label = [->]
-  '';
+  home.file.".config/git/delta.inc".text = builtins.readFile ./delta.inc;
 }
 
