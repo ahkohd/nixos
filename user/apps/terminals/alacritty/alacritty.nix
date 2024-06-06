@@ -12,7 +12,7 @@
     [window]
     decorations = "None"
     blur = true
-    opacity = 1.0
+    opacity = 0.90
 
     [window.dimensions]
     columns = 140
