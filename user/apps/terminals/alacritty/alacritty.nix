@@ -4,7 +4,7 @@
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [ "~/.config/alacritty/themes/nordic.toml" ]
+    import = [ "~/.config/alacritty/themes/nord.toml" ]
 
     [shell]
     program = "zsh"
@@ -50,6 +50,5 @@
     y = 0
   '';
 
-  home.file.".config/alacritty/themes/nordic.toml".source =
-    ./themes/nordic.toml;
+  home.file.".config/alacritty/themes/nord.toml".source = ./themes/nord.toml;
 }
