@@ -1,16 +1,32 @@
 { config, pkgs, ... }:
 
 {
-  programs.zellij = {
-    enable = true;
-    settings = {
-      theme = "nord";
-      simplified_ui = true;
-      default_shell = "zsh";
-      pane_frames = false;
-      ui = { pane_frames = { hide_session_name = true; }; };
-    };
-  };
+  programs.zellij = { enable = true; };
+
+  home.file.".config/zellij/config.kdl".text = ''
+    default_shell "zsh"
+    pane_frames false
+    simplified_ui true
+    theme "nord"
+
+    keybinds {
+      shared_except "tab" "locked" {
+        unbind "Ctrl h"
+        bind "Ctrl x" { SwitchToMode "Move"; }
+      }
+
+      move {
+        unbind "Ctrl h"
+        bind "Ctrl x" { SwitchToMode "Normal"; }
+      }
+    }
+
+    ui {
+      pane_frames {
+        hide_session_name true
+      }
+    }
+  '';
 
   home.file.".config/zellij/layouts/default.kdl".text = ''
         layout {
@@ -38,7 +54,7 @@
                     mode_rename_tab    "  (rename) ^+c: normal esc: undo"
                     mode_rename_pane   "  (rename) ^+c: normal esc: undo"
                     mode_session       "  ^+o: normal ^+s: scroll d: detach w: manager"
-                    mode_move          "  ^+h: normal (n, ): move p: backwards h:   j:   k:   l: "
+                    mode_move          "  ^+x: normal (n, ): move p: backwards h:   j:   k:   l: "
                     mode_prompt        ""
                     mode_tmux          ""
 
