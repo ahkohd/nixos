@@ -22,13 +22,15 @@
       }
 
       shared_except "locked" {
-        bind "Ctrl b" { SwitchToMode "Pane"; ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "Alt f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
 
         bind "Alt b" {
               LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
                   floating true; move_to_focused_tab true;
               }
           }
+
+        bind "Alt m" { ToggleFocusFullscreen; }
       }
     }
 
