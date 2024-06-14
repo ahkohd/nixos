@@ -10,14 +10,25 @@
     theme "nord"
 
     keybinds {
-      shared_except "tab" "locked" {
-        unbind "Ctrl h"
-        bind "Ctrl x" { SwitchToMode "Move"; }
-      }
-
       move {
         unbind "Ctrl h"
         bind "Ctrl x" { SwitchToMode "Normal"; }
+      }
+
+      shared_except "tab" "locked" {
+        unbind "Ctrl h"
+
+        bind "Ctrl x" { SwitchToMode "Move"; }
+      }
+
+      shared_except "locked" {
+        bind "Ctrl b" { SwitchToMode "Pane"; ToggleFloatingPanes; SwitchToMode "Normal"; }
+
+        bind "Alt b" {
+              LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+                  floating true; move_to_focused_tab true;
+              }
+          }
       }
     }
 
@@ -66,4 +77,10 @@
         }
     }
   '';
+
+  home.file.".config/zellij/plugins/harpoon.wasm".source = builtins.fetchurl {
+    url =
+      "https://github.com/Nacho114/harpoon/releases/download/v0.1.0/harpoon.wasm";
+    sha256 = "00ln03gjpf6xdfq1d3z84pcvmyrk1n1ddi1nkfxsmnqxldyzinfa";
+  };
 }
