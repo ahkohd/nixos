@@ -58,7 +58,7 @@
 
                     mode_normal        "⚡"
                     mode_locked        "  ^+g: normal"
-                    mode_resize        "  n: normal h: i  j: i  k: i  l: i  H: d  J: d  K: d  L: d  =: inc. -: dec."
+                    mode_resize        "  n: normal h: i  j: i  k: i  l: i  H: d  J: d  K: d  L: d  =: inc. -: dec."
                     mode_pane          "  n: new d: new  r: new  p: focus w: float e: embed f: full-screen c: rename x: close"
                     mode_tab           "  n: new r: rename l:   h:   x: close s: sync b: break p. 󰅪: break r. 󰅪: break l.  : toggle"
                     mode_scroll        " e: edit s: search ^+c: bottom j:  k:   ^+f: pg.  ^+b: pg.  d: half  u: half "
@@ -72,7 +72,16 @@
                     mode_tmux          ""
 
                     tab_normal   "#[fg=#6C7086] {name} "
-                    tab_active   "#[fg=#9399B2,bold,italic] {name} "
+
+                    tab_active   "#[fg=#9399B2,bold,italic] {name} {floating_indicator}"
+
+                    tab_active_fullscreen   "#[fg=#6C7086,bold,italic] {name} {fullscreen_indicator}"
+
+                    tab_rename              "#[fg=#627086] {index}  {name} {floating_indicator} "
+
+                    tab_fullscreen_indicator " "
+
+                    tab_floating_indicator " "
                 }
             }
             children
