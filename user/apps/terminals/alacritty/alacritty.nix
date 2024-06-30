@@ -23,7 +23,7 @@
     y = 5
 
     [font]
-    size = 12
+    size = 14
 
     [font.normal]
     # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
