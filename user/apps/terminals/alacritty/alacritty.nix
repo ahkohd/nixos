@@ -26,23 +26,23 @@
     size = 12
 
     [font.normal]
-    family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    # family = "Bitstream Vera Sans Mono"
+    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
+    family = "GeistMono Nerd Font"
     style = "Regular"
 
     [font.bold]
-    family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    # family = "Bitstream Vera Sans Mono"
+    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
+    family = "GeistMono Nerd Font"
     style = "Bold"
 
     [font.italic]
-    family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    # family = "Bitstream Vera Sans Mono"
+    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
+    family = "GeistMono Nerd Font Mono"
     style = "Italic"
 
     [font.bold_italic]
-    family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    # family = "Bitstream Vera Sans Mono"
+    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
+    family = "GeistMono Nerd Font Mono"
     style = "Bold Italic"
 
     [font.offset]
