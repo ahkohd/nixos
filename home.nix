@@ -7,6 +7,7 @@
     ./user/gpg.nix
     ./user/apps/browsers/firefox.nix
     ./user/apps/terminals/alacritty/alacritty.nix
+    ./user/apps/terminals/kitty/kitty.nix
     ./user/cli/git/git.nix
     ./user/cli/lazygit.nix
     ./user/cli/bat/bat.nix
