@@ -5,7 +5,7 @@ in {
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
 
-    nodejs_21
+    nodejs_22
 
     go
     gcc
@@ -37,7 +37,7 @@ in {
     eslint_d
     biome
 
-    nodePackages.vscode-html-languageserver-bin
+    nodePackages.vscode-langservers-extracted
 
     nodePackages.vscode-json-languageserver
 
