@@ -12,15 +12,15 @@
     [window]
     decorations = "None"
     blur = true
-    opacity = 0.90
+    opacity = 1.0
 
     [window.dimensions]
     columns = 140
     lines = 38
 
     [window.padding]
-    x = 10
-    y = 5
+    x = 75
+    y = 70
 
     [font]
     size = 14
