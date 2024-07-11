@@ -27,8 +27,6 @@ in {
   nixpkgs.overlays = with inputs; [
     roon-server
 
-    neovim-nightly-overlay.overlays.default
-
     neovide
 
     yazi.overlays.default
