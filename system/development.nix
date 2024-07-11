@@ -77,5 +77,7 @@ in {
     bandwhich
 
     delta
+
+    zrok
   ];
 }
