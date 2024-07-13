@@ -7,10 +7,10 @@
     userEmail = "me@victorare.mu";
     extraConfig = {
       github = { user = "ahkohd"; };
-      url = {
-        "https://" = { insteadOf = "git://"; };
-        "git@github.com:" = { insteadOf = "https://github.com/"; };
-      };
+      # url = {
+      #   "https://" = { insteadOf = "git://"; };
+      #   "git@github.com:" = { insteadOf = "https://github.com/"; };
+      # };
       user = { signingkey = "1F76A9056C921C8A004F63E28D43F8A176DDC6BD"; };
       commit = { gpgsign = true; };
       core = {
