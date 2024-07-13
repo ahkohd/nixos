@@ -17,6 +17,11 @@
       submodules = true;
     };
 
+    ghostty = {
+      type = "git";
+      url = "ssh://git@github.com/ghostty-org/ghostty";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +31,7 @@
     yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, ghostty, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -34,16 +39,19 @@
 
     in {
       nixosConfigurations.nixos = lib.nixosSystem {
-        inherit system;
-
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          inherit system;
+          inherit ghostty;
+        };
 
         modules = [
+
           nur.nixosModules.nur
 
           ./configuration.nix
 
-          (import ./overlays.nix)
+          ./overlays.nix
         ];
       };
 

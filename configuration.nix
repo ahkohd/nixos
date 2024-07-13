@@ -13,6 +13,7 @@
     ./system/mosh.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
+    ./system/apps/ghostty.nix
     ./system/services/audio/roon.nix
     ./system/development.nix
     ./system/media.nix
@@ -21,8 +22,8 @@
     ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
     ./system/appimage.nix
-    # ./system/services/runners/gh.nix
     ./system/services/bluetooth.nix
+    # ./system/services/runners/gh.nix
   ];
 
   # Bootloader.

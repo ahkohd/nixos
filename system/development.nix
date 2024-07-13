@@ -79,5 +79,7 @@ in {
     delta
 
     zrok
+
+    # ghostty
   ];
 }
