@@ -5,7 +5,7 @@
   home.file.".config/ghostty/config".text = ''
     font-family = GeistMono Nerd Font
 
-    font-size = 15
+    font-size = 14
 
     window-padding-x = 20
 
