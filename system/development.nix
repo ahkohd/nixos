@@ -81,5 +81,7 @@ in {
     zrok
 
     zig
+
+    zls
   ];
 }
