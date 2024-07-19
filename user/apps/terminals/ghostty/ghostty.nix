@@ -3,7 +3,9 @@
 {
 
   home.file.".config/ghostty/config".text = ''
-    font-family = GeistMono Nerd Font
+    font-family = Berkeley Mono
+
+    # font-family = GeistMono Nerd Font
 
     font-size = 14
 
