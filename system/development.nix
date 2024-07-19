@@ -80,6 +80,6 @@ in {
 
     zrok
 
-    # ghostty
+    zig
   ];
 }
