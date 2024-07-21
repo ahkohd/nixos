@@ -1,8 +1,5 @@
 { config, pkgs, inputs, ... }:
 
 {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
-  };
+  home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 }
