@@ -24,6 +24,7 @@ let
     zz = "z -";
     zj = "zellij";
     mosh-server = "systemd-run --user --scope mosh-server";
+    google-chrome = "chromium";
   };
 
   zshExtensionsDir = "~/.nix-profile/share/oh-my-zsh/plugins/vi-mode";
