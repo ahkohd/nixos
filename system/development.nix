@@ -83,5 +83,7 @@ in {
     zig
 
     zls
+
+    gtypist
   ];
 }
