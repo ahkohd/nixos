@@ -20,6 +20,8 @@
     ghostty = {
       type = "git";
       url = "ssh://git@github.com/ghostty-org/ghostty";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+      inputs.nixpkgs-unstable.follows = "nixpkgs";
     };
 
     sops-nix.url = "github:Mic92/sops-nix";
