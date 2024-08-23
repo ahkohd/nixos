@@ -37,7 +37,7 @@ in {
     eslint_d
     biome
 
-    nodePackages.vscode-langservers-extracted
+    # nodePackages.vscode-langservers-extracted
 
     nodePackages.vscode-json-languageserver
 
