@@ -25,6 +25,9 @@ let
     zj = "zellij";
     mosh-server = "systemd-run --user --scope mosh-server";
     google-chrome = "chromium";
+    pm = "pulsemixer";
+    p = "pnpm";
+    y = "yarn";
   };
 
   zshExtensionsDir = "~/.nix-profile/share/oh-my-zsh/plugins/vi-mode";
