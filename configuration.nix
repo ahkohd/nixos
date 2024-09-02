@@ -23,6 +23,7 @@
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
+    ./system/vpn.nix
     # ./system/services/runners/gh.nix
   ];
 
