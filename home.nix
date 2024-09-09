@@ -13,6 +13,7 @@
     ./user/cli/lazygit.nix
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix
+    ./user/cli/nix_direnv.nix
     ./user/apps/editors/neovim/neovim.nix
     ./user/services/notification/dunst.nix
     ./user/wm/hyprland/hyprland.nix
