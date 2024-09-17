@@ -85,5 +85,7 @@ in {
     zls
 
     gtypist
+
+    commitizen
   ];
 }
