@@ -142,6 +142,7 @@
       "users" # Allows any user to mount and unmount
     ];
   };
+
   # Add users to the storage group
   systemd.tmpfiles.rules = [ "d /mnt/nas01 770 var roon-server" ];
 
