@@ -10,7 +10,6 @@ let
     dev = "~/developer/personal";
     grep = "grep --color=auto";
     gst = "git status";
-    nv = "neovide";
     pbcopy = "wl-copy";
     pbpaste = "wl-past";
     tree = "eza --tree --level=4";
@@ -23,7 +22,6 @@ let
     cd = "z";
     zz = "z -";
     zj = "zellij";
-    mosh-server = "systemd-run --user --scope mosh-server";
     google-chrome = "chromium";
     pm = "pulsemixer";
     p = "pnpm";

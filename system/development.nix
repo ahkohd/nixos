@@ -49,8 +49,6 @@ in {
 
     # editors
 
-    neovide
-
     python311Packages.pip
 
     # tools

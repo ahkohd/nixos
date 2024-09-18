@@ -10,7 +10,6 @@
     ./system/wm/hyprland/hyprland.nix
     ./system/shell/zsh.nix
     ./system/ssh.nix
-    ./system/mosh.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
     ./system/apps/ghostty.nix
@@ -19,11 +18,9 @@
     ./system/media.nix
     ./system/audio.nix
     ./system/apps/media/hyprshot.nix
-    ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
-    # ./system/vpn.nix
     # ./system/services/runners/gh.nix
   ];
 
@@ -120,7 +117,7 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 55000 ];
-  networking.firewall.allowedUDPPorts = [ 60001 60002 ];
+  networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 

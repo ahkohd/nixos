@@ -12,22 +12,9 @@ let
       config = { allowUnfree = true; };
     }).roon-server;
   });
-  neovide = (self: super: {
-    # https://github.com/NixOS/nixpkgs/pull/312630
-    neovide = (import (builtins.fetchTarball {
-      url =
-        "https://github.com/NixOS/nixpkgs/archive/0fe111d1c7dc0c2851072569ae17ce5e71325c29.tar.gz";
-      sha256 = "06s62kjkk79hp8bnj8mys28lv16h7zx50fwyq73wpxygg67a3c9i";
-    }) {
-      localSystem = "x86_64-linux";
-      config = { allowUnfree = true; };
-    }).neovide;
-  });
 in {
   nixpkgs.overlays = with inputs; [
     roon-server
-
-    neovide
 
     yazi.overlays.default
 
