@@ -21,7 +21,7 @@ let
     lg = "lazygit";
     cd = "z";
     zz = "z -";
-    zj = "zellij";
+    # zj = "zellij";
     google-chrome = "chromium";
     pm = "pulsemixer";
     p = "pnpm";

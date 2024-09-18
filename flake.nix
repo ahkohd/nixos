@@ -28,7 +28,7 @@
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    zjstatus.url = "github:dj95/zjstatus";
+    # zjstatus.url = "github:dj95/zjstatus";
 
     yazi.url = "github:sxyazi/yazi";
   };

@@ -18,7 +18,7 @@
     ./user/services/notification/dunst.nix
     ./user/wm/hyprland/hyprland.nix
     ./user/cli/tmux.nix
-    ./user/cli/zellij.nix
+    # ./user/cli/zellij.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
     ./user/fonts.nix

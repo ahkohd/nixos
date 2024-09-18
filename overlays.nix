@@ -18,6 +18,6 @@ in {
 
     yazi.overlays.default
 
-    (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
+    # (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
   ];
 }
