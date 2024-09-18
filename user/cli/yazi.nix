@@ -6,7 +6,10 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    settings = { show_symlink = true; };
+    settings = {
+      show_symlink = true;
+      manager = { show_hidden = true; };
+    };
   };
 
   home.file.".config/yazi/theme.toml".text = ''
