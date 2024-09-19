@@ -7,24 +7,14 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system/wm/hyprland/hyprland.nix
     ./system/shell/zsh.nix
+    ./system/wm/sway/sway.nix
     ./system/ssh.nix
-    ./system/mosh.nix
     ./system/apps/op.nix
-    ./system/apps/obsidian.nix
     ./system/apps/ghostty.nix
-    ./system/services/audio/roon.nix
     ./system/development.nix
-    ./system/media.nix
-    ./system/audio.nix
-    ./system/apps/media/hyprshot.nix
-    ./system/apps/filemanager/spacedrive.nix
     ./system/sops.nix
-    ./system/appimage.nix
     ./system/services/bluetooth.nix
-    # ./system/vpn.nix
-    # ./system/services/runners/gh.nix
   ];
 
   # Bootloader.
@@ -60,12 +50,12 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "gb";
-      variant = "";
-    };
-  };
+  # services.xserver = {
+  #   xkb = {
+  #     layout = "us";
+  #     variant = "";
+  #   };
+  # };
 
   # Configure console keymap
   console.keyMap = "us";
@@ -100,6 +90,7 @@
     git
     neofetch
     unzip
+    pciutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -120,7 +111,7 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 55000 ];
-  networking.firewall.allowedUDPPorts = [ 60001 60002 ];
+  networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
@@ -135,17 +126,6 @@
   # Setup NixOS Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Auto-mount disks 
-
-  # NAS 01
-  fileSystems."/mnt/nas01" = {
-    device = "/dev/disk/by-uuid/6a2a9094-9d62-49e2-aac7-d738e81f3be1";
-    fsType = "ext4";
-    options = [
-      "users" # Allows any user to mount and unmount
-    ];
-  };
-  # Add users to the storage group
-  systemd.tmpfiles.rules = [ "d /mnt/nas01 770 var roon-server" ];
-
+  # VMWare configurations
+  virtualisation.vmware.guest.enable = true;
 }

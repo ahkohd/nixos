@@ -11,15 +11,8 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-    };
-
     ghostty = {
-      type = "git";
-      url = "ssh://git@github.com/ghostty-org/ghostty";
+      url = "git+ssh://git@github.com/ghostty-org/ghostty";
       inputs.nixpkgs-stable.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs";
     };
@@ -28,15 +21,13 @@
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    zjstatus.url = "github:dj95/zjstatus";
-
     yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ghostty, ... }@inputs:
     let
       lib = nixpkgs.lib;
-      system = "x86_64-linux";
+      system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
     in {
@@ -48,7 +39,6 @@
         };
 
         modules = [
-
           nur.nixosModules.nur
 
           ./configuration.nix

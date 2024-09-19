@@ -3,7 +3,6 @@
 let
   aliases = {
     c = "clear";
-    wm = "Hyprland";
     hmu = "home-manager switch --flake ~/.dotfiles";
     nixu = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
@@ -22,8 +21,6 @@ let
     lg = "lazygit";
     cd = "z";
     zz = "z -";
-    zj = "zellij";
-    mosh-server = "systemd-run --user --scope mosh-server";
     google-chrome = "chromium";
     pm = "pulsemixer";
     p = "pnpm";
