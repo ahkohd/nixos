@@ -31,7 +31,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
     in {
-      nixosConfigurations.nixos = lib.nixosSystem {
+      nixosConfigurations.area-51 = lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           inherit system;

@@ -5,7 +5,7 @@
     ./user/ssh.nix
     ./user/shell/zsh.nix
     ./user/gpg.nix
-    ./user/wm/sway/sway.nix
+    ./user/wm/gnome/gnome.nix
     ./user/apps/browsers/firefox.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/kitty/kitty.nix
@@ -16,7 +16,6 @@
     ./user/cli/btop.nix
     ./user/cli/nix_direnv.nix
     ./user/apps/editors/neovim/neovim.nix
-    ./user/services/notification/dunst.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix

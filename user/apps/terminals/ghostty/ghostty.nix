@@ -5,10 +5,10 @@
   home.file.".config/ghostty/config".text = ''
     # [appearance]
 
-    font-family = Berkeley Mono
-    # font-family = GeistMono Nerd Font
+    # font-family = Berkeley Mono
+    font-family = GeistMono Nerd Font
 
-    font-size = 14
+    font-size = 12
 
     window-padding-x = 20
 

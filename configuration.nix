@@ -8,20 +8,19 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./system/shell/zsh.nix
-    ./system/wm/sway/sway.nix
+    ./system/wm/gnome/gnome.nix
     ./system/ssh.nix
     ./system/apps/op.nix
     ./system/apps/ghostty.nix
     ./system/development.nix
     ./system/sops.nix
-    ./system/services/bluetooth.nix
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "area-51"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -50,12 +49,12 @@
   };
 
   # Configure keymap in X11
-  # services.xserver = {
-  #   xkb = {
-  #     layout = "us";
-  #     variant = "";
-  #   };
-  # };
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
 
   # Configure console keymap
   console.keyMap = "us";
@@ -88,9 +87,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    neofetch
     unzip
-    pciutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -110,7 +107,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 55000 ];
+  networking.firewall.allowedTCPPorts = [ 22 55000 5173 ];
   networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
@@ -127,5 +124,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # VMWare configurations
+  services.xserver.videoDrivers = [ "vmware" ];
   virtualisation.vmware.guest.enable = true;
 }
