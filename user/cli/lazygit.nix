@@ -4,6 +4,8 @@
   programs.lazygit.enable = true;
 
   home.file.".config/lazygit/config.yml".text = ''
+    os:
+      editPreset: "nvim"
     customCommands:
       - key: "C"
         command: "git cz c"

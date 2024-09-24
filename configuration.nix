@@ -7,8 +7,8 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system/shell/zsh.nix
     ./system/wm/gnome/gnome.nix
+    ./system/shell/zsh.nix
     ./system/ssh.nix
     ./system/apps/op.nix
     ./system/apps/ghostty.nix
@@ -90,6 +90,9 @@
     unzip
   ];
 
+  # Disable Nano editor (enabled by default)
+  programs.nano.enable = false;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -126,4 +129,5 @@
   # VMWare configurations
   services.xserver.videoDrivers = [ "vmware" ];
   virtualisation.vmware.guest.enable = true;
+
 }
