@@ -57,6 +57,8 @@ in {
       else
        ssh-add ~/.ssh/id_github;
       fi
+
+      export EDITOR="nvim"
     '';
   };
 
