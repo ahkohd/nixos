@@ -6,7 +6,6 @@
     ./user/shell/zsh.nix
     ./user/gpg.nix
     ./user/wm/gnome/gnome.nix
-    ./user/apps/browsers/firefox.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/kitty/kitty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
