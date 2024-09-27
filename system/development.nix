@@ -87,5 +87,7 @@ in {
     gtypist
 
     commitizen
+
+    marksman
   ];
 }
