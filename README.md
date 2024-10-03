@@ -1,5 +1,4 @@
-<img width="1725" alt="Screenshot 2024-09-21 at 12 19 30 AM" src="https://github.com/user-attachments/assets/754dc302-d4c3-4f7a-a1c4-276c0f998a17">
-
+![Screenshot](https://github.com/user-attachments/assets/754dc302-d4c3-4f7a-a1c4-276c0f998a17)
 
 # Area 51 👽
 

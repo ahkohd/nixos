@@ -5,10 +5,13 @@
   home.file.".config/ghostty/config".text = ''
     # [appearance]
 
+    font-family = SF Mono
     # font-family = Berkeley Mono
-    font-family = GeistMono Nerd Font
+    # font-family = GeistMono Nerd Font
 
-    font-size = 12
+    # recommended font size 13pt ~ 17.33px 
+
+    font-size = 17.33
 
     window-padding-x = 20
 
@@ -18,7 +21,7 @@
 
     window-height = 48 
 
-    theme = Solarized Dark - Patched
+    # theme = Solarized Dark - Patched
 
     # [keybinds]
 
@@ -59,5 +62,30 @@
     # [behaviour]
 
     mouse-hide-while-typing = true
+
+
+    # [theme] xcodedark
+
+    palette = 0=#414453
+    palette = 1=#ff8170
+    palette = 2=#78c2b3
+    palette = 3=#d9c97c
+    palette = 4=#4eb0cc
+    palette = 5=#ff7ab2
+    palette = 6=#b281eb
+    palette = 7=#dfdfe0
+    palette = 8=#7f8c98
+    palette = 9=#ff8170
+    palette = 10=#acf2e4
+    palette = 11=#ffa14f
+    palette = 12=#6bdfff
+    palette = 13=#ff7ab2
+    palette = 14=#dabaff
+    palette = 15=#dfdfe0
+    background = 292a30
+    foreground = dfdfe0
+    cursor-color = dfdfe0
+    selection-background = 414453
+    selection-foreground = dfdfe0
   '';
 }
