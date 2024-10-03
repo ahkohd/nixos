@@ -4,7 +4,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "solarized_dark";
+      color_theme = "tty";
       theme_background = false;
     };
   };

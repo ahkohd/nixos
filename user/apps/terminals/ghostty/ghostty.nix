@@ -20,8 +20,6 @@
 
     window-height = 48 
 
-    # theme = Solarized Dark - Patched
-
     # [keybinds]
 
     keybind = alt+d=new_split:right
