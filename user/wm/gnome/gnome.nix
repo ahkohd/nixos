@@ -9,7 +9,7 @@
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
           pop-shell.extensionUuid
-          blur-my-shell.extensionUuid
+          # blur-my-shell.extensionUuid
           hide-top-bar.extensionUuid
           unite.extensionUuid
         ];

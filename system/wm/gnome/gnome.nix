@@ -35,7 +35,7 @@
     adwaita-icon-theme
     gnomeExtensions.pop-shell
     gnomeExtensions.hide-top-bar
-    gnomeExtensions.blur-my-shell
+    # gnomeExtensions.blur-my-shell
     gnomeExtensions.unite
   ];
 
