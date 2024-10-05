@@ -31,9 +31,12 @@
     # zjstatus.url = "github:dj95/zjstatus";
 
     yazi.url = "github:sxyazi/yazi";
+
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ghostty, ... }@inputs:
+  outputs =
+    { self, nixpkgs, home-manager, nur, ghostty, zen-browser, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -45,6 +48,7 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
+          inherit zen-browser;
         };
 
         modules = [
