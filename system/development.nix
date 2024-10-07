@@ -3,8 +3,6 @@
 let nvim-config = import ../packages/nvim-config.nix { inherit pkgs; };
 in {
   environment.systemPackages = with pkgs; [
-    ungoogled-chromium
-
     nodejs_22
 
     go
@@ -46,10 +44,6 @@ in {
     rust-analyzer
 
     vscode-extensions.vadimcn.vscode-lldb
-
-    # editors
-
-    neovide
 
     python311Packages.pip
 

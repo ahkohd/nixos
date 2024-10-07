@@ -2,23 +2,18 @@
 
 {
   imports = [
-    ./user/ssh.nix
     ./user/shell/zsh.nix
     ./user/gpg.nix
-    ./user/wm/gnome/gnome.nix
-    ./user/apps/terminals/alacritty/alacritty.nix
-    ./user/apps/terminals/kitty/kitty.nix
-    ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/git/git.nix
     ./user/cli/lazygit.nix
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix
     ./user/cli/nix_direnv.nix
-    ./user/apps/editors/neovim/neovim.nix
+    ./user/cli/neovim.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
-    ./user/fonts.nix
+    ./user/ssh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,7 +36,7 @@
     [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
-      hello
+      # hello
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the

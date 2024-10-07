@@ -17,17 +17,12 @@ let
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
     x = "exit";
-    cht = "~/.config/bin/.local/scripts/tmux-cht.sh";
     lg = "lazygit";
     cd = "z";
     zz = "z -";
-    google-chrome = "chromium";
-    pm = "pulsemixer";
     p = "pnpm";
     y = "yarn";
   };
-
-  zshExtensionsDir = "~/.nix-profile/share/oh-my-zsh/plugins/vi-mode";
 
 in {
 
@@ -50,7 +45,7 @@ in {
     };
     oh-my-zsh = { enable = true; };
     initExtra = ''
-      if ssh-add -l | grep -q "id_github";
+       if ssh-add -l | grep -q "id_github";
       then
         # do nothing
       else
