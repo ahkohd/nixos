@@ -9,19 +9,20 @@ let
     dev = "~/developer/personal";
     grep = "grep --color=auto";
     gst = "git status";
-    nv = "neovide";
     pbcopy = "wl-copy";
-    pbpaste = "wl-past";
-    tree = "eza --tree --level=4";
+    pbpaste = "wl-paste";
+    l = "ls --icons always";
+    tree = "ls --tree --depth=4";
     cat = "bat";
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
+    fe = ''nvim "$(f)"'';
     x = "exit";
     lg = "lazygit";
     cd = "z";
     zz = "z -";
     p = "pnpm";
-    y = "yarn";
+    y = "yy";
   };
 
 in {
@@ -45,7 +46,7 @@ in {
     };
     oh-my-zsh = { enable = true; };
     initExtra = ''
-       if ssh-add -l | grep -q "id_github";
+      if ssh-add -l | grep -q "id_github";
       then
         # do nothing
       else
@@ -56,28 +57,62 @@ in {
     '';
   };
 
+  programs.fish = {
+    enable = true;
+    shellAliases = aliases;
+    plugins = [
+      {
+        name = "forgit";
+        src = pkgs.fishPlugins.forgit.src;
+      }
+      {
+        name = "fzf";
+        src = pkgs.fishPlugins.fzf.src;
+      }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+      {
+        name = "fifc";
+        src = pkgs.fishPlugins.fifc.src;
+      }
+    ];
+    shellInit = builtins.readFile ./fish/init.fish;
+  };
+
+  home.file.".config/fish/extra_vars.fish".text =
+    builtins.readFile ./fish/extra_vars.fish;
+
+  home.file.".config/fish/themes/fzf.fish".text =
+    builtins.readFile ./fish/themes/fzf.fish;
+
+  home.file.".config/fish/themes/tokyonight_storm.fish".text =
+    builtins.readFile ./fish/themes/tokyonight_storm.fish;
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
 
-  programs.eza = {
+  programs.lsd = {
     enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
-    icons = true;
+    colors = true;
+    enableAliases = true;
   };
 
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 }
