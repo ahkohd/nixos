@@ -63,5 +63,11 @@
     # [theme]
 
     theme = tokyonight-storm
+
+    # [shell]
+
+    shell-integration = fish
+
+    command = fish
   '';
 }

@@ -3,22 +3,19 @@
 {
   imports = [
     ./user/ssh.nix
-    ./user/shell/zsh.nix
+    ./user/shell/shell.nix
     ./user/gpg.nix
-    ./user/apps/browsers/firefox.nix
     ./user/apps/terminals/alacritty/alacritty.nix
-    ./user/apps/terminals/kitty/kitty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/git/git.nix
     ./user/cli/lazygit.nix
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix
     ./user/cli/nix_direnv.nix
-    ./user/apps/editors/neovim/neovim.nix
+    ./user/cli/neovim/neovim.nix
     ./user/services/notification/dunst.nix
     ./user/wm/hyprland/hyprland.nix
     ./user/cli/tmux.nix
-    # ./user/cli/zellij.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
     ./user/fonts.nix
