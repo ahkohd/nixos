@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./user/shell/zsh.nix
+    ./user/shell/shell.nix
     ./user/gpg.nix
     ./user/cli/git/git.nix
     ./user/cli/lazygit.nix

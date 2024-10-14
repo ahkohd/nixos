@@ -1,76 +1,60 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, modulesPath, ... }:
+{ inputs, config, pkgs, modulesPath, ... }:
 
 {
   imports = [
-    # Include the default lxd configuration.
-    "${modulesPath}/virtualisation/lxc-container.nix"
-    # Include the OrbStack-specific configuration.
-    ./orbstack.nix
-    # Include the devbox configuration.
+    (modulesPath + "/profiles/qemu-guest.nix")
+    inputs.disko.nixosModules.disko
+    ./disk-config.nix
     ./devbox.nix
   ];
 
-  users.users.var = {
-    uid = 501;
-    description = "Victor Aremu";
-    extraGroups = [ "networkmanager" "wheel" ];
-    # simulate isNormalUser, but with an arbitrary UID
-    isSystemUser = true;
-    # isNormalUser = true;
-    group = "users";
-    createHome = true;
-    home = "/home/var";
-    homeMode = "700";
-    useDefaultShell = true;
-  };
+  system.stateVersion = "24.09";
 
-  security.sudo.wheelNeedsPassword = false;
+  nixpkgs.hostPlatform = "x86_64-linux";
 
-  # This being `true` leads to a few nasty bugs, change at your own risk!
-  users.mutableUsers = false;
+  hardware.enableRedistributableFirmware = true;
+
+  networking.hostName = "devbox";
 
   time.timeZone = "Africa/Lagos";
 
-  networking = {
-    dhcpcd.enable = false;
-    useDHCP = false;
-    useHostResolvConf = false;
+  environment.systemPackages = with pkgs; [ vim git home-manager ];
+
+  networking.networkmanager.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+
+  networking.firewall.allowedUDPPorts = [ ];
+
+  networking.firewall.enable = true;
+
+  # boot.kernelParams = [ "net.ifnames=0" ];
+
+  # boot.loader.grub = {
+  #   efiSupport = true;
+  #   efiInstallAsRemovable = true;
+  # };
+
+  users.users.var = {
+    isNormalUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmyTBCigJkvxtEI3rSlZb3boT1J6Uvmb8VcXEO2FNOQ"
+    ];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  systemd.network = {
+  services.openssh = {
     enable = true;
-    networks."50-eth0" = {
-      matchConfig.Name = "eth0";
-      networkConfig = {
-        DHCP = "ipv4";
-        IPv6AcceptRA = true;
-      };
-      linkConfig.RequiredForOnline = "routable";
-    };
+    settings.PasswordAuthentication = false;
+    extraConfig = ''
+      PrintLastLog no
+    '';
   };
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
 
-  nixpkgs.hostPlatform = "aarch64-linux";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

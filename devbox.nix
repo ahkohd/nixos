@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ ./system/shell/zsh.nix ./system/development.nix ./system/sops.nix ];
+  imports = [
+    ./system/shell/zsh.nix
+    ./system/development.nix
+    ./system/sops.nix
+    ./system/nginx.nix
+    ./system/mosh.nix
+  ];
 
-  networking.hostName = "devbox"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Select internationalisation properties.
+  # Select internationalization properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -37,24 +37,9 @@
       };
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [ vim wget git unzip home-manager ];
-
   # Auto start SSH agent
   programs.ssh.startAgent = true;
 
   # Disable Nano editor (enabled by default)
   programs.nano.enable = false;
-
-  # List services that you want to enable:
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ ];
-  networking.firewall.allowedUDPPorts = [ ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-
-  # Setup NixOS Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
