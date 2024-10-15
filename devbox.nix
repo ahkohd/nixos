@@ -6,7 +6,6 @@
     ./system/development.nix
     ./system/sops.nix
     ./system/nginx.nix
-    ./system/mosh.nix
   ];
 
   # Select internationalization properties.

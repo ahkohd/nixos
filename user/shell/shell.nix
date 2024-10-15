@@ -23,7 +23,6 @@ let
     zz = "z -";
     p = "pnpm";
     y = "yy";
-    mosh-server = "systemd-run --user --scope mosh-server";
   };
 
 in {
