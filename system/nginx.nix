@@ -17,7 +17,12 @@
       "vite.aremu.dev" = {
         addSSL = true;
         enableACME = true;
-        locations = { "/" = { proxyPass = "http://localhost:5173"; }; };
+        locations = {
+          "/" = {
+            proxyPass = "http://localhost:5173";
+            proxyWebsockets = true;
+          };
+        };
       };
       "victor.computer" = {
         addSSL = true;
