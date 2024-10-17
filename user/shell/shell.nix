@@ -17,7 +17,7 @@ let
     cat = "bat";
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
-    fe = ''nvim "$(f)"'';
+    nv = ''nvim "$(f)"'';
     x = "exit";
     lg = "lazygit";
     cd = "z";
