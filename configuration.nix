@@ -10,6 +10,7 @@
     ./system/wm/hyprland/hyprland.nix
     ./system/shell/zsh.nix
     ./system/ssh.nix
+    ./system/nginx.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
     ./system/apps/ghostty.nix
@@ -120,7 +121,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 55000 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 55000 ];
   networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
