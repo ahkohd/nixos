@@ -70,14 +70,6 @@ in {
         src = pkgs.fishPlugins.forgit.src;
       }
       {
-        name = "fzf";
-        src = pkgs.fishPlugins.fzf.src;
-      }
-      {
-        name = "fzf-fish";
-        src = pkgs.fishPlugins.fzf-fish.src;
-      }
-      {
         name = "fifc";
         src = pkgs.fishPlugins.fifc.src;
       }
