@@ -1,5 +1,1 @@
-{ pkgs }:
-with pkgs;
-[
-
-]
+{ pkgs }: with pkgs; [ speedtest-cli ]

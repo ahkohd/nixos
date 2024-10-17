@@ -25,6 +25,7 @@ let
     pm = "pulsemixer";
     p = "pnpm";
     y = "yy";
+    speed = "speedtest-cli";
   };
 
 in {
