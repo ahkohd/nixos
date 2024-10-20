@@ -12,8 +12,8 @@ let
     gst = "git status";
     pbcopy = "wl-copy";
     pbpaste = "wl-paste";
-    l = "ls --icons always";
-    tree = "ls --tree --depth=4";
+    l = "lsd --icons always --tree --depth=1";
+    tree = "lsd --icons always --tree --depth=4";
     cat = "bat";
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
