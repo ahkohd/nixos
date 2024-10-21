@@ -13,18 +13,25 @@
     waypaper
     swaybg
     nwg-displays
+    nwg-look
+    fuzzel
   ];
 
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
     XDG_CURRENT_DESKTOP = "Hyprland";
+    NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-    xdgOpenUsePortal = false;
+    extraPortals = with pkgs;
+      [
+        # xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+      ];
   };
 
   xdg.portal.config.common.default = [ "*" ];

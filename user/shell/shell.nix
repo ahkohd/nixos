@@ -12,8 +12,8 @@ let
     gst = "git status";
     pbcopy = "wl-copy";
     pbpaste = "wl-paste";
-    l = "lsd --icons always --tree --depth=1";
-    tree = "lsd --icons always --tree --depth=4";
+    ls = "lsd --icon always --tree --depth=1";
+    tree = "lsd --icon always --tree --depth=4";
     cat = "bat";
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
@@ -95,7 +95,7 @@ in {
   programs.lsd = {
     enable = true;
     colors = true;
-    enableAliases = true;
+    # enableAliases = true;
   };
 
   programs.starship = {

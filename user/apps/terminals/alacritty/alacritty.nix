@@ -12,7 +12,7 @@
     [window]
     decorations = "None"
     # blur = true
-    # opacity = 1.0
+    # opacity = 0.90
 
     [window.dimensions]
     columns = 140
@@ -23,31 +23,31 @@
     y = 10
 
     [font]
-    size = 24
+    size = 13
 
     [font.normal]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font"
+    family = "SF Mono"
     style = "Regular"
 
     [font.bold]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font"
+    family = "SF Mono"
     style = "Bold"
 
     [font.italic]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font Mono"
+    family = "SF Mono"
     style = "Italic"
 
     [font.bold_italic]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font Mono"
+    family = "SF Mono"
     style = "Bold Italic"
 
     [font.offset]
     x = 0
     y = 0
+
+    [cursor.style]
+    shape = "Beam"
+    blinking = "Always"
   '';
 
   home.file.".config/alacritty/themes/tokyonight_storm.toml".source =

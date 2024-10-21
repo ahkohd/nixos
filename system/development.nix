@@ -87,7 +87,5 @@ in {
     commitizen
 
     marksman
-     
-     ungoogled-chromium
   ];
 }

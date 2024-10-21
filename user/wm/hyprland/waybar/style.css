@@ -1,0 +1,75 @@
+.module,
+#workspaces button {
+  background: transparent;
+  padding: 0 10px;
+  font-family: SF Pro Display;
+  font-weight: 500;
+  font-size: 11pt;
+  color: #c0caf5;
+}
+
+/* The waybar */
+window#waybar {
+  background: transparent;
+}
+
+/* When hovering over modules */
+tooltip {
+  font-size: 12px;
+  background: #1e1e2e;
+  border-radius: 13px;
+  font-family: SF Pro Display;
+  font-weight: 500;
+}
+
+#workspaces {
+  background: rgba(26, 27, 38, 0.75);
+  border-radius: 13px;
+  padding: 0 10px;
+}
+
+#workspaces button {
+  opacity: 0.5;
+  padding: 2px;
+  border: 0px;
+}
+#workspaces button:hover {
+  opacity: 1;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button.active {
+  opacity: 1;
+}
+
+#window,
+#pulseaudio,
+#clock,
+#bluetooth,
+#network,
+#battery,
+#backlight {
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
+}
+
+#pulseaudio,
+#clock,
+#bluetooth,
+#network,
+#battery,
+#backlight {
+  opacity: 0;
+  transition: color;
+}
+
+#pulseaudio:hover,
+#clock:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#backlight:hover {
+  opacity: 1;
+}
