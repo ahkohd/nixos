@@ -4,26 +4,26 @@
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [ "~/.config/alacritty/themes/nord.toml" ]
+    import = [ "~/.config/alacritty/themes/tokyonight_storm.toml" ]
 
     [shell]
-    program = "zsh"
+    program = "fish"
 
     [window]
     decorations = "None"
-    blur = true
-    opacity = 1.0
+    # blur = true
+    # opacity = 1.0
 
     [window.dimensions]
     columns = 140
     lines = 38
 
     [window.padding]
-    x = 75
-    y = 70
+    x = 15
+    y = 10
 
     [font]
-    size = 14
+    size = 24
 
     [font.normal]
     # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
@@ -50,5 +50,6 @@
     y = 0
   '';
 
-  home.file.".config/alacritty/themes/nord.toml".source = ./themes/nord.toml;
+  home.file.".config/alacritty/themes/tokyonight_storm.toml".source =
+    ./themes/tokyonight_storm.toml;
 }

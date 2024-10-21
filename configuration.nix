@@ -5,17 +5,18 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    # Include the apple silicon support module.
+    ./apple-silicon-support
     ./system/wm/hyprland/hyprland.nix
     ./system/shell/zsh.nix
     ./system/ssh.nix
-    ./system/nginx.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
-    ./system/apps/ghostty.nix
-    ./system/apps/zen-browser.nix
-    ./system/services/audio/roon.nix
+    # ./system/apps/ghostty.nix
+    # ./system/apps/zen-browser.nix
     ./system/development.nix
     ./system/media.nix
     ./system/audio.nix
@@ -23,22 +24,34 @@
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
-    # ./system/services/runners/gh.nix
   ];
+
+  hardware = {
+    asahi = {
+      # Specify path to peripheral firmware files.
+      peripheralFirmwareDirectory = ./firmware;
+      # Use the experimental GPU drivers for graphcis acceleration
+      useExperimentalGPUDriver = true;
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = false;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.iwd = {
+    enable = true;
+    settings.General.EnableNetworkConfiguration = true;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Africa/Lagos";
@@ -91,14 +104,13 @@
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+    vim
     git
-    neofetch
-    unzip
+    home-manager
+    # Install graphics drivers
+    mesa
+    mesa.drivers
   ];
 
   # Disable Nano editor (enabled by default)
@@ -121,7 +133,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 55000 ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
   networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
@@ -136,19 +148,4 @@
 
   # Setup NixOS Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Auto-mount disks 
-
-  # NAS 01
-  fileSystems."/mnt/nas01" = {
-    device = "/dev/disk/by-uuid/6a2a9094-9d62-49e2-aac7-d738e81f3be1";
-    fsType = "ext4";
-    options = [
-      "users" # Allows any user to mount and unmount
-    ];
-  };
-
-  # Add users to the storage group
-  systemd.tmpfiles.rules = [ "d /mnt/nas01 770 var roon-server" ];
-
 }

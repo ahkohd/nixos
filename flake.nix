@@ -17,29 +17,26 @@
       submodules = true;
     };
 
-    ghostty = {
-      type = "git";
-      url = "ssh://git@github.com/ghostty-org/ghostty";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-    };
+    # ghostty = {
+    #   type = "git";
+    #   url = "ssh://git@github.com/ghostty-org/ghostty";
+    #   inputs.nixpkgs-stable.follows = "nixpkgs";
+    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
+    # };
 
     sops-nix.url = "github:Mic92/sops-nix";
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # zjstatus.url = "github:dj95/zjstatus";
-
     yazi.url = "github:sxyazi/yazi";
 
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    # zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs =
-    { self, nixpkgs, home-manager, nur, ghostty, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
     let
       lib = nixpkgs.lib;
-      system = "x86_64-linux";
+      system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
     in {
@@ -47,8 +44,8 @@
         specialArgs = {
           inherit inputs;
           inherit system;
-          inherit ghostty;
-          inherit zen-browser;
+          # inherit ghostty;
+          # inherit zen-browser;
         };
 
         modules = [
