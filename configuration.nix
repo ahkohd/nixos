@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -37,9 +37,11 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+
   boot.loader.efi.canTouchEfiVariables = false;
 
   networking.hostName = "nixos"; # Define your hostname.
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.wireless.iwd = {
     enable = true;
@@ -87,7 +89,7 @@
     isNormalUser = true;
     description = "Victor Aremu";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = [ ];
   };
 
   # Allow unfree packages
@@ -134,7 +136,9 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ];
+
   networking.firewall.allowedUDPPorts = [ ];
+
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 

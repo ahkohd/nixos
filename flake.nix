@@ -33,7 +33,7 @@
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "aarch64-linux";

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ inputs, ... }:
 
 let
   roon-server = (self: super: {

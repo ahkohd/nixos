@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 # let
 #   modern-tmux-theme = pkgs.tmuxPlugins.mkTmuxPlugin {

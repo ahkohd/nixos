@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let nvim-config = import ../packages/nvim-config.nix { inherit pkgs; };
 in {
@@ -89,5 +89,9 @@ in {
     marksman
 
     nitch
+
+    nixd
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }
