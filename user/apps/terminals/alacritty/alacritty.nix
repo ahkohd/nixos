@@ -8,6 +8,7 @@
 
     [shell]
     program = "fish"
+    args = ["-c", "nitch && exec fish"]
 
     [window]
     decorations = "None"
