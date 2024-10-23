@@ -7,3 +7,4 @@ source ~/.config/fish/themes/tokyonight_strom.fish
 # apply fzf theme
 source ~/.config/fish/themes/fzf.fish
 
+nitch
