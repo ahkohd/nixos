@@ -17,6 +17,8 @@
       submodules = true;
     };
 
+    zig.url = "github:mitchellh/zig-overlay";
+
     # ghostty = {
     #   type = "git";
     #   url = "ssh://git@github.com/ghostty-org/ghostty";
@@ -33,7 +35,7 @@
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, zig, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "aarch64-linux";
@@ -44,6 +46,7 @@
         specialArgs = {
           inherit inputs;
           inherit system;
+          inherit zig;
           # inherit ghostty;
           # inherit zen-browser;
         };
