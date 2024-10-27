@@ -9,7 +9,7 @@
     # font-family = Berkeley Mono
 
     # recommended font size 13pt ~ 17.33px
-    font-size = 14
+    font-size = 13
 
     window-padding-x = 20
 
