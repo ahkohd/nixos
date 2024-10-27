@@ -10,6 +10,7 @@ let
     dev = "~/developer/personal";
     grep = "grep --color=auto";
     gst = "git status";
+    gl = "git log -n 10 --graph --decorate --oneline";
     pbcopy = "wl-copy";
     pbpaste = "wl-paste";
     ls = "lsd --icon always --tree --depth=1";

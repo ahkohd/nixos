@@ -7,10 +7,9 @@
 
     font-family = SF Mono
     # font-family = Berkeley Mono
-    # font-family = GeistMono Nerd Font
 
     # recommended font size 13pt ~ 17.33px
-    font-size = 17.33
+    font-size = 14
 
     window-padding-x = 20
 
@@ -20,11 +19,13 @@
 
     window-height = 48 
 
+    cursor-style = bar
+
     # [keybinds]
 
-    keybind = alt+d=new_split:right
+    keybind = alt+b=new_split:right
 
-    keybind = alt+shift+d=new_split:down
+    keybind = alt+shift+b=new_split:down
 
     keybind = alt+t=new_tab
 
@@ -52,9 +53,15 @@
 
     keybind = alt+shift+enter=toggle_split_zoom
 
+    keybind = alt+d=scroll_page_down
+
+    keybind = alt+u=scroll_page_up
+
     # [decorations]
 
     gtk-titlebar = false
+
+    # background-opacity = 0.9
 
     # [behaviour]
 
@@ -68,6 +75,6 @@
 
     shell-integration = fish
 
-    command = fish
+    command = fish -c "nitch && exec fish"
   '';
 }

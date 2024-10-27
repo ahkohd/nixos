@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let nvim-config = import ../packages/nvim-config.nix { inherit pkgs; };
 in {
