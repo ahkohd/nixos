@@ -76,5 +76,10 @@
     shell-integration = fish
 
     command = fish -c "nitch && exec fish"
+
+    # [shader]
+    custom-shader = shaders/shader.glsl
   '';
+
+  home.file.".config/ghostty/shaders/shader.glsl".source = ./shaders/shader.gsl;
 }

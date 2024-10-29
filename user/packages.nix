@@ -1,8 +1,1 @@
-{ pkgs }:
-with pkgs; [
-  brightnessctl
-  nwg-look
-  speedtest-cli
-  spotify-player
-  fastfetch
-]
+{ pkgs }: with pkgs; [ brightnessctl nwg-look speedtest-cli spotify-player ]

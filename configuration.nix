@@ -11,14 +11,10 @@
     # Include the apple silicon support module.
     ./apple-silicon-support
     ./system/wm/hyprland/hyprland.nix
-    ./system/shell/zsh.nix
     ./system/ssh.nix
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
-    # ./system/apps/ghostty.nix
-    # ./system/apps/zen-browser.nix
     ./system/development.nix
-    ./system/media.nix
     ./system/audio.nix
     ./system/apps/media/hyprshot.nix
     ./system/sops.nix

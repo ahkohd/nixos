@@ -1,19 +1,5 @@
 { pkgs, ... }:
 
-# let
-#   modern-tmux-theme = pkgs.tmuxPlugins.mkTmuxPlugin {
-#     pluginName = "modern-tmux-theme";
-#     version = "unstable-2023-01-06";
-#     src = fetchFromGitHub {
-#       owner = "Millrocious";
-#       repo = "modern-tmux-theme";
-#       rev = "29dad92c8a2486e5b6f116e42883906c00a1f0a2";
-#       sha256 = "sha256-ymmCI6VYvf94Ot7h2GAboTRBXPIREP+EB33+px5aaJk=";
-#     };
-#   };
-#
-# in 
-
 {
   programs.tmux = {
     enable = true;
@@ -21,13 +7,8 @@
     baseIndex = 1;
     mouse = true;
     keyMode = "vi";
-    shell = "${pkgs.zsh}/bin/zsh";
-    plugins = with pkgs;
-      [
-        tmuxPlugins.sensible
-        # tmuxPlugins.vim-tmux-navigator
-        # modern-tmux-theme
-      ];
+    shell = "${pkgs.fish}/bin/fish";
+    plugins = with pkgs; [ tmuxPlugins.sensible ];
     extraConfig = ''
       # undercurl support
 
@@ -79,11 +60,6 @@
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-Space' select-pane -l
-
-      # Actions
-
-      bind-key -r i run-shell "tmux neww ~/.config/bin/.local/scripts/tmux-cht.sh"
-
     '';
   };
 }
