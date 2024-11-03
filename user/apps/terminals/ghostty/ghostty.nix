@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
 
@@ -6,8 +6,6 @@
     # [appearance]
 
     font-family = SF Mono
-    # font-family = Berkeley Mono
-    # font-family = GeistMono Nerd Font
 
     # recommended font size 13pt ~ 17.33px
     font-size = 17.33
@@ -68,6 +66,6 @@
 
     shell-integration = fish
 
-    command = fish
+    command = fish -c "nitch && exec fish"
   '';
 }

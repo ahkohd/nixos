@@ -9,3 +9,6 @@ set -Ux fifc_editor nvim
 
 # set shell
 set -x SHELL "fish"
+
+# turn off the greeting
+set -g fish_greeting

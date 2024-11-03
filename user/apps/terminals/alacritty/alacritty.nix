@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [ "~/.config/alacritty/themes/nord.toml" ]
+    import = [ "~/.config/alacritty/themes/tokyonight_storm.toml" ]
 
     [shell]
-    program = "zsh"
+    program = "fish"
+    args = ["-c", "nitch && exec fish"]
 
     [window]
     decorations = "None"
@@ -26,29 +27,30 @@
     size = 14
 
     [font.normal]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font"
+    family = "SF Mono"
     style = "Regular"
 
     [font.bold]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font"
+    family = "SF Mono"
     style = "Bold"
 
     [font.italic]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font Mono"
+    family = "SF Mono"
     style = "Italic"
 
     [font.bold_italic]
-    # family = "BerkeleyMono Nerd Font Plus Font Awesome Plus Octicons Plus Codicons Plus Material Design Icons"
-    family = "GeistMono Nerd Font Mono"
+    family = "SF Mono"
     style = "Bold Italic"
 
     [font.offset]
     x = 0
     y = 0
+
+    [cursor.style]
+    shape = "Beam"
+    blinking = "Always"
   '';
 
-  home.file.".config/alacritty/themes/nord.toml".source = ./themes/nord.toml;
+  home.file.".config/alacritty/themes/tokyonight_storm.toml".source =
+    ./themes/tokyonight_storm.toml;
 }

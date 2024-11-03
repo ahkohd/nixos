@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ speedtest-cli ]
+{ pkgs }: with pkgs; [ speedtest-cli spotify-player ]

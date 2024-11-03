@@ -5,6 +5,7 @@
     ./user/ssh.nix
     ./user/shell/shell.nix
     ./user/gpg.nix
+    ./user/gtk.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/git/git.nix
