@@ -14,7 +14,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts = {
-      "vite.aremu.dev" = {
+      "vite.victor.computer" = {
         addSSL = true;
         enableACME = true;
         locations = {
