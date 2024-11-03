@@ -2,13 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./system/wm/hyprland/hyprland.nix
-    ./system/shell/zsh.nix
     ./system/ssh.nix
     ./system/nginx.nix
     ./system/apps/op.nix
@@ -23,14 +23,15 @@
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
-    # ./system/services/runners/gh.nix
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -74,7 +75,6 @@
     isNormalUser = true;
     description = "Victor Aremu";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -87,19 +87,7 @@
       };
   };
 
-  # White list insecure packages
-
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    neofetch
-    unzip
-  ];
+  environment.systemPackages = with pkgs; [ vim git home-manager ];
 
   # Disable Nano editor (enabled by default)
   programs.nano.enable = false;
@@ -122,8 +110,10 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 80 443 55000 ];
+
   networking.firewall.allowedUDPPorts = [ ];
   # Or disable the firewall altogether.
+
   networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default

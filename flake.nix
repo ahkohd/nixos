@@ -1,6 +1,6 @@
 {
 
-  description = "Yay! A snow flake";
+  description = "Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -28,15 +28,12 @@
 
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # zjstatus.url = "github:dj95/zjstatus";
-
     yazi.url = "github:sxyazi/yazi";
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs =
-    { self, nixpkgs, home-manager, nur, ghostty, zen-browser, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, ghostty, zen-browser, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";

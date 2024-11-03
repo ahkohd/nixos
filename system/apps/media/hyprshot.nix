@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let hyprshot = import ../../../packages/hyprshot.nix { inherit pkgs; };
 in {

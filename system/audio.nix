@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Add user to audio group
   users.extraUsers.var.extraGroups = [ "audio" ];
 
-  environment.systemPackages = with pkgs; [ pulsemixer pavucontrol uxplay ];
+  environment.systemPackages = with pkgs; [ pulsemixer pavucontrol ];
 
   security.rtkit.enable = true;
 
