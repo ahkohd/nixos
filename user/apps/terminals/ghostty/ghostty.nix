@@ -8,7 +8,9 @@
     font-family = SF Mono
 
     # recommended font size 13pt ~ 17.33px
-    font-size = 17.33
+    # font-size = 17.33
+
+    font-size = 14.33
 
     window-padding-x = 20
 
