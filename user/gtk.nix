@@ -20,9 +20,7 @@
   qt = {
     enable = true;
     platformTheme = { name = "adwaita"; };
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.pkgs.adwaita-qt;
-    };
+    style = { name = "adwaita-dark"; };
   };
+
 }
