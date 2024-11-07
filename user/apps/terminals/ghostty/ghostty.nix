@@ -66,8 +66,9 @@
 
     # [shell]
 
-    shell-integration = fish
+    shell-integration = zsh
 
-    command = fish -c "nitch && exec fish"
+    # command = fish -c "nitch && exec fish"
+    command = zsh -c "nitch && exec zsh"
   '';
 }

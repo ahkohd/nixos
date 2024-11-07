@@ -7,8 +7,8 @@
     import = [ "~/.config/alacritty/themes/tokyonight_storm.toml" ]
 
     [shell]
-    program = "fish"
-    args = ["-c", "nitch && exec fish"]
+    program = "zsh"
+    args = ["-c", "nitch && exec zsh"]
 
     [window]
     decorations = "None"
