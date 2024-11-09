@@ -4,9 +4,10 @@
   programs.alacritty.enable = true;
 
   home.file.".config/alacritty/alacritty.toml".text = ''
+    [general]
     import = [ "~/.config/alacritty/themes/tokyonight_storm.toml" ]
 
-    [shell]
+    [terminal.shell]
     program = "zsh"
     args = ["-c", "nitch && exec zsh"]
 
