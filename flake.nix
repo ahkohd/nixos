@@ -30,13 +30,10 @@
 
     yazi.url = "github:sxyazi/yazi";
 
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
-
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ghostty, zen-browser, nixos-cosmic
-    , ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, ghostty, nixos-cosmic, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -48,7 +45,6 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
-          inherit zen-browser;
         };
 
         modules = [

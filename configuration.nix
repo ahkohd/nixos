@@ -15,7 +15,6 @@
     ./system/apps/op.nix
     ./system/apps/obsidian.nix
     ./system/apps/ghostty.nix
-    ./system/apps/zen-browser.nix
     ./system/services/audio/roon.nix
     ./system/development.nix
     ./system/media.nix
