@@ -6,7 +6,6 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
     settings = {
       show_symlink = true;
       manager = { show_hidden = true; };

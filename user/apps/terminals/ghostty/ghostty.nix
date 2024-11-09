@@ -63,10 +63,8 @@
     theme = tokyonight-storm
 
     # [shell]
-
     shell-integration = zsh
 
-    # command = fish -c "nitch && exec fish"
     command = zsh -c "nitch && exec zsh"
   '';
 }

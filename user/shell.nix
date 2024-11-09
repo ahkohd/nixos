@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 let
   aliases = {
@@ -62,31 +62,6 @@ in {
     '';
   };
 
-  programs.fish = {
-    enable = true;
-    shellAliases = aliases;
-    plugins = [
-      {
-        name = "forgit";
-        src = pkgs.fishPlugins.forgit.src;
-      }
-      {
-        name = "fifc";
-        src = pkgs.fishPlugins.fifc.src;
-      }
-    ];
-    shellInit = builtins.readFile ./fish/init.fish;
-  };
-
-  home.file.".config/fish/extra_vars.fish".text =
-    builtins.readFile ./fish/extra_vars.fish;
-
-  home.file.".config/fish/themes/fzf.fish".text =
-    builtins.readFile ./fish/themes/fzf.fish;
-
-  home.file.".config/fish/themes/tokyonight_strom.fish".text =
-    builtins.readFile ./fish/themes/tokyonight_strom.fish;
-
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
@@ -102,13 +77,11 @@ in {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
   };
 }

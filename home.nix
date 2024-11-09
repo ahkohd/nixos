@@ -3,7 +3,7 @@
 {
   imports = [
     ./user/ssh.nix
-    ./user/shell/shell.nix
+    ./user/shell.nix
     ./user/gpg.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
