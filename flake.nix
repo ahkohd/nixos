@@ -11,11 +11,11 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-    };
+    # hyprland = {
+    #   type = "git";
+    #   url = "https://github.com/hyprwm/Hyprland";
+    #   submodules = true;
+    # };
 
     ghostty = {
       type = "git";
@@ -31,9 +31,12 @@
     yazi.url = "github:sxyazi/yazi";
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ghostty, zen-browser, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, ghostty, zen-browser, nixos-cosmic
+    , ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -49,6 +52,16 @@
         };
 
         modules = [
+          {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
+
+          nixos-cosmic.nixosModules.default
 
           nur.nixosModules.nur
 

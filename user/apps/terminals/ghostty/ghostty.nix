@@ -14,9 +14,9 @@
 
     font-size = 14.33
 
-    window-padding-x = 20
+    window-padding-x = 10
 
-    window-padding-y = 10
+    window-padding-y = 5
 
     window-width = 150
 
@@ -57,6 +57,8 @@
     # [decorations]
 
     gtk-titlebar = false
+
+    window-decoration = false
 
     # [behaviour]
 

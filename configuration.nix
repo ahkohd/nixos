@@ -8,7 +8,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system/wm/hyprland/hyprland.nix
+    ./system/desktop.nix
+    # ./system/wm/hyprland/hyprland.nix
     ./system/ssh.nix
     ./system/nginx.nix
     ./system/apps/op.nix
@@ -19,7 +20,7 @@
     ./system/development.nix
     ./system/media.nix
     ./system/audio.nix
-    ./system/apps/media/hyprshot.nix
+    # ./system/apps/media/hyprshot.nix
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix

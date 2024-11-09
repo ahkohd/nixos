@@ -5,7 +5,6 @@
     ./user/ssh.nix
     ./user/shell/shell.nix
     ./user/gpg.nix
-    ./user/gtk.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/apps/fuzzel/fuzzel.nix
@@ -16,7 +15,8 @@
     ./user/cli/nix_direnv.nix
     ./user/cli/neovim/neovim.nix
     ./user/services/notification/dunst.nix
-    ./user/wm/hyprland/hyprland.nix
+    # ./user/wm/hyprland/hyprland.nix
+    # ./user/gtk.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
