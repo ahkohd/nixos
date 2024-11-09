@@ -5,7 +5,9 @@
   home.file.".config/ghostty/config".text = ''
     # [appearance]
 
-    font-family = SF Mono
+    # font-family = SF Mono
+
+    font-family = Berkeley Mono
 
     # recommended font size 13pt ~ 17.33px
     # font-size = 17.33
