@@ -24,6 +24,7 @@
     ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
+    ./system/services/flatpak.nix
   ];
 
   # Bootloader.
