@@ -16,7 +16,7 @@
     ./user/cli/neovim/neovim.nix
     ./user/services/notification/dunst.nix
     # ./user/wm/hyprland/hyprland.nix
-    # ./user/gtk.nix
+    ./user/gtk.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
