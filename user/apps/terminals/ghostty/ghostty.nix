@@ -5,9 +5,9 @@
   home.file.".config/ghostty/config".text = ''
     # [appearance]
 
-    # font-family = SF Mono
+    font-family = SF Mono
 
-    font-family = Berkeley Mono
+    # font-family = Berkeley Mono
 
     # recommended font size 13pt ~ 17.33px
     # font-size = 17.33
@@ -24,33 +24,27 @@
 
     # [keybinds]
 
-    keybind = alt+d=new_split:right
+    keybind = alt+shift+t=new_tab
 
-    keybind = alt+shift+d=new_split:down
+    keybind = alt+shift+g=new_split:right
 
-    keybind = alt+t=new_tab
+    keybind = alt+shift+b=new_split:down
 
-    keybind = alt+shift+h=previous_tab
+    keybind = alt+shift+i=previous_tab
 
-    keybind = alt+shift+l=next_tab
+    keybind = alt+shift+o=next_tab
 
-    keybind = alt+h=goto_split:left
+    keybind = alt+shift+h=goto_split:left
 
-    keybind = alt+l=goto_split:right
+    keybind = alt+shift+l=goto_split:right
 
-    keybind = alt+k=goto_split:top
+    keybind = alt+shift+j=goto_split:bottom
 
-    keybind = alt+shift+k=goto_split:previous
+    keybind = alt+shift+k=goto_split:top
 
-    keybind = alt+shift+j=goto_split:next
+    keybind = alt+shift+,=reload_config
 
-    keybind = alt+j=goto_split:bottom
-
-    keybind = alt+,=reload_config
-
-    keybind = alt+w=close_surface
-
-    keybind = alt+enter=toggle_split_zoom
+    keybind = alt+shift+w=close_surface
 
     keybind = alt+shift+enter=toggle_split_zoom
 
