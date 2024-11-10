@@ -3,6 +3,7 @@
 {
   fonts.fontconfig.enable = true;
 
-  home.packages = [ (pkgs.nerdfonts.override { fonts = [ ]; }) ];
+  home.packages =
+    [ pkgs.inter (pkgs.nerdfonts.override { fonts = [ "GeistMono" ]; }) ];
 }
 

@@ -6,7 +6,7 @@
 
     settings = {
       global = {
-        font = "SF Pro Display 11.0";
+        font = "Inter 11.0";
         allow_markup = true;
         frame_width = 2;
         corner_radius = 12;
