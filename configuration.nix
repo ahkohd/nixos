@@ -13,7 +13,6 @@
     ./system/ssh.nix
     ./system/nginx.nix
     ./system/apps/op.nix
-    ./system/apps/obsidian.nix
     ./system/apps/ghostty.nix
     ./system/services/audio/roon.nix
     ./system/development.nix
