@@ -9,7 +9,6 @@
 
     [terminal.shell]
     program = "zsh"
-    args = ["-c", "nitch && exec zsh"]
 
     [window]
     decorations = "None"
@@ -21,31 +20,26 @@
     lines = 38
 
     [window.padding]
-    x = 75
-    y = 70
+    x = 5
 
     [font]
     size = 14
 
     [font.normal]
-    family = "SF Mono"
+    family = "Maple Mono"
     style = "Regular"
 
     [font.bold]
-    family = "SF Mono"
+    family = "Maple Mono"
     style = "Bold"
 
     [font.italic]
-    family = "SF Mono"
+    family = "Maple Mono"
     style = "Italic"
 
     [font.bold_italic]
-    family = "SF Mono"
+    family = "Maple Mono"
     style = "Bold Italic"
-
-    [font.offset]
-    x = 0
-    y = 0
 
     [cursor.style]
     shape = "Beam"
