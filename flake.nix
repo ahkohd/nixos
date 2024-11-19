@@ -3,7 +3,7 @@
   description = "Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
     nur.url = "github:nix-community/NUR";
 
