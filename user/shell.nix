@@ -28,6 +28,8 @@ let
     p = "pnpm";
     y = "yy";
     speed = "speedtest-cli";
+    jst = "jj st --no-pager";
+    jbl = "jj log -r 'heads(all())'";
   };
 
 in {

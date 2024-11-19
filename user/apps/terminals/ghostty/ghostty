@@ -43,9 +43,9 @@ gtk-wide-tabs = false
 
 gtk-single-instance = true
 
-window-padding-x = 2
+window-padding-x = 10
 
-window-padding-y = 2
+window-padding-y = 5
 
 # window-padding-balance = true
 
