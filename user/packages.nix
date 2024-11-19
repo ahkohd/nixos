@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ speedtest-cli ]
+{ pkgs }: with pkgs; [ lazyjj speedtest-cli ]

@@ -59,6 +59,10 @@ in {
       fi
 
       export EDITOR="nvim"
+
+      autoload -U compinit
+      compinit
+      source <(jj util completion zsh)
     '';
   };
 

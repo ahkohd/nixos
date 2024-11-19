@@ -8,7 +8,8 @@
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/git/git.nix
-    ./user/cli/lazygit.nix
+    ./user/cli/git/jj.nix
+    ./user/cli/git/lazy.nix
     ./user/cli/bat/bat.nix
     ./user/cli/btop.nix
     ./user/cli/nix_direnv.nix
