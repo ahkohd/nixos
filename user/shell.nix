@@ -30,6 +30,15 @@ let
     speed = "speedtest-cli";
     jst = "jj st --no-pager";
     jbl = "jj log -r 'heads(all())'";
+    jpw = "jj git push --change=@";
+    jsq = "jj squash";
+    jed = "jj edit";
+    jds = "jj desc";
+    jfo = "jj git fetch --remote=origin";
+    jbk = "jj bookmark";
+    jab = "jj abandon";
+    jt = "jj_tui";
+    j = "jj";
   };
 
 in {

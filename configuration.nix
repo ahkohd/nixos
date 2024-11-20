@@ -18,6 +18,7 @@
     ./system/development.nix
     ./system/media.nix
     ./system/audio.nix
+    ./system/jj.nix
     # ./system/apps/media/hyprshot.nix
     ./system/sops.nix
     ./system/appimage.nix

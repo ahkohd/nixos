@@ -31,9 +31,12 @@
     yazi.url = "github:sxyazi/yazi";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
+    jj_tui.url = "github:faldor20/jj_tui";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ghostty, nixos-cosmic, ... }@inputs:
+  outputs =
+    { nixpkgs, home-manager, nur, ghostty, nixos-cosmic, jj_tui, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -45,6 +48,7 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
+          inherit jj_tui;
         };
 
         modules = [
