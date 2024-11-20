@@ -8,28 +8,52 @@
     enableZshIntegration = true;
     settings = {
       show_symlink = true;
-      manager = {
-        show_hidden = true;
-        keymap = [{
-          on = [ "E" ];
-          run = "plugin eza-preview";
-          desc = "Toggle tree/list dir preview";
+      manager = { show_hidden = true; };
+      plugin = {
+        prepend_previewers = [{
+          name = "*/";
+          run = "eza-preview";
         }];
-      };
-      prepend_previewers = [{
-        name = "*/";
-        run = "eza-preview";
-      }];
-    };
-    plugins = {
-      eza-preview = pkgs.fetchFromGitHub {
-        owner = "sharklasers996";
-        repo = "eza-preview.yazi";
-        rev = "7ca4c2558e17bef98cacf568f10ec065a1e5fb9b";
-        sha256 = "sha256-mriZ9QBe1QIDsBkGd+tmg4bNFtD0evuSom2pWyQ1yEM=";
+
       };
     };
   };
+
+  home.file.".config/yazi/plugins/eza-preview.yazi".source =
+    pkgs.fetchFromGitHub {
+      owner = "ahkohd";
+      repo = "eza-preview.yazi";
+      rev = "222c33de1ad4";
+      sha256 = "sha256-fVZzDAq9/HT2HJ7e9Cqibh2LhevhKRQVSMYXdgdKe8o=";
+    };
+
+  home.file.".config/yazi/plugins/no-status.yazi".source =
+    pkgs.fetchFromGitHub {
+      owner = "yazi-rs";
+      repo = "plugins";
+      rev = "ab7068ef7569a477899e2aebe5948e933909c38d";
+      sha256 = "sha256-0is0kiLEvTUasOGX882OnnrkvTUGVlfT4ohBmrWY8pc=";
+    } + "/no-status.yazi";
+
+  home.file.".config/yazi/keymap.toml".text = ''
+    [manager]
+    prepend_keymap = [
+      { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+      { on = [ "-" ], run = "plugin eza-preview --args='inc-level'",  desc = "Increment tree level" },
+      { on = [ "_" ], run = "plugin eza-preview --args='dec-level'",  desc = "Decrement tree level" },
+      { on = [ "$" ], run = "plugin eza-preview --args='toggle-follow-symlinks'",  desc = "Toggle tree follow symlinks" },
+    ]
+  '';
+
+  home.file.".config/yazi/init.lua".text = ''
+    require("eza-preview"):setup{
+      level = 2,
+      follow_symlinks = true,
+      dereference = false
+    }
+
+    require("no-status"):setup()
+  '';
 
   home.file.".config/yazi/theme.toml".text = ''
     [manager]
