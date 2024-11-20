@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 
@@ -8,7 +8,26 @@
     enableZshIntegration = true;
     settings = {
       show_symlink = true;
-      manager = { show_hidden = true; };
+      manager = {
+        show_hidden = true;
+        keymap = [{
+          on = [ "E" ];
+          run = "plugin eza-preview";
+          desc = "Toggle tree/list dir preview";
+        }];
+      };
+      prepend_previewers = [{
+        name = "*/";
+        run = "eza-preview";
+      }];
+    };
+    plugins = {
+      eza-preview = pkgs.fetchFromGitHub {
+        owner = "sharklasers996";
+        repo = "eza-preview.yazi";
+        rev = "7ca4c2558e17bef98cacf568f10ec065a1e5fb9b";
+        sha256 = "sha256-mriZ9QBe1QIDsBkGd+tmg4bNFtD0evuSom2pWyQ1yEM=";
+      };
     };
   };
 
