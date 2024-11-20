@@ -13,8 +13,6 @@ let
     glg = "git log -n 10 --graph --decorate --oneline";
     pbcopy = "wl-copy";
     pbpaste = "wl-paste";
-    ls = "lsd --icon always --tree --depth=1";
-    tree = "lsd --icon always --tree --depth=4";
     cat = "bat";
     f =
       "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
@@ -23,6 +21,8 @@ let
     x = "exit";
     lg = "lazygit";
     cd = "z";
+    ls = "eza --tree --level=1";
+    l = "eza -l --tree --level=1";
     zz = "z -";
     pm = "pulsemixer";
     p = "pnpm";
@@ -37,6 +37,7 @@ let
     jfo = "jj git fetch --remote=origin";
     jbk = "jj bookmark";
     jab = "jj abandon";
+    jla = "jj log -r 'all()'";
     jt = "jj_tui";
     j = "jj";
   };
@@ -83,9 +84,12 @@ in {
     enableBashIntegration = true;
   };
 
-  programs.lsd = {
+  programs.eza = {
     enable = true;
-    colors = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    icons = true;
+    git = true;
   };
 
   programs.starship = {
