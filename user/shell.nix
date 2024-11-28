@@ -11,8 +11,6 @@ let
     grep = "grep --color=auto";
     gst = "git status";
     glg = "git log -n 10 --graph --decorate --oneline";
-    pbcopy = "wl-copy";
-    pbpaste = "wl-paste";
     cat = "bat";
     nv = "nvim";
     nvc = "nvim-config";
