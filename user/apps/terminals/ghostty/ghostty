@@ -1,5 +1,5 @@
 # favourite font
-# font-family = Berkeley Mono
+font-family = Berkeley Mono
 
 # alternate font
 # font-family = SF Mono
@@ -7,7 +7,17 @@
 # fallback to Maple Mono
 font-family = Maple Mono
 
-font-size = 14
+font-size = 12
+
+font-feature = -calt
+
+font-feature = -liga
+
+font-feature = -dlig
+
+adjust-cell-height = 15%
+
+freetype-load-flags = no-hinting
 
 keybind = alt+t=new_tab
 
