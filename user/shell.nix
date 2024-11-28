@@ -14,9 +14,7 @@ let
     pbcopy = "wl-copy";
     pbpaste = "wl-paste";
     cat = "bat";
-    f =
-      "fzf --preview 'bat --color=always --style=header,grid --line-range :500 {}'";
-    nv = ''nvim "$(f)"'';
+    nv = "nvim";
     nvc = "nvim-config";
     x = "exit";
     lg = "lazygit";
@@ -55,7 +53,8 @@ in {
     antidote = {
       enable = true;
       plugins = [
-        "marlonrichert/zsh-autocomplete"
+        "Aloxaf/fzf-tab"
+        "zsh-users/zsh-autosuggestions"
         "zdharma-continuum/fast-syntax-highlighting"
         "nix-community/nix-zsh-completions"
         "wfxr/forgit"
