@@ -10,10 +10,16 @@
       show_symlink = true;
       manager = { show_hidden = true; };
       plugin = {
-        prepend_previewers = [{
-          name = "*/";
-          run = "eza-preview";
-        }];
+        prepend_previewers = [
+          {
+            name = "*/";
+            run = "eza-preview";
+          }
+          {
+            name = "*.md";
+            run = "glow";
+          }
+        ];
 
       };
     };
@@ -23,9 +29,16 @@
     pkgs.fetchFromGitHub {
       owner = "ahkohd";
       repo = "eza-preview.yazi";
-      rev = "222c33de1ad4";
-      sha256 = "sha256-fVZzDAq9/HT2HJ7e9Cqibh2LhevhKRQVSMYXdgdKe8o=";
+      rev = "245a1d9c61bbb94063e8ea0746a1a29ac81fee94";
+      sha256 = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
     };
+
+  home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
+    owner = "ahkohd";
+    repo = "glow.yazi";
+    rev = "a30984c6b61a1d3c607efee9998cb2ba4695d6b6";
+    sha256 = "sha256-yhwFezr/ky7FXNXI5C7YL38iaknx34EGk7AvobwFtK0=";
+  };
 
   home.file.".config/yazi/plugins/no-status.yazi".source =
     pkgs.fetchFromGitHub {
@@ -39,9 +52,9 @@
     [manager]
     prepend_keymap = [
       { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
-      { on = [ "-" ], run = "plugin eza-preview --args='inc-level'",  desc = "Increment tree level" },
-      { on = [ "_" ], run = "plugin eza-preview --args='dec-level'",  desc = "Decrement tree level" },
-      { on = [ "$" ], run = "plugin eza-preview --args='toggle-follow-symlinks'",  desc = "Toggle tree follow symlinks" },
+      { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'",  desc = "Increment tree level" },
+      { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'",  desc = "Decrement tree level" },
+      { on = [ "$" ], run = "plugin eza-preview --args='--toggle-follow-symlinks'",  desc = "Toggle tree follow symlinks" },
     ]
   '';
 
