@@ -1,11 +1,4 @@
-# favourite font
 font-family = Berkeley Mono
-
-# alternate font
-# font-family = SF Mono
-
-# fallback to Maple Mono
-font-family = Maple Mono
 
 font-size = 12
 
@@ -56,8 +49,6 @@ gtk-single-instance = true
 window-padding-x = 10
 
 window-padding-y = 5
-
-# window-padding-balance = true
 
 window-decoration = false
 
