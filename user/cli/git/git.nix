@@ -21,4 +21,3 @@
 
   home.file.".config/git/delta.inc".text = builtins.readFile ./delta.inc;
 }
-
