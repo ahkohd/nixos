@@ -3,6 +3,9 @@
 {
   fonts.fontconfig.enable = true;
 
-  home.packages = [ pkgs.inter pkgs.maple-mono ];
+  home.packages = with pkgs; [
+    helvetica-neue-lt-std
+    nerd-fonts.symbols-only
+    fragment-mono
+  ];
 }
-

@@ -4,7 +4,7 @@ pkgs.stdenv.mkDerivation {
   name = "nvim-config";
   version = "0.0.0";
   src = builtins.fetchGit {
-    url = "https://github.com/ahkohd/nvim.git";
+    url = "git@github.com:ahkohd/nvim";
     rev = "895701f62118fc7078d323ace49934428d50e0a8";
   };
 
@@ -16,4 +16,3 @@ pkgs.stdenv.mkDerivation {
     chmod +x $out/bin/nvim-config
   '';
 }
-

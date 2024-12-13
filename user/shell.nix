@@ -3,9 +3,7 @@
 let
   aliases = {
     c = "clear";
-    w = "Hyprland";
-    hmu = "home-manager switch --flake ~/.dotfiles";
-    nixu = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+    nixu = "darwin-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
     dev = "~/developer/personal";
     grep = "grep --color=auto";
@@ -20,7 +18,6 @@ let
     ls = "eza --tree --level=1";
     l = "eza -l --tree --level=1";
     zz = "z -";
-    pm = "pulsemixer";
     p = "pnpm";
     y = "yy";
     speed = "speedtest-cli";
@@ -38,12 +35,12 @@ let
     j = "jj";
   };
 
-in {
+  initExtra = ''
+    export EDITOR=nvim
+    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+  '';
 
-  programs.bash = {
-    enable = true;
-    shellAliases = aliases;
-  };
+in {
 
   programs.zsh = {
     enable = true;
@@ -59,31 +56,16 @@ in {
       ];
     };
     oh-my-zsh = { enable = true; };
-    initExtra = ''
-      if ssh-add -l | grep -q "id_github";
-      then
-        # do nothing
-      else
-       ssh-add ~/.ssh/id_github;
-      fi
-
-      export EDITOR="nvim"
-
-      autoload -U compinit
-      compinit
-      source <(jj util completion zsh)
-    '';
+    inherit initExtra;
   };
 
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
-    enableBashIntegration = true;
   };
 
   programs.eza = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
     icons = "auto";
     git = true;
@@ -91,13 +73,11 @@ in {
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 }

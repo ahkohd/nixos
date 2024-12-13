@@ -1,82 +1,58 @@
 {
-
-  description = "Flake";
+  description = "Victor's Darwin System";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
-    nur.url = "github:nix-community/NUR";
+    darwin.url = "github:lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
-
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   submodules = true;
-    # };
-
-    ghostty = {
-      type = "git";
-      url = "ssh://git@github.com/ghostty-org/ghostty";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
     };
-
-    sops-nix.url = "github:Mic92/sops-nix";
-
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    yazi.url = "github:sxyazi/yazi";
-
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
-    jj_tui.url = "github:faldor20/jj_tui";
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
-  outputs =
-    { nixpkgs, home-manager, nur, ghostty, nixos-cosmic, jj_tui, ... }@inputs:
-    let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+  outputs = { home-manager, darwin, nix-homebrew, homebrew-core, homebrew-cask
+    , homebrew-bundle, ... }@inputs:
+
+    let system = "aarch64-darwin";
 
     in {
-      nixosConfigurations.nixos = lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+      darwinConfigurations = {
+        "Victors-MacBook-Pro" = darwin.lib.darwinSystem {
           inherit system;
-          inherit ghostty;
-          inherit jj_tui;
+
+          specialArgs = {
+            inherit homebrew-core;
+            inherit homebrew-cask;
+            inherit homebrew-bundle;
+          };
+
+          modules = [
+            nix-homebrew.darwinModules.nix-homebrew
+
+            ./configuration.nix
+
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = { users.var = import ./home.nix; };
+              users.users.var.home = "/Users/var";
+            }
+          ];
         };
-
-        modules = [
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [
-                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-              ];
-            };
-          }
-
-          nixos-cosmic.nixosModules.default
-
-          nur.nixosModules.nur
-
-          ./configuration.nix
-
-          ./overlays.nix
-        ];
-      };
-
-      homeConfigurations.var = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        extraSpecialArgs = { inherit inputs; };
-
-        modules = [ ./home.nix (import ./overlays.nix) ];
       };
     };
 }

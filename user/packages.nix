@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ wl-clipboard speedtest-cli ]
+{ pkgs }: with pkgs; [ speedtest-cli ]

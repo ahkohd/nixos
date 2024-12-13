@@ -11,7 +11,6 @@
 
   services.gpg-agent = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
     defaultCacheTtl = 28800;
     maxCacheTtl = 28800;

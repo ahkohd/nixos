@@ -1,13 +1,6 @@
-# favourite font
 font-family = Berkeley Mono
 
-# alternate font
-# font-family = SF Mono
-
-# fallback to Maple Mono
-font-family = Maple Mono
-
-font-size = 12
+font-family = Fragment Mono
 
 font-feature = -calt
 
@@ -15,9 +8,17 @@ font-feature = -liga
 
 font-feature = -dlig
 
+font-size = 14
+
 adjust-cell-height = 15%
 
 freetype-load-flags = no-hinting
+
+theme = tokyonight-storm
+
+window-padding-x = 20
+
+window-padding-y = 10
 
 keybind = alt+t=new_tab
 
@@ -47,29 +48,13 @@ keybind = alt+u=scroll_page_up
 
 keybind = alt+d=scroll_page_down
 
-gtk-titlebar = false
-
-gtk-wide-tabs = false
-
-gtk-single-instance = true
-
-window-padding-x = 10
-
-window-padding-y = 5
-
-# window-padding-balance = true
-
-window-decoration = false
-
-cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
 
 cursor-style = bar
 
 cursor-style-blink = true
 
-mouse-hide-while-typing = true
-
-theme = tokyonight-storm
+macos-option-as-alt = true
 
 shell-integration = zsh
 

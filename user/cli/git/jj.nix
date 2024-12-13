@@ -1,5 +1,6 @@
-{ ... }: {
+{ ... }:
 
+{
   programs.jujutsu = {
     enable = true;
     settings = {
@@ -15,5 +16,4 @@
       ui = { diff-editor = [ "nvim" "-c" "DiffEditor $left $right $output" ]; };
     };
   };
-
 }
