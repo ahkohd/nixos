@@ -5,4 +5,4 @@ let
   custom-fonts = import ../packages/custom-fonts.nix { inherit pkgs; };
   _ghostty = ghostty.packages.${system}.default;
 
-in { environment.systemPackages = [ nvim-config custom-fonts _ghostty ]; }
+in { environment.systemPackages = [ nvim-config _ghostty ]; }

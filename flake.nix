@@ -1,6 +1,6 @@
 {
 
-  description = "My flake";
+  description = "A nix flake for my homelab";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
@@ -15,10 +15,6 @@
       inputs.nixpkgs-stable.follows = "nixpkgs";
       inputs.nixpkgs-unstable.follows = "nixpkgs";
     };
-
-    sops-nix.url = "github:Mic92/sops-nix";
-
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     yazi.url = "github:sxyazi/yazi";
 

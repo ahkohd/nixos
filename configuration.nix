@@ -10,7 +10,6 @@
     ./system/services/audio/roon.nix
     ./system/packages.nix
     ./system/audio.nix
-    ./system/sops.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
     ./system/services/flatpak.nix
