@@ -38,12 +38,11 @@ let
     j = "jj";
   };
 
+  initExtra = ''
+    export EDITOR=nvim
+    export SSH_AUTH_SOCK=/home/var/.1password/agent.sock
+  '';
 in {
-
-  programs.bash = {
-    enable = true;
-    shellAliases = aliases;
-  };
 
   programs.zsh = {
     enable = true;
@@ -59,31 +58,16 @@ in {
       ];
     };
     oh-my-zsh = { enable = true; };
-    initExtra = ''
-      if ssh-add -l | grep -q "id_github";
-      then
-        # do nothing
-      else
-       ssh-add ~/.ssh/id_github;
-      fi
-
-      export EDITOR="nvim"
-
-      autoload -U compinit
-      compinit
-      source <(jj util completion zsh)
-    '';
+    inherit initExtra;
   };
 
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
-    enableBashIntegration = true;
   };
 
   programs.eza = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
     icons = "auto";
     git = true;
@@ -91,13 +75,11 @@ in {
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 }

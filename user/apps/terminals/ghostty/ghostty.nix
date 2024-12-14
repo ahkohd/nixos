@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  home.file.".config/ghostty/config".source = ./ghostty;
+  home.file.".config/ghostty/config".source = ./config;
 }

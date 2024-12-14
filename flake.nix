@@ -1,21 +1,13 @@
 {
 
-  description = "Flake";
+  description = "My flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
-    nur.url = "github:nix-community/NUR";
-
     home-manager.url = "github:nix-community/home-manager";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   submodules = true;
-    # };
 
     ghostty = {
       type = "git";
@@ -31,12 +23,9 @@
     yazi.url = "github:sxyazi/yazi";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
-    jj_tui.url = "github:faldor20/jj_tui";
   };
 
-  outputs =
-    { nixpkgs, home-manager, nur, ghostty, nixos-cosmic, jj_tui, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ghostty, nixos-cosmic, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -48,7 +37,6 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
-          inherit jj_tui;
         };
 
         modules = [
@@ -62,8 +50,6 @@
           }
 
           nixos-cosmic.nixosModules.default
-
-          nur.nixosModules.nur
 
           ./configuration.nix
 

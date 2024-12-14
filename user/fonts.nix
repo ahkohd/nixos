@@ -3,6 +3,6 @@
 {
   fonts.fontconfig.enable = true;
 
-  home.packages = [ pkgs.inter pkgs.maple-mono ];
+  home.packages = with pkgs; [ maple-mono fragment-mono ];
 }
 
