@@ -21,5 +21,4 @@
     platformTheme = { name = "adwaita"; };
     style = { name = "adwaita-dark"; };
   };
-
 }
