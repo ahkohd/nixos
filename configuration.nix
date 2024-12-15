@@ -69,8 +69,6 @@
 
   programs.nano.enable = false;
 
-  programs.ssh.startAgent = true;
-
   services.openssh.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 22 80 443 55000 ];
