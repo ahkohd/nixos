@@ -32,7 +32,7 @@
 
     in {
       darwinConfigurations = {
-        "Victors-MacBook-Pro" = darwin.lib.darwinSystem {
+        homestead = darwin.lib.darwinSystem {
           inherit system;
 
           specialArgs = {
