@@ -47,13 +47,7 @@ in {
     shellAliases = aliases;
     antidote = {
       enable = true;
-      plugins = [
-        "Aloxaf/fzf-tab"
-        "zsh-users/zsh-autosuggestions"
-        "zdharma-continuum/fast-syntax-highlighting"
-        "nix-community/nix-zsh-completions"
-        "wfxr/forgit"
-      ];
+      plugins = [ "Aloxaf/fzf-tab" ];
     };
     oh-my-zsh = { enable = true; };
     inherit initExtra;

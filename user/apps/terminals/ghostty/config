@@ -8,7 +8,7 @@ font-feature = -liga
 
 font-feature = -dlig
 
-font-size = 14
+font-size = 13
 
 adjust-cell-height = 15%
 
@@ -16,9 +16,9 @@ freetype-load-flags = no-hinting
 
 theme = tokyonight-storm
 
-window-padding-x = 20
+window-padding-x = 5
 
-window-padding-y = 10
+window-padding-y = 0
 
 keybind = alt+t=new_tab
 
