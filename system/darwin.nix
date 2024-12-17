@@ -96,14 +96,15 @@
 
     NSGlobalDomain = {
       AppleFontSmoothing = 0;
+
       # enable full keyboard control
       AppleKeyboardUIMode = 3;
 
       # show all file extensions in Finder
       AppleShowAllExtensions = true;
 
-      AppleEnableMouseSwipeNavigateWithScrolls = false;
-      AppleEnableSwipeNavigateWithScrolls = false;
+      AppleEnableMouseSwipeNavigateWithScrolls = true;
+      AppleEnableSwipeNavigateWithScrolls = true;
       AppleICUForce24HourTime = false;
       AppleInterfaceStyle = "Dark";
       AppleInterfaceStyleSwitchesAutomatically = true;
