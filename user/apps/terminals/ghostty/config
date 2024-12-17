@@ -48,6 +48,10 @@ keybind = alt+u=scroll_page_up
 
 keybind = alt+d=scroll_page_down
 
+keybind = global:cmd+alt+ctrl+shift+enter=toggle_quick_terminal
+
+quick-terminal-screen = mouse
+
 mouse-hide-while-typing = true
 
 cursor-style = bar
