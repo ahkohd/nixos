@@ -95,6 +95,7 @@
     };
 
     NSGlobalDomain = {
+      AppleFontSmoothing = 0;
       # enable full keyboard control
       AppleKeyboardUIMode = 3;
 
