@@ -3,27 +3,17 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "tmux-256color";
+    terminal = "xterm-ghostty";
     baseIndex = 1;
-    mouse = true;
+    mouse = false;
     keyMode = "vi";
-    shell = "${pkgs.zsh}/bin/zsh";
-    plugins = with pkgs; [ tmuxPlugins.sensible ];
+    plugins = with pkgs.tmuxPlugins; [ tmux-fzf ];
     extraConfig = ''
-      # undercurl support
-
-      set -sg terminal-overrides ",*:RGB"
-      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' # enable undercurl colors
-      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # set undercurl color
-
-
       # layout & colors
-
       set -g status-right ""
       set -g status-right-length 100
       set -g status-left-length 50
       set -g status-position top
-
       set -g status-left "#[fg=#ffffff,bold]⚡#{session_name}  "
       set -g window-status-format "#[fg=#D0D0D0,bg=default][#I]"
       set -g window-status-current-format "#[fg=#ffffff,bg=default, bold]#W"
@@ -31,9 +21,7 @@
 
 
       # others
-
-      # Enable vi mode for tmux
-
+      # enable vi mode for tmux
       # See: https://blog.sanctum.geek.nz/vi-mode-in-tmux/
       set-window-option -g mode-keys vi
       # Support visual selection
@@ -60,11 +48,6 @@
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-Space' select-pane -l
-
-      # Actions
-
-      bind-key -r i run-shell "tmux neww ~/.config/bin/.local/scripts/tmux-cht.sh"
-
     '';
   };
 }
