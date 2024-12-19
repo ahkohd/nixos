@@ -8,13 +8,8 @@
     mouse = true;
     keyMode = "vi";
     shell = "${pkgs.zsh}/bin/zsh";
-    plugins = with pkgs; [ tmuxPlugins.sensible ];
+    plugins = with pkgs.tmuxPlugins; [ tmux-fzf ];
     extraConfig = ''
-      # undercurl support
-      set -sg terminal-overrides ",*:RGB"
-      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' # enable undercurl colors
-      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # set undercurl color
-
       # layout & colors
       set -g status-right ""
       set -g status-right-length 100
@@ -56,6 +51,11 @@
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-Space' select-pane -l
+
+      # undercurl support
+      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+      # support colors for undercurl
+      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m
     '';
   };
 }
