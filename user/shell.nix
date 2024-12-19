@@ -49,9 +49,8 @@ in {
     shellAliases = aliases;
     antidote = {
       enable = true;
-      plugins = [ "Aloxaf/fzf-tab" ];
+      plugins = [ "Aloxaf/fzf-tab" "ahkohd/tmux-sessionizer" ];
     };
-    oh-my-zsh = { enable = true; };
     inherit initExtra;
   };
 
