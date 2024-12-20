@@ -34,6 +34,7 @@
       "roon"
       "arc"
       "screen-studio"
+      "sf-symbols"
     ];
 
     masApps = {
