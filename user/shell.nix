@@ -24,8 +24,9 @@ let
     p = "pnpm";
     y = "yy";
     speed = "speedtest-cli";
+    jnw = "jj new";
+    jgp = "jj git push";
     jst = "jj st --no-pager";
-    jbl = "jj log -r 'heads(all())'";
     jpw = "jj git push --change=@";
     jsq = "jj squash";
     jed = "jj edit";
@@ -33,7 +34,12 @@ let
     jfo = "jj git fetch --remote=origin";
     jbk = "jj bookmark";
     jab = "jj abandon";
+    jl = "jj log -n 12";
+    jll = "jj log -n 12 -r '..@'";
     jla = "jj log -r 'all()'";
+    jllb = "jj log -r 'bookmarks()'";
+    jlrb = "jj log -r 'remote_bookmarks()'";
+    jlh = "jj log -r 'visible_heads()'";
     jt = "jj_tui";
     j = "jj";
   };
