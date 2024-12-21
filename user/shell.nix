@@ -30,6 +30,8 @@ let
     jfo = "jj git fetch --remote=origin";
     jbk = "jj bookmark";
     jab = "jj abandon";
+    jl = "jj log -n 12";
+    jll = "jj log -n 12 -r '..@'";
     jla = "jj log -r 'all()'";
     jt = "jj_tui";
     j = "jj";
