@@ -14,7 +14,7 @@ adjust-cell-height = 15%
 
 freetype-load-flags = no-hinting
 
-theme = tokyonight-storm
+theme = light:tokyonight-day,dark:tokyonight-storm
 
 window-padding-x = 5
 
@@ -63,3 +63,7 @@ macos-option-as-alt = true
 shell-integration = zsh
 
 command = zsh
+
+macos-icon = custom-style
+
+macos-icon-frame = plastic
