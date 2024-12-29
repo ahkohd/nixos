@@ -8,9 +8,9 @@ font-feature = -liga
 
 font-feature = -dlig
 
-font-size = 17
+font-size = 20
 
-adjust-cell-height = 15%
+adjust-cell-height = 35%
 
 freetype-load-flags = no-hinting
 
@@ -19,6 +19,10 @@ theme = light:tokyonight-day,dark:tokyonight-storm
 window-padding-x = 5
 
 window-padding-y = 0
+
+window-colorspace = display-p3
+
+window-save-state = always
 
 keybind = alt+t=new_tab
 
@@ -54,15 +58,19 @@ quick-terminal-screen = mouse
 
 mouse-hide-while-typing = true
 
+mouse-scroll-multiplier = 2
+
 cursor-style = bar
 
 cursor-style-blink = true
 
-macos-option-as-alt = true
-
 shell-integration = zsh
 
 command = zsh
+
+macos-option-as-alt = true
+
+macos-titlebar-style = transparent
 
 macos-icon = custom-style
 
