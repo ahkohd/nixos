@@ -42,6 +42,7 @@
       "arc"
       "screen-studio"
       "sf-symbols"
+      "localsend"
     ];
 
     masApps = {
