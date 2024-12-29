@@ -33,10 +33,10 @@
     };
 
   home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
-    owner = "ahkohd";
+    owner = "Reledia";
     repo = "glow.yazi";
-    rev = "a30984c6b61a1d3c607efee9998cb2ba4695d6b6";
-    sha256 = "sha256-yhwFezr/ky7FXNXI5C7YL38iaknx34EGk7AvobwFtK0=";
+    rev = "5ce76dc92ddd0dcef36e76c0986919fda3db3cf5";
+    sha256 = "sha256-UljcrXXO5DZbufRfavBkiNV3IGUNct31RxCujRzC9D4=";
   };
 
   home.file.".config/yazi/plugins/no-status.yazi".source =
