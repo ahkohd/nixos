@@ -2,8 +2,6 @@
 with pkgs; [
   firefox-devedition-bin
 
-  ungoogled-chromium
-
   nodejs_22
 
   gcc
