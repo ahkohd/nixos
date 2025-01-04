@@ -9,12 +9,7 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty = {
-      type = "git";
-      url = "ssh://git@github.com/ghostty-org/ghostty";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-    };
+    ghostty.url = "github:ghostty-org/ghostty";
 
     yazi.url = "github:sxyazi/yazi";
 

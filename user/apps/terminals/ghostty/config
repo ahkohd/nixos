@@ -52,6 +52,8 @@ window-padding-y = 0
 
 window-decoration = false
 
+window-colorspace = display-p3
+
 cursor-invert-fg-bg = true
 
 cursor-style = bar
@@ -60,7 +62,7 @@ cursor-style-blink = true
 
 mouse-hide-while-typing = true
 
-theme = tokyonight-storm
+theme = light:tokyonight-day,dark:tokyonight-storm
 
 shell-integration = zsh
 
