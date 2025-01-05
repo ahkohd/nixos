@@ -17,6 +17,7 @@
     ./user/cli/git/lazy.nix
     ./user/cli/bat.nix
     ./user/cli/nvim.nix
+    ./user/cli/bacon.nix
   ];
 
   home.username = "var";
