@@ -25,22 +25,27 @@ let
     y = "yy";
     speed = "speedtest-cli";
     jnw = "jj new";
-    jgp = "jj git push";
     jst = "jj st --no-pager";
     jpw = "jj git push --change=@";
     jsq = "jj squash";
+    jsqi = "jj squash --ignore-immutable";
     jed = "jj edit";
+    jedi = "jj edit --ignore-immutable";
     jds = "jj desc";
+    jdsi = "jj desc --ignore-immutable";
+    jgp = ''
+      j git push --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
     jfo = "jj git fetch --remote=origin";
-    jbk = "jj bookmark";
+    jbk = ''
+      j bookmark set $(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
+    jbki = "jbk --ignore-immutable";
     jab = "jj abandon";
-    jl = "jj log -n 12";
+    jls = "jj log -n 12";
     jll = "jj log -n 12 -r '..@'";
     jla = "jj log -r 'all()'";
     jllb = "jj log -r 'bookmarks()'";
     jlrb = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
-    jt = "jj_tui";
     j = "jj";
   };
 
