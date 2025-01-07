@@ -16,5 +16,7 @@ in {
     roon-server
 
     yazi.overlays.default
+
+    hyprpanel.overlay
   ];
 }
