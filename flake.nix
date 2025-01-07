@@ -13,10 +13,12 @@
 
     yazi.url = "github:sxyazi/yazi";
 
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { nixpkgs, home-manager, ghostty, nixos-cosmic, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ghostty, hyprland, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -28,20 +30,10 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
+          inherit hyprland;
         };
 
         modules = [
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [
-                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-              ];
-            };
-          }
-
-          nixos-cosmic.nixosModules.default
-
           ./configuration.nix
 
           ./overlays.nix

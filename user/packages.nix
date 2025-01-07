@@ -1,1 +1,4 @@
-{ pkgs }: with pkgs; [ brave wl-clipboard glow speedtest-cli ]
+{ pkgs }:
+with pkgs;
+[ nautilus loupe ] ++ [ wl-clipboard ] ++ [ glow speedtest-cli ]
+++ [ brave spotify slack discord obsidian ]

@@ -19,6 +19,7 @@
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
     ./user/fonts.nix
+    ./user/desktop/hyprland.nix
   ];
 
   home.username = "var";

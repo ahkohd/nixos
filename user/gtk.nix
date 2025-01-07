@@ -1,15 +1,16 @@
 { pkgs, ... }:
 
 {
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "adwaita";
-      color-scheme = "prefer-dark";
-    };
-  };
-
   gtk = {
     enable = true;
+    theme = {
+      name = "Tokyonight-Dark-Storm";
+      package = pkgs.tokyonight-gtk-theme.override {
+        colorVariants = [ "dark" ];
+        tweakVariants = [ "storm" ];
+        iconVariants = [ "Dark" ];
+      };
+    };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
