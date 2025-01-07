@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./system/desktop.nix
     ./system/ssh.nix
     ./system/nginx.nix
     ./system/op.nix
@@ -12,7 +11,7 @@
     ./system/audio.nix
     ./system/appimage.nix
     ./system/services/bluetooth.nix
-    ./system/services/flatpak.nix
+    ./system/desktop/hyprland.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -37,13 +36,6 @@
     LC_PAPER = "en_NG";
     LC_TELEPHONE = "en_NG";
     LC_TIME = "en_NG";
-  };
-
-  services.xserver = {
-    xkb = {
-      layout = "gb";
-      variant = "";
-    };
   };
 
   console.keyMap = "us";
