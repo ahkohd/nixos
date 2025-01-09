@@ -43,6 +43,7 @@
       "screen-studio"
       "sf-symbols"
       "localsend"
+      "linear-linear"
     ];
 
     masApps = {
