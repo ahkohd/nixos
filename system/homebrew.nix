@@ -44,6 +44,7 @@
       "sf-symbols"
       "localsend"
       "linear-linear"
+      "orbstack"
     ];
 
     masApps = {
