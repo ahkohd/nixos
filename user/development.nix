@@ -37,4 +37,6 @@ with pkgs; [
   nitch
 
   nixd
+
+  eslint_d
 ]
