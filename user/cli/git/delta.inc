@@ -1,6 +1,6 @@
 [delta]
   dark = false
-  side-by-side = true
+  side-by-side = false
   true-color = always
   file-added-label = [+]
   file-copied-label = [==]
