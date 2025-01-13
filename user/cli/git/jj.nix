@@ -13,7 +13,11 @@
         backend = "gpg";
         key = "1F76A9056C921C8A004F63E28D43F8A176DDC6BD";
       };
-      ui = { diff-editor = [ "nvim" "-c" "DiffEditor $left $right $output" ]; };
+      ui = {
+        pager = "delta";
+        diff = { format = "git"; };
+        diff-editor = [ "nvim" "-c" "DiffEditor $left $right $output" ];
+      };
     };
   };
 }
