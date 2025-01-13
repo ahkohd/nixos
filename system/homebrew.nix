@@ -45,6 +45,7 @@
       "localsend"
       "linear-linear"
       "orbstack"
+      "homerow"
     ];
 
     masApps = {
