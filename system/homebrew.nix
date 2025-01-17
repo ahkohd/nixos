@@ -30,8 +30,6 @@
       "raycast"
       "google-drive"
       "polypane"
-      "slack"
-      "discord"
       "reader"
       "pixelsnap"
       "cleanmymac"
@@ -46,6 +44,7 @@
       "linear-linear"
       "orbstack"
       "homerow"
+      "ferdium"
     ];
 
     masApps = {
