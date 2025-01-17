@@ -20,6 +20,8 @@ window-padding-y = 0
 
 window-colorspace = display-p3
 
+text-blending = native
+
 window-save-state = always
 
 keybind = alt+t=new_tab
