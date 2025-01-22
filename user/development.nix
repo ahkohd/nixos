@@ -31,4 +31,10 @@ with pkgs; [
   nixfmt-classic
 
   nixd
+
+  openssh
+
+  libfido2
+
+  yubikey-manager
 ]
