@@ -6,6 +6,7 @@
     ./user/shell.nix
     ./user/gpg.nix
     ./user/apps/terminals/ghostty/ghostty.nix
+    ./user/apps/terminals/alacritty/alacritty.nix
     ./user/cli/git/git.nix
     ./user/cli/git/jj.nix
     ./user/cli/git/lazy.nix

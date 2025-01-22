@@ -37,4 +37,8 @@ with pkgs; [
   nitch
 
   nixd
+
+  libfido2
+
+  yubikey-manager
 ]

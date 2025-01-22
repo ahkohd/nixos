@@ -142,6 +142,7 @@ in {
     ];
     layerrule = [ "dimaround,launcher" ];
     workspace = "1,monitor:auto";
+    monitor = "HDMI-A-1,3240x2160@59.99,0x0,1.5";
     exec-once = with default_apps; [ terminal ];
   };
 

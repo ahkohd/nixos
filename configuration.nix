@@ -6,12 +6,14 @@
     ./system/ssh.nix
     ./system/nginx.nix
     ./system/op.nix
-    ./system/services/audio/roon.nix
     ./system/packages.nix
     ./system/audio.nix
     ./system/appimage.nix
-    ./system/services/bluetooth.nix
     ./system/desktop/hyprland.nix
+    ./system/services/audio/roon.nix
+    ./system/services/smartcard.nix
+    ./system/services/bluetooth.nix
+    ./system/services/keyring.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

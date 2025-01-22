@@ -51,7 +51,7 @@ let
 
   initExtra = ''
     export EDITOR=nvim
-    export SSH_AUTH_SOCK=/home/var/.1password/agent.sock
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
 in {
 
