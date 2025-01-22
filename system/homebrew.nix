@@ -45,6 +45,7 @@
       "orbstack"
       "homerow"
       "ferdium"
+      "gpg-suite"
     ];
 
     masApps = {
