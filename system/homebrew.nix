@@ -46,6 +46,8 @@
       "homerow"
       "ferdium"
       "gpg-suite"
+      "sublime-text"
+      "karabiner-elements"
     ];
 
     masApps = {
@@ -55,7 +57,7 @@
       "Cursor Pro" = 1447043133;
       "Keystroke Pro" = 1572206224;
       Couverture = 1552415914;
-      Xcode = 497799835;
+      # Xcode = 497799835;
       HazeOver = 430798174;
       Amphetamine = 937984704;
     };
