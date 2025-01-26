@@ -18,6 +18,7 @@
     ./user/cli/bat.nix
     ./user/cli/nvim.nix
     ./user/cli/bacon.nix
+    ./user/cli/karabiner.nix
   ];
 
   home.username = "var";
