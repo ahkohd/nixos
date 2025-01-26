@@ -4,6 +4,7 @@ let
   terminal = "/Applications/Ghostty.app";
   spotify = "/Applications/Spotify.app";
   chat = "/Applications/Ferdium.app";
+  notes = "/Applications/Obsidian.app";
   op = "/Applications/1Password.app";
 in {
   services.skhd = {
@@ -48,6 +49,8 @@ in {
       launcher < f : open -a Finder
 
       launcher < p : open ${op}
+
+      launcher < n : open ${notes}
 
       launcher < escape ; default
 
