@@ -44,6 +44,7 @@ let
     jlrb = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
     j = "jj";
+    tby = "tabby serve --device metal --model Qwen2.5-Coder-3B --webserver";
   };
 
   initExtra = ''

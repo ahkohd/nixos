@@ -6,6 +6,7 @@
     ./user/ssh.nix
     ./user/shell.nix
     ./user/fonts.nix
+    ./user/tabby.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/tmux.nix
     ./user/cli/btop.nix
