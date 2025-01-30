@@ -52,7 +52,7 @@
 
     masApps = {
       "1password for Safari" = 1569813296;
-      Vimari = 1480933944;
+      "Save to Raindrop.io" = 1549370672;
       "Save to Reader" = 1640236961;
       "Cursor Pro" = 1447043133;
       "Keystroke Pro" = 1572206224;
