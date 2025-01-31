@@ -48,6 +48,7 @@
       "gpg-suite"
       "sublime-text"
       "karabiner-elements"
+      "chatgpt"
     ];
 
     masApps = {
