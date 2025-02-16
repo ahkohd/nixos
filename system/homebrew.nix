@@ -49,6 +49,7 @@
       "sublime-text"
       "karabiner-elements"
       "chatgpt"
+      "zed"
     ];
 
     masApps = {
