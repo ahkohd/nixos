@@ -186,12 +186,12 @@
       GloballyEnabled = false;
     };
 
-    universalaccess = {
-      closeViewScrollWheelToggle = true;
-      closeViewZoomFollowsFocus = true;
-      reduceMotion = false;
-      reduceTransparency = false;
-    };
+   # universalaccess = {
+   #   closeViewScrollWheelToggle = true;
+   #   closeViewZoomFollowsFocus = true;
+   #   reduceMotion = false;
+   #   reduceTransparency = false;
+   # };
   };
 
   system = {

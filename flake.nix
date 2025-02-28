@@ -32,7 +32,7 @@
 
     in {
       darwinConfigurations = {
-        homestead = darwin.lib.darwinSystem {
+        godfather = darwin.lib.darwinSystem {
           inherit system;
 
           specialArgs = {
