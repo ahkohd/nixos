@@ -62,7 +62,7 @@ cursor-style-blink = true
 
 mouse-hide-while-typing = true
 
-theme = light:tokyonight-day,dark:tokyonight-storm
+theme = tokyonight-storm
 
 shell-integration = zsh
 

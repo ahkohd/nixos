@@ -28,23 +28,23 @@
     pkgs.fetchFromGitHub {
       owner = "ahkohd";
       repo = "eza-preview.yazi";
-      rev = "245a1d9c61bbb94063e8ea0746a1a29ac81fee94";
-      sha256 = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
+      rev = "6575a9a4806d8dc96ac75adf28791155551804fb";
+      sha256 = "sha256-RwJu79bjdgmKbRaDH++y8wreBKdGGwbyGOx4G/px2PE=";
     };
 
   home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
-    owner = "ahkohd";
+    owner = "Reledia";
     repo = "glow.yazi";
-    rev = "a30984c6b61a1d3c607efee9998cb2ba4695d6b6";
-    sha256 = "sha256-yhwFezr/ky7FXNXI5C7YL38iaknx34EGk7AvobwFtK0=";
+    rev = "c76bf4fb612079480d305fe6fe570bddfe4f99d3";
+    sha256 = "sha256-DPud1Mfagl2z490f5L69ZPnZmVCa0ROXtFeDbEegBBU=";
   };
 
   home.file.".config/yazi/plugins/no-status.yazi".source =
     pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "ab7068ef7569a477899e2aebe5948e933909c38d";
-      sha256 = "sha256-0is0kiLEvTUasOGX882OnnrkvTUGVlfT4ohBmrWY8pc=";
+      rev = "07258518f3bffe28d87977bc3e8a88e4b825291b";
+      sha256 = "sha256-axoMrOl0pdlyRgckFi4DiS+yBKAIHDhVeZQJINh8+wk=";
     } + "/no-status.yazi";
 
   home.file.".config/yazi/keymap.toml".text = ''

@@ -124,10 +124,10 @@ in {
     windowrulev2 = [
       "opacity 0.90, class:^(com.mitchellh.ghostty)$"
 
-      "opacity 0.90, class:^(brave-browser)$"
+      # "opacity 0.90, class:^(brave-browser)$"
       "opacity 1.0 override, title: (.*YouTube.*)$"
       "opacity 1.0 override, title: (.*Netflix.*)$"
-      "opacity 1.0 override, title: (.*t3rn.*)$ class:^(brave-browser)$"
+      # "opacity 1.0 override, title: (.*t3rn.*)$ class:^(brave-browser)$"
 
       "opacity 0.90, class:^(spotify)$"
       "opacity 0.90, class:^(ferdium)$"
@@ -142,7 +142,7 @@ in {
     ];
     layerrule = [ "dimaround,launcher" ];
     workspace = "1,monitor:auto";
-    monitor = "HDMI-A-1,3240x2160@59.99,0x0,1.5";
+    monitor = "HDMI-A-1,3240x2160@59.99,0x0,1";
     exec-once = with default_apps; [ terminal ];
   };
 
@@ -152,7 +152,7 @@ in {
       ipc = false;
       splash = false;
       preload = wallpapers;
-      wallpaper = "DP-1,${active_wallpaper}";
+      wallpaper = "HDMI-A-1,${active_wallpaper}";
     };
   };
 
@@ -160,7 +160,6 @@ in {
 
   programs.hyprpanel = {
     enable = true;
-    systemd.enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
     theme = "tokyo_night";
