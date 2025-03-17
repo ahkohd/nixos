@@ -13,12 +13,12 @@
 
     yazi.url = "github:sxyazi/yazi";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { nixpkgs, home-manager, ghostty, hyprland, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ghostty, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -30,7 +30,7 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
-          inherit hyprland;
+          # inherit hyprland;
         };
 
         modules = [

@@ -17,6 +17,6 @@ in {
 
     yazi.overlays.default
 
-    hyprpanel.overlay
+    # hyprpanel.overlay
   ];
 }
