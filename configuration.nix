@@ -10,6 +10,7 @@
     ./system/audio.nix
     ./system/appimage.nix
     # ./system/desktop/hyprland.nix
+    ./system/desktop/kde-plasma.nix
     ./system/services/audio/roon.nix
     ./system/services/smartcard.nix
     ./system/services/bluetooth.nix

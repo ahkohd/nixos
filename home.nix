@@ -14,8 +14,8 @@
     ./user/cli/btop.nix
     ./user/cli/direnv.nix
     ./user/cli/nvim.nix
-    ./user/gtk.nix
-    ./user/cursor.nix
+    # ./user/gtk.nix
+    # ./user/cursor.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
