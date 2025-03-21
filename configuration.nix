@@ -5,7 +5,6 @@
     ./system/darwin.nix
     ./system/homebrew.nix
     ./system/packages.nix
-    # ./system/yabi.nix
     ./system/janky.nix
     ./system/skhd.nix
   ];

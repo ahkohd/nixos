@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -6,7 +6,6 @@
     ./user/ssh.nix
     ./user/shell.nix
     ./user/fonts.nix
-    ./user/tabby.nix
     ./user/skhd.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/tmux.nix
@@ -41,4 +40,5 @@
   };
 
   programs.home-manager.enable = true;
+
 }

@@ -21,7 +21,7 @@ let
     p = "pnpm";
     y = "yy";
     speed = "speedtest-cli";
-    jnw = "jj new";
+    jn = "jj new";
     jst = "jj st --no-pager";
     jpw = "jj git push --change=@";
     jsq = "jj squash";
@@ -44,7 +44,6 @@ let
     jlrb = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
     j = "jj";
-    tby = "tabby serve --device metal --model Qwen2.5-Coder-3B --webserver";
   };
 
   initExtra = ''

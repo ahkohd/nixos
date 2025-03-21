@@ -23,6 +23,8 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { home-manager, darwin, nix-homebrew, homebrew-core, homebrew-cask
@@ -32,7 +34,7 @@
 
     in {
       darwinConfigurations = {
-        godfather = darwin.lib.darwinSystem {
+        homestead = darwin.lib.darwinSystem {
           inherit system;
 
           specialArgs = {
@@ -48,7 +50,10 @@
 
             home-manager.darwinModules.home-manager
             {
-              home-manager = { users.var = import ./home.nix; };
+              home-manager = {
+                extraSpecialArgs = { inherit inputs; };
+                users.var = import ./home.nix;
+              };
               users.users.var.home = "/Users/var";
             }
           ];

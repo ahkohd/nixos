@@ -24,9 +24,7 @@
 
     casks = [
       "1password"
-      "firefox@developer-edition"
       "obsidian"
-      "eloston-chromium"
       "raycast"
       "google-drive"
       "polypane"
@@ -37,10 +35,7 @@
       "figma"
       "spotify"
       "roon"
-      "arc"
-      # "screen-studio"
       "sf-symbols"
-      "localsend"
       "linear-linear"
       "orbstack"
       "homerow"
@@ -49,6 +44,10 @@
       "karabiner-elements"
       "chatgpt"
       "zed"
+      "zen-browser"
+      "slack"
+      "discord"
+      "google-chrome"
     ];
 
     masApps = {
@@ -58,7 +57,7 @@
       "Cursor Pro" = 1447043133;
       "Keystroke Pro" = 1572206224;
       Couverture = 1552415914;
-      # Xcode = 497799835;
+      Xcode = 497799835;
       HazeOver = 430798174;
       Amphetamine = 937984704;
     };

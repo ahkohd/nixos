@@ -37,8 +37,4 @@ with pkgs; [
   libfido2
 
   yubikey-manager
-
-  tabby
-
-  tabby-agent
 ]
