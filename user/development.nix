@@ -37,4 +37,6 @@ with pkgs; [
   libfido2
 
   yubikey-manager
+
+  create-dmg
 ]
