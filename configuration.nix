@@ -4,17 +4,11 @@
   imports = [
     ./hardware-configuration.nix
     ./system/ssh.nix
-    # ./system/nginx.nix
     ./system/op.nix
     ./system/packages.nix
     ./system/audio.nix
-    ./system/appimage.nix
-    # ./system/desktop/hyprland.nix
-    ./system/desktop/kde-plasma.nix
     ./system/services/audio/roon.nix
     ./system/services/smartcard.nix
-    ./system/services/bluetooth.nix
-    ./system/services/keyring.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -84,6 +78,7 @@
       "users" # Allows any user to mount and unmount
     ];
   };
+
   # Add users to the storage group
   systemd.tmpfiles.rules = [ "d /mnt/nas01 770 var roon-server" ];
 }

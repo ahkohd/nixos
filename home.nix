@@ -5,6 +5,7 @@
     ./user/ssh.nix
     ./user/shell.nix
     ./user/gpg.nix
+    ./user/desktop/hyprland.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/cli/git/git.nix
@@ -14,13 +15,12 @@
     ./user/cli/btop.nix
     ./user/cli/direnv.nix
     ./user/cli/nvim.nix
-    # ./user/gtk.nix
-    # ./user/cursor.nix
+    ./user/gtk.nix
+    ./user/cursor.nix
     ./user/cli/tmux.nix
     ./user/cli/yazi.nix
     ./user/cli/gh.nix
     ./user/fonts.nix
-    # ./user/desktop/hyprland.nix
   ];
 
   home.username = "var";

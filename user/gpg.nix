@@ -17,7 +17,8 @@ in {
     defaultCacheTtlSsh = 1 * hour;
     maxCacheTtl = 1 * day;
     maxCacheTtlSsh = 1 * day;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    # pinentryPackage = pkgs.pinentry-gnome3;
+    pinentryPackage = pkgs.pinentry-tty;
     sshKeys = [ "15E03063349420441E70B693C05D522FE16DAB14" ];
   };
 }

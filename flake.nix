@@ -12,15 +12,9 @@
     ghostty.url = "github:ghostty-org/ghostty";
 
     yazi.url = "github:sxyazi/yazi";
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { nixpkgs, home-manager, ghostty, zen-browser, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ghostty, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -32,8 +26,6 @@
           inherit inputs;
           inherit system;
           inherit ghostty;
-          inherit zen-browser;
-          # inherit hyprland;
         };
 
         modules = [

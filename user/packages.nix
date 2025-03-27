@@ -1,4 +1,4 @@
 { pkgs }:
 with pkgs;
-[ nautilus loupe seahorse bluetuith ] ++ [ wl-clipboard ]
-++ [ glow speedtest-cli ] ++ [ brave spotify obsidian ferdium ]
+[ gnome-tweaks nautilus seahorse ] ++ [ bluetuith ] ++ [ wl-clipboard ]
+++ [ glow ] ++ [ google-chrome ]

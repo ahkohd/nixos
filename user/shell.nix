@@ -3,7 +3,7 @@
 let
   aliases = {
     c = "clear";
-    w = "Hyprland";
+    w = "dbus-run-session -- gnome-shell --display-server --wayland";
     hmu = "home-manager switch --flake ~/.dotfiles";
     nixu = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
