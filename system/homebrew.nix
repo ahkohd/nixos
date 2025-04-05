@@ -48,6 +48,7 @@
       "slack"
       "discord"
       "google-chrome"
+      "alacritty"
     ];
 
     masApps = {
