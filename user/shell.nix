@@ -48,6 +48,7 @@ let
 
   initExtra = ''
     export EDITOR=nvim
+    export PAGER=moar
     export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
     export BACON_PREFS=~/.config/bacon/prefs.toml
   '';

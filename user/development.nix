@@ -24,8 +24,6 @@ with pkgs; [
 
   mprocs
 
-  delta
-
   marksman
 
   nixfmt-classic
@@ -39,4 +37,8 @@ with pkgs; [
   yubikey-manager
 
   create-dmg
+
+  riffdiff
+
+  moar
 ]
