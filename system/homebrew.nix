@@ -46,7 +46,7 @@
       "zed"
       "zen-browser"
       "slack"
-      "discord"
+      "legcord"
       "google-chrome"
       "alacritty"
     ];
