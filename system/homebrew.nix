@@ -49,6 +49,7 @@
       "legcord"
       "google-chrome"
       "alacritty"
+      "bettertouchtool"
     ];
 
     masApps = {
