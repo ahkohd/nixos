@@ -7,5 +7,6 @@
     helvetica-neue-lt-std
     nerd-fonts.symbols-only
     fragment-mono
+    jetbrains-mono
   ];
 }
