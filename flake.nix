@@ -34,7 +34,7 @@
 
     in {
       darwinConfigurations = {
-        homestead = darwin.lib.darwinSystem {
+        homestead-2 = darwin.lib.darwinSystem {
           inherit system;
 
           specialArgs = {

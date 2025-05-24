@@ -7,7 +7,7 @@
     enableZshIntegration = true;
     settings = {
       show_symlink = true;
-      manager = { show_hidden = true; };
+      mgr = { show_hidden = true; };
       plugin = {
         prepend_previewers = [
           {
@@ -19,7 +19,6 @@
             run = "glow";
           }
         ];
-
       };
     };
   };
@@ -28,8 +27,8 @@
     pkgs.fetchFromGitHub {
       owner = "ahkohd";
       repo = "eza-preview.yazi";
-      rev = "245a1d9c61bbb94063e8ea0746a1a29ac81fee94";
-      sha256 = "sha256-L7i+uL2kAx3AUr5EAzRrduoV2m4+/tE1gCfbTOSuAc4=";
+      rev = "a97cf55e3c55dc6ae7f57823fe085a48a6723bb1";
+      sha256 = "sha256-yVsv332N4OExvP4hERiDV753YWRyyfycD4iPMCtyXdE=";
     };
 
   home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
@@ -43,17 +42,20 @@
     pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "ab7068ef7569a477899e2aebe5948e933909c38d";
-      sha256 = "sha256-0is0kiLEvTUasOGX882OnnrkvTUGVlfT4ohBmrWY8pc=";
+      rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
+      sha256 = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
     } + "/no-status.yazi";
 
   home.file.".config/yazi/keymap.toml".text = ''
-    [manager]
+    [mgr]
     prepend_keymap = [
-      { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
-      { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'",  desc = "Increment tree level" },
-      { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'",  desc = "Decrement tree level" },
-      { on = [ "$" ], run = "plugin eza-preview --args='--toggle-follow-symlinks'",  desc = "Toggle tree follow symlinks" },
+      { on = [ "e", "t" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+      { on = [ "e", "-" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
+      { on = [ "e", "_" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+      { on = [ "e", "$" ], run = "plugin eza-preview toggle-follow-symlinks", desc = "Toggle tree follow symlinks" },
+      { on = [ "e", "*" ], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
+      { on = [ "e", "g", "i" ], run = "plugin eza-preview toggle-git-ignore", desc = "Toggle .gitignore files" },
+      { on = [ "e", "g", "s" ], run = "plugin eza-preview toggle-git-status", desc = "Toggle showing git status" },
     ]
   '';
 
@@ -61,14 +63,15 @@
     require("eza-preview"):setup{
       level = 2,
       follow_symlinks = true,
-      dereference = false
+      dereference = false,
+      all = true
     }
 
     require("no-status"):setup()
   '';
 
   home.file.".config/yazi/theme.toml".text = ''
-    [manager]
+    [mgr]
     # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
     # highlight = "path/to/tmTheme"
 

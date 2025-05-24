@@ -41,4 +41,10 @@ with pkgs; [
   riffdiff
 
   moar
+
+  uv
+
+  github-mcp-server
+
+  stylua
 ]

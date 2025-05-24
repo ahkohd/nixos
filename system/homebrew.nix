@@ -48,6 +48,10 @@
       "google-chrome"
       "alacritty"
       "bettertouchtool"
+      "docker"
+      "linearmouse"
+      "localsend"
+      "tailscale"
     ];
 
     masApps = {

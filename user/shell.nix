@@ -3,7 +3,7 @@
 let
   aliases = {
     c = "clear";
-    nixu = "darwin-rebuild switch --flake ~/.dotfiles";
+    nixu = "sudo darwin-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
     dev = "~/developer/personal";
     grep = "grep --color=auto";
@@ -22,35 +22,45 @@ let
     y = "yy";
     speed = "speedtest-cli";
     jn = "jj new";
-    jst = "jj st --no-pager";
-    jpw = "jj git push --change=@";
+    js = "jj st --no-pager";
     jsq = "jj squash";
     jsqi = "jj squash --ignore-immutable";
-    jed = "jj edit";
-    jedi = "jj edit --ignore-immutable";
-    jds = "jj desc";
-    jdsi = "jj desc --ignore-immutable";
+    je = "jj edit";
+    jei = "jj edit --ignore-immutable";
+    jd = "jj desc";
+    jdi = "jj desc --ignore-immutable";
     jgp = ''
       j git push --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
-    jfo = "jj git fetch --remote=origin";
-    jbk = ''
+    jf = "jj git fetch --remote=origin";
+    jb = ''
       j bookmark set $(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
-    jbki = "jbk --ignore-immutable";
-    jab = "jj abandon";
-    jls = "jj log -n 12";
-    jll = "jj log -n 12 -r '..@'";
-    jla = "jj log -r 'all()'";
-    jllb = "jj log -r 'bookmarks()'";
-    jlrb = "jj log -r 'remote_bookmarks()'";
+    jbi = "jbk --ignore-immutable";
+    ja = "jj abandon";
+    jl = "jj log -r 'all()'";
+    jlb = "jj log -r 'bookmarks()'";
+    jlr = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
     j = "jj";
   };
 
-  initExtra = ''
+  initContent = ''
     export EDITOR=nvim
     export PAGER=moar
     export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
     export BACON_PREFS=~/.config/bacon/prefs.toml
+
+    # Setup NPM to install some global packages
+    export PATH=~/.npm-packages/bin:$PATH
+    export NODE_PATH=~/.npm-packages/lib/node_modules
+
+    gh_env() {
+      export GITHUB_PERSONAL_ACCESS_TOKEN=$(op read "op://Personal/SHELL GH_PATH/credential" --no-newline) 
+      export GH_PAT=$(op read "op://Personal/SHELL GH_PATH/credential" --no-newline) 
+    }
+
+    ai_env() {
+      export OPENAI_API_KEY=$(op read "op://Personal/OpenAiApi/credential" --no-newline) 
+    }
   '';
 
 in {
@@ -62,7 +72,7 @@ in {
       enable = true;
       plugins = [ "Aloxaf/fzf-tab" "ahkohd/tmux-sessionizer" ];
     };
-    inherit initExtra;
+    inherit initContent;
   };
 
   programs.zoxide = {

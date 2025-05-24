@@ -5,13 +5,11 @@
     ./system/darwin.nix
     ./system/homebrew.nix
     ./system/packages.nix
-    ./system/janky.nix
-    ./system/skhd.nix
+    # ./system/janky.nix
+    # ./system/skhd.nix
   ];
 
   environment.systemPackages = with pkgs; [ vim git home-manager ];
-
-  services.nix-daemon.enable = true;
 
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -21,6 +19,8 @@
 
   programs.zsh.enable = true;
 
+  system.primaryUser = "var";
+
   users.users.var = {
     name = "var";
     home = "/Users/var";
@@ -28,4 +28,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  ids.gids.nixbld = 350;
 }
