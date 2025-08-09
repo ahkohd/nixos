@@ -1,7 +1,5 @@
 { pkgs }:
 with pkgs; [
-  firefox-devedition-bin
-
   nodejs_22
 
   gcc
@@ -26,12 +24,6 @@ with pkgs; [
 
   zoxide
 
-  mprocs
-
-  delta
-
-  zrok
-
   marksman
 
   nitch
@@ -41,4 +33,10 @@ with pkgs; [
   libfido2
 
   yubikey-manager
+
+  glow
+
+  moar
+
+  riffdiff
 ]

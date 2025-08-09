@@ -1,25 +1,17 @@
 { pkgs, ... }:
 
 {
-
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
     settings = {
       show_symlink = true;
-      manager = { show_hidden = true; };
+      mgr = { show_hidden = true; };
       plugin = {
-        prepend_previewers = [
-          {
-            name = "*/";
-            run = "eza-preview";
-          }
-          {
-            name = "*.md";
-            run = "glow";
-          }
-        ];
-
+        prepend_previewers = [{
+          url = "*/";
+          run = "eza-preview";
+        }];
       };
     };
   };
@@ -28,173 +20,203 @@
     pkgs.fetchFromGitHub {
       owner = "ahkohd";
       repo = "eza-preview.yazi";
-      rev = "6575a9a4806d8dc96ac75adf28791155551804fb";
-      sha256 = "sha256-RwJu79bjdgmKbRaDH++y8wreBKdGGwbyGOx4G/px2PE=";
+      rev = "499621e1865927539fded3dcda8c4d2acf26f175";
+      sha256 = "sha256-rJT6ZNuV5ogMg8K7aQBFj/ujRKsXPBBp5y+HPtgTwO0=";
     };
-
-  home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
-    owner = "Reledia";
-    repo = "glow.yazi";
-    rev = "c76bf4fb612079480d305fe6fe570bddfe4f99d3";
-    sha256 = "sha256-DPud1Mfagl2z490f5L69ZPnZmVCa0ROXtFeDbEegBBU=";
-  };
 
   home.file.".config/yazi/plugins/no-status.yazi".source =
     pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "07258518f3bffe28d87977bc3e8a88e4b825291b";
-      sha256 = "sha256-axoMrOl0pdlyRgckFi4DiS+yBKAIHDhVeZQJINh8+wk=";
+      rev = "e95c7b384e7b0a9793fe1471f0f8f7810ef2a7ed";
+      sha256 = "sha256-TUS+yXxBOt6tL/zz10k4ezot8IgVg0/2BbS8wPs9KcE=";
     } + "/no-status.yazi";
 
   home.file.".config/yazi/keymap.toml".text = ''
-    [manager]
+    [mgr]
     prepend_keymap = [
-      { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
-      { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'",  desc = "Increment tree level" },
-      { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'",  desc = "Decrement tree level" },
-      { on = [ "$" ], run = "plugin eza-preview --args='--toggle-follow-symlinks'",  desc = "Toggle tree follow symlinks" },
+      { on = [ "e", "t" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+      { on = [ "e", "-" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
+      { on = [ "e", "_" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+      { on = [ "e", "$" ], run = "plugin eza-preview toggle-follow-symlinks", desc = "Toggle tree follow symlinks" },
+      { on = [ "e", "*" ], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
+      { on = [ "e", "g", "i" ], run = "plugin eza-preview toggle-git-ignore", desc = "Toggle .gitignore files" },
+      { on = [ "e", "g", "s" ], run = "plugin eza-preview toggle-git-status", desc = "Toggle showing git status" },
     ]
   '';
 
   home.file.".config/yazi/init.lua".text = ''
-    require("eza-preview"):setup{
+    require("eza-preview"):setup({
+      default_tree = true,
       level = 2,
       follow_symlinks = true,
-      dereference = false
-    }
+      dereference = false,
+      all = true,
+      ignore_glob = {},
+      git_ignore = true,
+      git_status = false
+    })
 
     require("no-status"):setup()
   '';
 
   home.file.".config/yazi/theme.toml".text = ''
-    [manager]
+    [mgr]
     # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
-    # highlight = "path/to/tmTheme"
+    # syntect_theme = "path/to/tmTheme"
 
     cwd = { fg = "#a9b1d6", italic = true }
 
     # Hovered
-    hovered         = { bg = "#292e42" }
+    hovered = { bg = "#292e42" }
     preview_hovered = { bg = "#292e42" }
 
     # Find
-    find_keyword  = { fg = "#1f2335", bg = "#ff9e64", bold = true }
+    find_keyword = { fg = "#1f2335", bg = "#ff9e64", bold = true }
     find_position = { fg = "#0db9d7", bg = "#22374b", bold = true }
 
     # Marker
-    marker_copied   = { fg = "#73daca", bg = "#73daca" }
-    marker_cut      = { fg = "#f7768e", bg = "#f7768e" }
-    marker_marked   = { fg = "#bb9af7", bg = "#bb9af7" }
+    marker_copied = { fg = "#73daca", bg = "#73daca" }
+    marker_cut = { fg = "#f7768e", bg = "#f7768e" }
+    marker_marked = { fg = "#bb9af7", bg = "#bb9af7" }
     marker_selected = { fg = "#7aa2f7", bg = "#7aa2f7" }
 
     # Tab
-    tab_active   = { fg = "#c0caf5", bg = "#292e42" }
+    tab_active = { fg = "#c0caf5", bg = "#292e42" }
     tab_inactive = { fg = "#3b4261", bg = "#24283b" }
-    tab_width    = 1
+    tab_width = 1
 
     # Count
-    count_copied   = { fg = "#c0caf5", bg = "#41a6b5" }
-    count_cut      = { fg = "#c0caf5", bg = "#db4b4b" }
+    count_copied = { fg = "#c0caf5", bg = "#41a6b5" }
+    count_cut = { fg = "#c0caf5", bg = "#db4b4b" }
     count_selected = { fg = "#c0caf5", bg = "#3d59a1" }
+
     # Border
     border_symbol = "│"
-    border_style  = { fg = "#29a4bd" }
+    border_style = { fg = "#29a4bd" }
+
+    [mode]
+    normal_main = { fg = "#1d202f", bg = "#7aa2f7", bold = true }
+    normal_alt = { fg = "#7aa2f7", bg = "#3b4261" }
+
+    select_main = { fg = "#1d202f", bg = "#bb9af7", bold = true }
+    select_alt = { fg = "#bb9af7", bg = "#3b4261" }
+
+    unset_main = { fg = "#1d202f", bg = "#9d7cd8", bold = true }
+    unset_alt = { fg = "#9d7cd8", bg = "#3b4261" }
 
     [status]
-    separator_open  = ""
+    separator_open = ""
     separator_close = ""
-    separator_style = { fg = "#3b4261", bg = "#3b4261" }
-
-    # Mode
-    mode_normal = { fg = "#1f2335", bg = "#7aa2f7", bold = true }
-    mode_select = { fg = "#1f2335", bg = "#bb9af7", bold = true }
-    mode_unset  = { fg = "#1f2335", bg = "#9d7cd8", bold = true }
+    # separator_style = { fg = "#3b4261", bg = "#3b4261" }
 
     # Progress
-    progress_label  = { fg = "#a9b1d6", bold = true }
+    progress_label = { fg = "#a9b1d6", bold = true }
     progress_normal = { fg = "#24283b" }
-    progress_error  = { fg = "#f7768e" }
+    progress_error = { fg = "#f7768e" }
 
     # Permissions
-    permissions_t = { fg = "#7aa2f7" }
-    permissions_r = { fg = "#e0af68" }
-    permissions_w = { fg = "#f7768e" }
-    permissions_x = { fg = "#9ece6a" }
-    permissions_s = { fg = "#414868" }
+    perm_type = { fg = "#7aa2f7" }
+    perm_read = { fg = "#e0af68" }
+    perm_write = { fg = "#f7768e" }
+    perm_exec = { fg = "#9ece6a" }
+    perm_sep = { fg = "#414868" }
 
-    [select]
-    border   = { fg = "#29a4bd" }
-    active   = { fg = "#c0caf5",  bg = "#2e3c64" }
+    [pick]
+    border = { fg = "#29a4bd" }
+    active = { fg = "#c0caf5", bg = "#2e3c64" }
     inactive = { fg = "#c0caf5" }
 
     # Input
     [input]
-    border   = { fg = "#0db9d7" }
-    title    = {}
-    value    = { fg = "#9d7cd8" }
+    border = { fg = "#0db9d7" }
+    title = { fg = "#0db9d7" }
+    value = { fg = "#9d7cd8" }
     selected = { bg = "#2e3c64" }
 
     # Completion
     [completion]
-    border   = { fg = "#0db9d7" }
-    active   = { fg = "#c0caf5", bg = "#2e3c64" }
+    border = { fg = "#0db9d7" }
+    active = { fg = "#c0caf5", bg = "#2e3c64" }
     inactive = { fg = "#c0caf5" }
+
+    icon_file = ""
+    icon_folder = ""
+    icon_command = ""
 
     # Tasks
     [tasks]
-    border  = { fg = "#29a4bd" }
-    title   = {}
-    hovered = { fg = "#c0caf5", bg="#2e3c64" }
+    border = { fg = "#29a4bd" }
+    title = { fg = "#29a4bd" }
+    hovered = { fg = "#c0caf5", bg = "#2e3c64" }
 
     # Which
     [which]
     cols = 3
-    mask            = { bg = "#1f2335" }
-    cand            = { fg = "#7dcfff" }
-    rest            = { fg = "#7aa2f7" }
-    desc            = { fg = "#bb9af7" }
-    separator       = "  "
+    mask = { bg = "#1f2335" }
+    cand = { fg = "#7dcfff" }
+    rest = { fg = "#7aa2f7" }
+    desc = { fg = "#bb9af7" }
+    separator = " ➜ "
     separator_style = { fg = "#565f89" }
+
+    # Confirm
+    [confirm]
+    border = { fg = "#0db9d7" }
+    title = { fg = "#29a4bd" }
+    content = {}
+    list = {}
+    btn_yes = { bg = "#2e3c64" }
+    btn_no = {}
+    btn_labels = ["  [Y]es  ", "  (N)o  "]
+
+    # Spot
+    [spot]
+    border = { fg = "#29a4bd" }
+    title = { fg = "#29a4bd" }
 
     # Notify
     [notify]
-    title_info  = { fg = "#0db9d7" }
-    title_warn  = { fg = "#e0af68" }
-    title_error = { fg = "#f7768e" }
+    title_info = { fg = "#0db9d7" }
+    title_warn = { fg = "#e0af68" }
+    title_error = { fg = "#db4b4b" }
+
+    icon_error = ""
+    icon_warn = ""
+    icon_info = ""
 
     # Help
     [help]
-    on      = { fg = "#9ece6a" }
-    run     = { fg = "#bb9af7" }
-    hovered = { bg = "#2e3c64" }
-    footer  = { fg = "#c0caf5", bg = "#24283b" }
+    on = { fg = "#9ece6a" }
+    run = { fg = "#bb9af7" }
+    hovered = { bg = "#292e42" }
+    footer = { fg = "#c0caf5", bg = "#24283b" }
 
     [filetype]
 
     rules = [
-    	# Images
-    	{ mime = "image/*", fg = "#e0af68" },
+      # Images
+      { mime = "image/*", fg = "#e0af68" },
 
-    	# Media
-    	{ mime = "{audio,video}/*", fg = "#bb9af7" },
+      # Media
+      { mime = "{audio,video}/*", fg = "#bb9af7" },
 
-    	# Archives
-    	{ mime = "application/*zip", fg = "#f7768e" },
-    	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f7768e" },
+      # Archives
+      { mime = "application/*zip", fg = "#f7768e" },
+      { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f7768e" },
 
-    	# Documents
-    	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7dcfff" },
+      # Documents
+      { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7dcfff" },
 
-    	# Empty files
-    	# { mime = "inode/x-empty", fg = "#f7768e" },
+      # Empty files
+      # { mime = "inode/x-empty", fg = "#f7768e" },
 
-    	# Special files
-    	{ name = "*", is = "orphan", bg = "#f7768e" },
-    	{ name = "*", is = "exec"  , fg = "#9ece6a" },
+      # Special files
+      { name = "*", is = "orphan", bg = "#f7768e" },
+      { name = "*", is = "exec", fg = "#9ece6a" },
 
-    	# Fallback
-    	{ name = "*/", fg = "#7aa2f7" }
+      # Fallback
+      { name = "*/", fg = "#7aa2f7" },
     ]
   '';
 }

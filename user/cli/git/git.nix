@@ -11,14 +11,17 @@
       commit = { gpgsign = true; };
       core = {
         editor = "vim";
-        pager = "delta";
+        pager = "riff";
       };
+      pager = {
+        diff = "riff";
+        show = "riff";
+        log = "riff";
+      };
+      interactive = { diffFilter = "riff --color=on"; };
       merge = { conflictstyle = "diff3"; };
       diff = { colorMoved = "default"; };
     };
-    includes = [{ path = "~/.config/git/delta.inc"; }];
   };
-
-  home.file.".config/git/delta.inc".text = builtins.readFile ./delta.inc;
 }
 

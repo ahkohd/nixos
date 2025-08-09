@@ -5,6 +5,6 @@
 
   services.roon-server = {
     enable = true;
-    openFirewall = true;
+    openFirewall = false;
   };
 }

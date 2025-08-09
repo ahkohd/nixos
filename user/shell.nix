@@ -25,32 +25,34 @@ let
     y = "yy";
     speed = "speedtest-cli";
     jn = "jj new";
-    jst = "jj st --no-pager";
+    js = "jj st --no-pager";
     jpw = "jj git push --change=@";
     jsq = "jj squash";
     jsqi = "jj squash --ignore-immutable";
-    jed = "jj edit";
-    jedi = "jj edit --ignore-immutable";
-    jds = "jj desc";
-    jdsi = "jj desc --ignore-immutable";
+    je = "jj edit";
+    jei = "jj edit --ignore-immutable";
+    jd = "jj desc";
+    jdi = "jj desc --ignore-immutable";
     jgp = ''
       j git push --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
-    jfo = "jj git fetch --remote=origin";
-    jbk = ''
+    jf = "jj git fetch --remote=origin";
+    jb = ''
       j bookmark set $(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
-    jbki = "jbk --ignore-immutable";
+    jbi = "jbk --ignore-immutable";
     jab = "jj abandon";
-    jls = "jj log -n 12";
+    jl = "jj log -n 12";
     jll = "jj log -n 12 -r '..@'";
     jla = "jj log -r 'all()'";
-    jllb = "jj log -r 'bookmarks()'";
+    jlb = "jj log -r 'bookmarks()'";
     jlrb = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
     j = "jj";
   };
 
-  initExtra = ''
+  initContent = ''
     export EDITOR=nvim
+    export PAGER=moar
+    export BACON_PREFS=~/.config/bacon/prefs.toml
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
 in {
@@ -60,9 +62,9 @@ in {
     shellAliases = aliases;
     antidote = {
       enable = true;
-      plugins = [ "Aloxaf/fzf-tab" "ahkohd/tmux-sessionizer" ];
+      plugins = [ "Aloxaf/fzf-tab" ];
     };
-    inherit initExtra;
+    inherit initContent;
   };
 
   programs.zoxide = {

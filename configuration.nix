@@ -4,11 +4,16 @@
   imports = [
     ./hardware-configuration.nix
     ./system/ssh.nix
-    ./system/op.nix
+    # ./system/op.nix
     ./system/packages.nix
     ./system/audio.nix
     ./system/services/audio/roon.nix
     ./system/services/smartcard.nix
+    ./system/services/tailscale.nix
+    ./system/services/tailscale.nix
+    ./system/services/glance.nix
+    ./system/services/caddy.nix
+    ./system/services/golink.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -39,10 +44,12 @@
 
   programs.zsh.enable = true;
 
+  users.groups.plugdev = { };
+
   users.users.var = {
     isNormalUser = true;
     description = "Victor Aremu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "podman" ];
     shell = pkgs.zsh;
   };
 
@@ -60,7 +67,7 @@
 
   services.openssh.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 55000 ];
+  networking.firewall.allowedTCPPorts = [ ];
 
   networking.firewall.allowedUDPPorts = [ ];
 

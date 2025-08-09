@@ -1,7 +1,4 @@
 {
-
-  description = "A nix flake for my homelab";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
@@ -9,12 +6,13 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty.url = "github:ghostty-org/ghostty";
+    # ghostty.url = "github:ghostty-org/ghostty";
 
     yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { nixpkgs, home-manager, ghostty, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... # , ghostty
+    }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -25,7 +23,7 @@
         specialArgs = {
           inherit inputs;
           inherit system;
-          inherit ghostty;
+          # inherit ghostty;
         };
 
         modules = [
