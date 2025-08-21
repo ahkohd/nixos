@@ -29,12 +29,15 @@ let
     jei = "jj edit --ignore-immutable";
     jd = "jj desc";
     jdi = "jj desc --ignore-immutable";
-    jgp = ''
-      j git push --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
+    jdf = "jj diff";
+    jp = ''
+      jj git push --allow-new --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
     jf = "jj git fetch --remote=origin";
     jb = ''
       j bookmark set $(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
-    jbi = "jbk --ignore-immutable";
+    jbi = "jb --ignore-immutable";
+    jbk = "jj bookmark";
+    jbs = "jj bookmark set";
     ja = "jj abandon";
     jl = "jj log -r 'all()'";
     jlb = "jj log -r 'bookmarks()'";

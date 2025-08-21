@@ -3,7 +3,8 @@
 {
   programs.bat = {
     enable = true;
-    config = { theme = "tokyonight_night"; };
+    config = { theme = "ansi"; };
+    # config = { theme = "tokyonight_night"; };
     themes = {
       tokyonight_night = {
         src = pkgs.fetchFromGitHub {

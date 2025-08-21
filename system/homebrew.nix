@@ -52,6 +52,7 @@
       "linearmouse"
       "localsend"
       "tailscale"
+      "firefox"
     ];
 
     masApps = {
