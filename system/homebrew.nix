@@ -53,6 +53,7 @@
       "localsend"
       "tailscale"
       "firefox"
+      "whichspace"
     ];
 
     masApps = {
