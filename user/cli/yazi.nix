@@ -9,16 +9,10 @@
       show_symlink = true;
       mgr = { show_hidden = true; };
       plugin = {
-        prepend_previewers = [
-          {
-            name = "*/";
-            run = "eza-preview";
-          }
-          {
-            name = "*.md";
-            run = "glow";
-          }
-        ];
+        prepend_previewers = [{
+          name = "*/";
+          run = "eza-preview";
+        }];
       };
     };
   };
@@ -31,20 +25,27 @@
       sha256 = "sha256-yVsv332N4OExvP4hERiDV753YWRyyfycD4iPMCtyXdE=";
     };
 
-  home.file.".config/yazi/plugins/glow.yazi".source = pkgs.fetchFromGitHub {
-    owner = "Reledia";
-    repo = "glow.yazi";
-    rev = "5ce76dc92ddd0dcef36e76c0986919fda3db3cf5";
-    sha256 = "sha256-UljcrXXO5DZbufRfavBkiNV3IGUNct31RxCujRzC9D4=";
+  home.file.".config/yazi/plugins/starship.yazi".source = pkgs.fetchFromGitHub {
+    owner = "Rolv-Apneseth";
+    repo = "starship.yazi";
+    rev = "a63550b2f91f0553cc545fd8081a03810bc41bc0";
+    sha256 = "sha256-PYeR6fiWDbUMpJbTFSkM57FzmCbsB4W4IXXe25wLncg=";
   };
 
   home.file.".config/yazi/plugins/no-status.yazi".source =
     pkgs.fetchFromGitHub {
       owner = "yazi-rs";
       repo = "plugins";
-      rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
+      rev = "22af0033be18eead7b04c2768767d38ccfbaa05b";
       sha256 = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
     } + "/no-status.yazi";
+
+  home.file.".config/yazi/plugins/yamb.yazi".source = pkgs.fetchFromGitHub {
+    owner = "h-hg";
+    repo = "yamb.yazi";
+    rev = "22af0033be18eead7b04c2768767d38ccfbaa05b";
+    sha256 = "sha256-NMxZ8/7HQgs+BsZeH4nEglWsRH2ibAzq7hRSyrtFDTA=";
+  };
 
   home.file.".config/yazi/keymap.toml".text = ''
     [mgr]
@@ -56,10 +57,45 @@
       { on = [ "e", "*" ], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
       { on = [ "e", "g", "i" ], run = "plugin eza-preview toggle-git-ignore", desc = "Toggle .gitignore files" },
       { on = [ "e", "g", "s" ], run = "plugin eza-preview toggle-git-status", desc = "Toggle showing git status" },
+      # yamb keymaps
+      { on = [
+        "u",
+        "a",
+      ], run = "plugin yamb save", desc = "Add bookmark" },
+      { on = [
+        "u",
+        "g",
+      ], run = "plugin yamb jump_by_key", desc = "Jump bookmark by key" },
+      { on = [
+        "u",
+        "G",
+      ], run = "plugin yamb jump_by_fzf", desc = "Jump bookmark by fzf" },
+      { on = [
+        "u",
+        "d",
+      ], run = "plugin yamb delete_by_key", desc = "Delete bookmark by key" },
+      { on = [
+        "u",
+        "D",
+      ], run = "plugin yamb delete_by_fzf", desc = "Delete bookmark by fzf" },
+      { on = [
+        "u",
+        "A",
+      ], run = "plugin yamb delete_all", desc = "Delete all bookmarks" },
+      { on = [
+        "u",
+        "r",
+      ], run = "plugin yamb rename_by_key", desc = "Rename bookmark by key" },
+      { on = [
+        "u",
+        "R",
+      ], run = "plugin yamb rename_by_fzf", desc = "Rename bookmark by fzf" },
     ]
   '';
 
   home.file.".config/yazi/init.lua".text = ''
+    require("starship"):setup()
+
     require("eza-preview"):setup{
       level = 2,
       follow_symlinks = true,
@@ -68,83 +104,119 @@
     }
 
     require("no-status"):setup()
+
+    local bookmarks = {}
+    local path_sep = package.config:sub(1, 1)
+    local home_path = ya.target_family() == "windows" and os.getenv("USERPROFILE") or os.getenv("HOME")
+
+    if ya.target_family() == "windows" then
+      table.insert(bookmarks, {
+        tag = "Scoop Local",
+
+        path = (os.getenv("SCOOP") or home_path .. "\\scoop") .. "\\",
+        key = "p"
+      })
+      table.insert(bookmarks, {
+        tag = "Scoop Global",
+        path = (os.getenv("SCOOP_GLOBAL") or "C:\\ProgramData\\scoop") .. "\\",
+        key = "P"
+      })
+    end
+    table.insert(bookmarks, {
+      tag = "Desktop",
+      path = home_path .. path_sep .. "Desktop" .. path_sep,
+      key = "d"
+    })
+
+    require("yamb"):setup {
+      bookmarks = bookmarks,
+      jump_notify = true,
+      cli = "fzf",
+      keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      path = (ya.target_family() == "windows" and os.getenv("APPDATA") .. "\\yazi\\config\\bookmark") or
+            (os.getenv("HOME") .. "/.config/yazi/bookmark"),
+    }
   '';
 
   home.file.".config/yazi/theme.toml".text = ''
     [mgr]
-    cwd = { fg = "#78a9ff", italic = true }
+    # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
+    # syntect_theme = "path/to/tmTheme"
+
+    cwd = { fg = "#859ba2", italic = true }
 
     # Hovered
-    hovered = { bg = "#262626" }
-    preview_hovered = { bg = "#262626" }
+    hovered = { bg = "#424242" }
+    preview_hovered = { bg = "#424242" }
 
     # Find
-    find_keyword = { fg = "#161616", bg = "#ffffff", bold = true }
-    find_position = { fg = "#f2f4f8", bg = "#262626", bold = true }
+    find_keyword = { fg = "#101010", bg = "#ced4df", bold = true }
+    find_position = { fg = "#c7cdd8", bg = "#424242", bold = true }
 
     # Marker
-    marker_copied = { fg = "#00c15a", bg = "#00c15a" }
-    marker_cut = { fg = "#ff4297", bg = "#ff4297" }
-    marker_marked = { fg = "#c693ff", bg = "#c693ff" }
-    marker_selected = { fg = "#78a9ff", bg = "#78a9ff" }
+    marker_copied = { fg = "#7b9198", bg = "#7b9198" }
+    marker_cut = { fg = "#eee8d5", bg = "#eee8d5" }
+    marker_marked = { fg = "#DAD4C3", bg = "#DAD4C3" }
+    marker_selected = { fg = "#ced4df", bg = "#ced4df" }
 
     # Tab
-    tab_active = { fg = "#f2f4f8", bg = "#262626" }
-    tab_inactive = { fg = "#585858", bg = "#161616" }
+    tab_active = { fg = "#c7cdd8", bg = "#424242" }
+    tab_inactive = { fg = "#838383", bg = "#101010" }
     tab_width = 1
 
     # Count
-    count_copied = { fg = "#f2f4f8", bg = "#00c15a" }
-    count_cut = { fg = "#f2f4f8", bg = "#585858" }
-    count_selected = { fg = "#f2f4f8", bg = "#78a9ff" }
+    count_copied = { fg = "#c7cdd8", bg = "#7b9198" }
+    count_cut = { fg = "#c7cdd8", bg = "#838383" }
+    count_selected = { fg = "#c7cdd8", bg = "#859ba2" }
 
     # Border
     border_symbol = "│"
-    border_style = { fg = "#78a9ff" }
+    border_style = { fg = "#859ba2" }
 
     [mode]
-    normal_main = { fg = "#161616", bg = "#78a9ff", bold = true }
-    normal_alt = { fg = "#78a9ff", bg = "#262626" }
+    normal_main = { fg = "#101010", bg = "#ced4df", bold = true }
+    normal_alt = { fg = "#ced4df", bg = "#424242" }
 
-    select_main = { fg = "#161616", bg = "#c693ff", bold = true }
-    select_alt = { fg = "#c693ff", bg = "#262626" }
+    select_main = { fg = "#101010", bg = "#DAD4C3", bold = true }
+    select_alt = { fg = "#DAD4C3", bg = "#424242" }
 
-    unset_main = { fg = "#161616", bg = "#ffffff", bold = true }
-    unset_alt = { fg = "#ffffff", bg = "#262626" }
+    unset_main = { fg = "#101010", bg = "#DFDFDA", bold = true }
+    unset_alt = { fg = "#DFDFDA", bg = "#424242" }
 
     [status]
     separator_open = ""
     separator_close = ""
+    # separator_style = { fg = "#424242", bg = "#424242" }
 
     # Progress
-    progress_label = { fg = "#f2f4f8", bold = true }
-    progress_normal = { fg = "#262626" }
-    progress_error = { fg = "#ff4297" }
+    progress_label = { fg = "#c7cdd8", bold = true }
+    progress_normal = { fg = "#424242" }
+    progress_error = { fg = "#eee8d5" }
 
     # Permissions
-    perm_type = { fg = "#78a9ff" }
-    perm_read = { fg = "#00c15a" }
-    perm_write = { fg = "#ff4297" }
-    perm_exec = { fg = "#00b4ff" }
-    perm_sep = { fg = "#585858" }
+    perm_type = { fg = "#ced4df" }
+    perm_read = { fg = "#859ba2" }
+    perm_write = { fg = "#eee8d5" }
+    perm_exec = { fg = "#7b9198" }
+    perm_sep = { fg = "#838383" }
 
     [pick]
-    border = { fg = "#78a9ff" }
-    active = { fg = "#f2f4f8", bg = "#262626" }
-    inactive = { fg = "#f2f4f8" }
+    border = { fg = "#859ba2" }
+    active = { fg = "#c7cdd8", bg = "#424242" }
+    inactive = { fg = "#c7cdd8" }
 
     # Input
     [input]
-    border = { fg = "#78a9ff" }
-    title = { fg = "#78a9ff" }
-    value = { fg = "#c693ff" }
-    selected = { bg = "#262626" }
+    border = { fg = "#ced4df" }
+    title = { fg = "#ced4df" }
+    value = { fg = "#DAD4C3" }
+    selected = { bg = "#424242" }
 
     # Completion
     [completion]
-    border = { fg = "#78a9ff" }
-    active = { fg = "#f2f4f8", bg = "#262626" }
-    inactive = { fg = "#f2f4f8" }
+    border = { fg = "#ced4df" }
+    active = { fg = "#c7cdd8", bg = "#424242" }
+    inactive = { fg = "#c7cdd8" }
 
     icon_file = ""
     icon_folder = ""
@@ -152,40 +224,40 @@
 
     # Tasks
     [tasks]
-    border = { fg = "#78a9ff" }
-    title = { fg = "#78a9ff" }
-    hovered = { fg = "#f2f4f8", bg = "#262626" }
+    border = { fg = "#859ba2" }
+    title = { fg = "#859ba2" }
+    hovered = { fg = "#c7cdd8", bg = "#424242" }
 
     # Which
     [which]
     cols = 3
-    mask = { bg = "#161616" }
-    cand = { fg = "#ffffff" }
-    rest = { fg = "#78a9ff" }
-    desc = { fg = "#c693ff" }
+    mask = { bg = "#101010" }
+    cand = { fg = "#DFDFDA" }
+    rest = { fg = "#ced4df" }
+    desc = { fg = "#DAD4C3" }
     separator = " ➜ "
-    separator_style = { fg = "#585858" }
+    separator_style = { fg = "#838383" }
 
     # Confirm
     [confirm]
-    border = { fg = "#78a9ff" }
-    title = { fg = "#78a9ff" }
+    border = { fg = "#ced4df" }
+    title = { fg = "#859ba2" }
     content = {}
     list = {}
-    btn_yes = { bg = "#262626" }
+    btn_yes = { bg = "#424242" }
     btn_no = {}
     btn_labels = ["  [Y]es  ", "  (N)o  "]
 
     # Spot
     [spot]
-    border = { fg = "#78a9ff" }
-    title = { fg = "#78a9ff" }
+    border = { fg = "#859ba2" }
+    title = { fg = "#859ba2" }
 
     # Notify
     [notify]
-    title_info = { fg = "#78a9ff" }
-    title_warn = { fg = "#ff4297" }
-    title_error = { fg = "#ff4297" }
+    title_info = { fg = "#ced4df" }
+    title_warn = { fg = "#859ba2" }
+    title_error = { fg = "#eee8d5" }
 
     icon_error = ""
     icon_warn = ""
@@ -193,36 +265,36 @@
 
     # Help
     [help]
-    on = { fg = "#00c15a" }
-    run = { fg = "#c693ff" }
-    hovered = { bg = "#262626" }
-    footer = { fg = "#f2f4f8", bg = "#161616" }
+    on = { fg = "#7b9198" }
+    run = { fg = "#DAD4C3" }
+    hovered = { bg = "#424242" }
+    footer = { fg = "#c7cdd8", bg = "#101010" }
 
     [filetype]
 
     rules = [
-    # Images
-    { mime = "image/*", fg = "#ff74b8" },
+      # Images
+      { mime = "image/*", fg = "#859ba2" },
 
-    # Media
-    { mime = "{audio,video}/*", fg = "#c693ff" },
+      # Media
+      { mime = "{audio,video}/*", fg = "#DAD4C3" },
 
-    # Archives
-    { mime = "application/*zip", fg = "#585858" },
-    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#585858" },
+      # Archives
+      { mime = "application/*zip", fg = "#838383" },
+      { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#838383" },
 
-    # Documents
-    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#ffffff" },
+      # Documents
+      { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#DFDFDA" },
 
-    # Empty files
-    # { mime = "inode/x-empty", fg = "#ff4297" },
+      # Empty files
+      # { mime = "inode/x-empty", fg = "#eee8d5" },
 
-    # Special files
-    { name = "*", is = "orphan", bg = "#ff4297" },
-    { name = "*", is = "exec", fg = "#00b4ff" },
+      # Special files
+      { name = "*", is = "orphan", bg = "#eee8d5" },
+      { name = "*", is = "exec", fg = "#7b9198" },
 
-    # Fallback
-    { name = "*/", fg = "#78a9ff" },
+      # Fallback
+      { name = "*/", fg = "#ced4df" },
     ]
   '';
 }
