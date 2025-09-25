@@ -11,6 +11,7 @@ let
     glg = "git log -n 10 --graph --decorate --oneline";
     cat = "bat";
     nv = "nvim";
+    nvd = "neovide";
     nvc = "nvim-config";
     x = "exit";
     lg = "lazygit";
@@ -98,5 +99,11 @@ in {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    flags = [ "--disable-up-arrow" ];
   };
 }

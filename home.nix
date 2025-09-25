@@ -22,6 +22,7 @@
     ./user/cli/karabiner.nix
     ./user/cli/npm.nix
     ./user/cli/browsh.nix
+    ./user/cli/neovide.nix
   ];
 
   home.username = "var";

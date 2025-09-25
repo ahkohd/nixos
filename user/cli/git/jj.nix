@@ -14,12 +14,9 @@
         key = "1F76A9056C921C8A004F63E28D43F8A176DDC6BD";
       };
       ui = {
-        pager = "riff";
-        diff = {
-          tool = [ "riff" "--color=on" "$left" "$right" ];
-          format = "git";
-        };
+        pager = [ "moor" "--no-linenumbers" ];
         diff-editor = [ "nvim" "-c" "DiffEditor $left $right $output" ];
+        diff-formatter = [ "difft" "--color=always" "$left" "$right" ];
       };
     };
   };

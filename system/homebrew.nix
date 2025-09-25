@@ -54,6 +54,7 @@
       "tailscale"
       "firefox"
       "whichspace"
+      "vlc"
     ];
 
     masApps = {
@@ -66,6 +67,7 @@
       Xcode = 497799835;
       HazeOver = 430798174;
       Amphetamine = 937984704;
+      "Pixelmator Pro" = 1289583905;
     };
   };
 }

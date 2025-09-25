@@ -1,6 +1,6 @@
 { pkgs }:
 with pkgs; [
-  nodejs_22
+  nodejs_24
 
   gcc
 
@@ -38,13 +38,21 @@ with pkgs; [
 
   create-dmg
 
-  riffdiff
+  difftastic
 
-  moar
+  moor
 
   uv
 
   github-mcp-server
 
   stylua
+
+  lazyssh
+
+  atuin
+
+  python312
+
+  eslint
 ]
