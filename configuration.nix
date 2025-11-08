@@ -1,13 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./system/darwin.nix
-    ./system/homebrew.nix
-    ./system/packages.nix
-    # ./system/janky.nix
-    # ./system/skhd.nix
-  ];
+  imports = [ ./system/darwin.nix ./system/homebrew.nix ./system/packages.nix ];
 
   environment.systemPackages = with pkgs; [ vim git home-manager ];
 
@@ -17,14 +11,11 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  programs.zsh.enable = true;
-
   system.primaryUser = "var";
 
   users.users.var = {
     name = "var";
     home = "/Users/var";
-    shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;

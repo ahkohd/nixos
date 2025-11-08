@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ _1password-cli speedtest-cli glow browsh ffmpeg ]
+{ pkgs }: with pkgs; [ _1password-cli ffmpeg ]

@@ -6,6 +6,7 @@
     ./user/ssh.nix
     ./user/shell.nix
     ./user/fonts.nix
+    ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/tmux.nix
     ./user/cli/btop.nix
@@ -20,7 +21,6 @@
     ./user/cli/bacon.nix
     ./user/cli/karabiner.nix
     ./user/cli/npm.nix
-    ./user/cli/browsh.nix
     ./user/go.nix
   ];
 

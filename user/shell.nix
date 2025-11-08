@@ -2,6 +2,7 @@
 
 let
   aliases = {
+    a = "open -n -a Alacritty";
     c = "clear";
     nixu = "sudo darwin-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
@@ -60,6 +61,18 @@ let
 
     export NODE_PATH=~/.npm-packages/lib/node_modules
 
+    j-() {
+        local count=''${1:-1}
+        local suffix=$(printf '%*s' "$count" | tr ' ' '-')
+        jj edit "@''${suffix}" --ignore-immutable
+    }
+
+    j+() {
+        local count=''${1:-1}
+        local suffix=$(printf '%*s' "$count" | tr ' ' '+')
+        jj edit "@''${suffix}" --ignore-immutable
+    }
+
     gh_env() {
       export GITHUB_PERSONAL_ACCESS_TOKEN=$(op read "op://Personal/SHELL GH_PATH/credential" --no-newline) 
       export GH_PAT=$(op read "op://Personal/SHELL GH_PATH/credential" --no-newline) 
@@ -79,6 +92,7 @@ in {
       enable = true;
       plugins = [ "Aloxaf/fzf-tab" "ahkohd/tmux-sessionizer" ];
     };
+    completionInit = "autoload -U compinit && compinit -i";
     inherit initContent;
   };
 
@@ -90,7 +104,7 @@ in {
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
-    icons = "auto";
+    icons = "never";
     git = true;
   };
 

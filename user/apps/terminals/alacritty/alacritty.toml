@@ -1,0 +1,42 @@
+[font]
+size = 14.0
+
+[font.normal]
+family = "TX-02-AREMU"
+
+[font.offset]
+y = 7
+
+[window]
+opacity = 0.85
+decorations = "Buttonless"
+blur = true
+dynamic_padding = true
+
+[window.padding]
+x = 5
+y = 0
+
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[scrolling]
+multiplier = 2
+
+[general]
+import = ["~/.config/alacritty/colors.toml"]
+
+[terminal.shell]
+program = "zsh"
+
+[[keyboard.bindings]]
+key = "I"
+mods = "Control|Shift"
+chars = "\u001b[105;6u"
+
+[[keyboard.bindings]]
+key = "O"
+mods = "Control|Shift"
+chars = "\u001b[111;6u"

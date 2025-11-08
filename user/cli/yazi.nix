@@ -21,8 +21,8 @@
     pkgs.fetchFromGitHub {
       owner = "ahkohd";
       repo = "eza-preview.yazi";
-      rev = "a97cf55e3c55dc6ae7f57823fe085a48a6723bb1";
-      sha256 = "sha256-yVsv332N4OExvP4hERiDV753YWRyyfycD4iPMCtyXdE=";
+      rev = "e4b7a380b7344940e09f2d3c5ce3560c0b651931";
+      sha256 = "sha256-wDT4VC9/W/RNk1k6qO4B8J858lkcg03zgS8+hdjimvE=";
     };
 
   home.file.".config/yazi/plugins/starship.yazi".source = pkgs.fetchFromGitHub {
@@ -98,6 +98,7 @@
 
     require("eza-preview"):setup{
       level = 2,
+      icons = false,
       follow_symlinks = true,
       dereference = false,
       all = true
@@ -184,8 +185,9 @@
     unset_alt = { fg = "#DFDFDA", bg = "#424242" }
 
     [status]
-    separator_open = ""
-    separator_close = ""
+    sep_left = { open = "", close = "" }
+    sep_right = { open = "", close = "" }
+
     # separator_style = { fg = "#424242", bg = "#424242" }
 
     # Progress
@@ -218,9 +220,12 @@
     active = { fg = "#c7cdd8", bg = "#424242" }
     inactive = { fg = "#c7cdd8" }
 
-    icon_file = ""
-    icon_folder = ""
-    icon_command = ""
+    [icon]
+    globs = []
+    dirs  = []
+    files = []
+    exts  = []
+    conds = []
 
     # Tasks
     [tasks]
