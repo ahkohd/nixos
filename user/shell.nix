@@ -53,8 +53,11 @@ let
     export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
     export BACON_PREFS=~/.config/bacon/prefs.toml
 
-    # Setup NPM to install some global packages
+    export GOPATH=~/go
+    export PATH=$GOPATH/bin:$PATH
+
     export PATH=~/.npm-packages/bin:$PATH
+
     export NODE_PATH=~/.npm-packages/lib/node_modules
 
     gh_env() {

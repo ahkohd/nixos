@@ -6,7 +6,6 @@
     ./user/ssh.nix
     ./user/shell.nix
     ./user/fonts.nix
-    # ./user/skhd.nix
     ./user/apps/terminals/ghostty/ghostty.nix
     ./user/cli/tmux.nix
     ./user/cli/btop.nix
@@ -22,7 +21,7 @@
     ./user/cli/karabiner.nix
     ./user/cli/npm.nix
     ./user/cli/browsh.nix
-    ./user/cli/neovide.nix
+    ./user/go.nix
   ];
 
   home.username = "var";
