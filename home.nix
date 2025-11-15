@@ -8,6 +8,7 @@
     ./user/fonts.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
+    ./user/cli/claude.nix
     ./user/cli/tmux.nix
     ./user/cli/btop.nix
     ./user/cli/gh.nix

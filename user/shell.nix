@@ -10,6 +10,7 @@ let
     grep = "grep --color=auto";
     gst = "git status";
     glg = "git log -n 10 --graph --decorate --oneline";
+    bat = "bat --theme=gruvbox-dark";
     cat = "bat";
     nv = "nvim";
     nvd = "neovide";
@@ -80,6 +81,34 @@ let
 
     ai_env() {
       export OPENAI_API_KEY=$(op read "op://Personal/OpenAiApi/credential" --no-newline) 
+    }
+
+    # preview markdown that looks like GitHub
+    md() {
+        if ! command -v gh &>/dev/null; then
+            echo "Error: gh (GitHub CLI) is not installed"
+            return 1
+        fi
+
+        if ! gh extension list | grep -q "yusukebe/gh-markdown-preview"; then
+            echo "Error: gh-markdown-preview extension is not installed. Install it with: gh extension install yusukebe/gh-markdown-preview"
+            return 1
+        fi
+
+        if ! command -v fd &>/dev/null; then
+            echo "Error: fd is not installed"
+            return 1
+        fi
+
+        if ! command -v fzf &>/dev/null; then
+            echo "Error: fzf is not installed"
+            return 1
+        fi
+
+        local file
+        file="$(fd -e md -e markdown | fzf)" || return 1
+        [ -z "$file" ] && return 0
+        gh markdown-preview "$file" &
     }
   '';
 

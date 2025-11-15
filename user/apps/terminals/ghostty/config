@@ -1,100 +1,85 @@
 font-family = TX-02-AREMU
-
 font-feature = -calt
-
 font-feature = -liga
-
 font-feature = -dlig
-
 font-size = 14
-
 adjust-cell-height = 35%
-
 freetype-load-flags = no-hinting
-
-# theme = tokyonight
-
 window-padding-x = 5
-
 window-padding-y = 0
-
 window-colorspace = display-p3
-
-alpha-blending = native
-
+# alpha-blending = native
 window-save-state = always
-
+background-opacity = 0.95
+background-blur = true
 keybind = alt+t=new_tab
-
 keybind = alt+s=new_split:right
-
 keybind = alt+x=new_split:down
-
 keybind = alt+i=previous_tab
-
 keybind = alt+o=next_tab
-
 keybind = alt+h=goto_split:left
-
 keybind = alt+l=goto_split:right
-
 keybind = alt+j=goto_split:bottom
-
 keybind = alt+k=goto_split:top
-
 keybind = alt+,=reload_config
-
 keybind = alt+w=close_surface
-
 keybind = alt+enter=toggle_split_zoom
-
 keybind = alt+u=scroll_page_up
-
 keybind = alt+d=scroll_page_down
-
 keybind = global:cmd+alt+ctrl+shift+enter=toggle_quick_terminal
-
-quick-terminal-screen = mouse
-
-mouse-hide-while-typing = true
-
 mouse-scroll-multiplier = 2
-
 cursor-style = bar
-
 cursor-style-blink = true
-
 shell-integration = zsh
-
 command = zsh
-
 macos-option-as-alt = true
-
 macos-icon = custom-style
-
 macos-icon-frame = plastic
 
-# monochrome theme
-palette = 0=#101010
-palette = 1=#eee8d5
-palette = 2=#7b9198
-palette = 3=#859ba2
-palette = 4=#ced4df
-palette = 5=#DAD4C3
-palette = 6=#DFDFDA
-palette = 7=#bfc5d0
-palette = 8=#383838
-palette = 9=#eee8d5
-palette = 10=#7b9198
-palette = 11=#859ba2
-palette = 12=#ced4df
-palette = 13=#DAD4C3
-palette = 14=#DFDFDA
-palette = 15=#c7cdd8
-background = #101010
-foreground = #bfc5d0
-cursor-color = #ced4df
-selection-background = #383838
-selection-foreground = #bfc5d0
+# Monochrome
+# palette = 0=#101010
+# palette = 1=#eee8d5
+# palette = 2=#7b9198
+# palette = 3=#859ba2
+# palette = 4=#ced4df
+# palette = 5=#DAD4C3
+# palette = 6=#DFDFDA
+# palette = 7=#bfc5d0
+# palette = 8=#383838
+# palette = 9=#eee8d5
+# palette = 10=#7b9198
+# palette = 11=#859ba2
+# palette = 12=#ced4df
+# palette = 13=#DAD4C3
+# palette = 14=#DFDFDA
+# palette = 15=#c7cdd8
+# background = #101010
+# foreground = #bfc5d0
+# cursor-color = #ced4df
+# selection-background = #383838
+# selection-foreground = #bfc5d0
 
-# custom-shader = ./shaders/cursor_smear_fade.glsl
+# Gruvbox Hard
+background = "#101114"
+foreground = "#F7F8E0"
+selection-background = "#EBEDCA"
+selection-foreground = "#101114"
+cursor-color = "#D8B198"
+# Normal colors
+palette = 0=#3A3B3E
+palette = 1=#937875
+palette = 2=#BA6951
+palette = 3=#EA9E7B
+palette = 4=#ADB886
+palette = 5=#B6BB6E
+palette = 6=#E7ECA6
+palette = 7=#EBEDCA
+# Bright colors
+palette = 8=#A4A68D
+palette = 9=#937875
+palette = 10=#BA6951
+palette = 11=#EA9E7B
+palette = 12=#ADB886
+palette = 13=#B6BB6E
+palette = 14=#E7ECA6
+palette = 15=#EBEDCA

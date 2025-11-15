@@ -18,8 +18,6 @@ with pkgs; [
 
   fd
 
-  bat
-
   zoxide
 
   mprocs
@@ -55,4 +53,6 @@ with pkgs; [
   python312
 
   eslint
+
+  stow
 ]

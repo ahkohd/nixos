@@ -144,81 +144,81 @@
     # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
     # syntect_theme = "path/to/tmTheme"
 
-    cwd = { fg = "#859ba2", italic = true }
+    cwd = { fg = "#a89984", italic = true }          # gray2
 
     # Hovered
-    hovered = { bg = "#424242" }
-    preview_hovered = { bg = "#424242" }
+    hovered = { bg = "#3c3836" }                     # bg3
+    preview_hovered = { bg = "#3c3836" }             # bg3
 
     # Find
-    find_keyword = { fg = "#101010", bg = "#ced4df", bold = true }
-    find_position = { fg = "#c7cdd8", bg = "#424242", bold = true }
+    find_keyword = { fg = "#1d2021", bg = "#d4be98", bold = true }  # bg0 on fg0
+    find_position = { fg = "#ddc7a1", bg = "#3c3836", bold = true } # fg1 on bg3
 
     # Marker
-    marker_copied = { fg = "#7b9198", bg = "#7b9198" }
-    marker_cut = { fg = "#eee8d5", bg = "#eee8d5" }
-    marker_marked = { fg = "#DAD4C3", bg = "#DAD4C3" }
-    marker_selected = { fg = "#ced4df", bg = "#ced4df" }
+    marker_copied   = { fg = "#89b482", bg = "#89b482" }            # aqua
+    marker_cut      = { fg = "#ea6962", bg = "#ea6962" }            # red
+    marker_marked   = { fg = "#d8a657", bg = "#d8a657" }            # yellow
+    marker_selected = { fg = "#7daea3", bg = "#7daea3" }            # blue
 
     # Tab
-    tab_active = { fg = "#c7cdd8", bg = "#424242" }
-    tab_inactive = { fg = "#838383", bg = "#101010" }
+    tab_active   = { fg = "#ddc7a1", bg = "#3c3836" }               # fg1 on bg3
+    tab_inactive = { fg = "#7c6f64", bg = "#1d2021" }               # gray0 on bg0
     tab_width = 1
 
     # Count
-    count_copied = { fg = "#c7cdd8", bg = "#7b9198" }
-    count_cut = { fg = "#c7cdd8", bg = "#838383" }
-    count_selected = { fg = "#c7cdd8", bg = "#859ba2" }
+    count_copied   = { fg = "#d4be98", bg = "#89b482" }             # fg0 on aqua
+    count_cut      = { fg = "#d4be98", bg = "#7c6f64" }             # fg0 on gray0
+    count_selected = { fg = "#1d2021", bg = "#a9b665" }             # bg0 on green
 
     # Border
     border_symbol = "│"
-    border_style = { fg = "#859ba2" }
+    border_style = { fg = "#928374" }                               # gray1
 
     [mode]
-    normal_main = { fg = "#101010", bg = "#ced4df", bold = true }
-    normal_alt = { fg = "#ced4df", bg = "#424242" }
+    normal_main = { fg = "#1d2021", bg = "#d8a657", bold = true }   # bg0 on yellow
+    normal_alt  = { fg = "#d4be98", bg = "#3c3836" }                 # fg0 on bg3
 
-    select_main = { fg = "#101010", bg = "#DAD4C3", bold = true }
-    select_alt = { fg = "#DAD4C3", bg = "#424242" }
+    select_main = { fg = "#1d2021", bg = "#a9b665", bold = true }   # bg0 on green
+    select_alt  = { fg = "#a9b665", bg = "#3c3836" }                 # green on bg3
 
-    unset_main = { fg = "#101010", bg = "#DFDFDA", bold = true }
-    unset_alt = { fg = "#DFDFDA", bg = "#424242" }
+    unset_main  = { fg = "#1d2021", bg = "#ea6962", bold = true }   # bg0 on red
+    unset_alt   = { fg = "#ea6962", bg = "#3c3836" }                 # red on bg3
 
     [status]
     sep_left = { open = "", close = "" }
     sep_right = { open = "", close = "" }
 
-    # separator_style = { fg = "#424242", bg = "#424242" }
+    # separator_style = { fg = "#3c3836", bg = "#3c3836" }
 
     # Progress
-    progress_label = { fg = "#c7cdd8", bold = true }
-    progress_normal = { fg = "#424242" }
-    progress_error = { fg = "#eee8d5" }
+    progress_label = { fg = "#d4be98", bold = true }                # fg0
+    progress_normal = { fg = "#3c3836" }                            # bg3
+    progress_error  = { fg = "#ea6962" }                            # red
 
     # Permissions
-    perm_type = { fg = "#ced4df" }
-    perm_read = { fg = "#859ba2" }
-    perm_write = { fg = "#eee8d5" }
-    perm_exec = { fg = "#7b9198" }
-    perm_sep = { fg = "#838383" }
+    perm_type = { fg = "#d4be98" }                                  # fg0
+    perm_read = { fg = "#89b482" }                                  # aqua
+    perm_write = { fg = "#d8a657" }                                 # yellow
+    perm_exec = { fg = "#a9b665" }                                  # green
+    perm_sep = { fg = "#928374" }                                   # gray1
 
     [pick]
-    border = { fg = "#859ba2" }
-    active = { fg = "#c7cdd8", bg = "#424242" }
-    inactive = { fg = "#c7cdd8" }
+    border = { fg = "#928374" }                                     # gray1
+    active = { fg = "#d4be98", bg = "#3c3836" }                     # fg0 on bg3
+    inactive = { fg = "#d4be98" }                                   # fg0
 
     # Input
     [input]
-    border = { fg = "#ced4df" }
-    title = { fg = "#ced4df" }
-    value = { fg = "#DAD4C3" }
-    selected = { bg = "#424242" }
+    border   = { fg = "#d4be98" }                                   # fg0
+    title    = { fg = "#d4be98" }                                   # fg0
+    value    = { fg = "#ddc7a1" }                                   # fg1
+    selected = { bg = "#3c3836" }                                   # bg3
 
     # Completion
     [completion]
-    border = { fg = "#ced4df" }
-    active = { fg = "#c7cdd8", bg = "#424242" }
-    inactive = { fg = "#c7cdd8" }
+    border  = { fg = "#d4be98" }                                    # fg0
+    active  = { fg = "#d4be98", bg = "#3c3836" }                    # fg0 on bg3
+    inactive = { fg = "#d4be98" }                                   # fg0
 
     [icon]
     globs = []
@@ -229,77 +229,77 @@
 
     # Tasks
     [tasks]
-    border = { fg = "#859ba2" }
-    title = { fg = "#859ba2" }
-    hovered = { fg = "#c7cdd8", bg = "#424242" }
+    border  = { fg = "#928374" }                                    # gray1
+    title   = { fg = "#928374" }                                    # gray1
+    hovered = { fg = "#d4be98", bg = "#3c3836" }                    # fg0 on bg3
 
     # Which
     [which]
     cols = 3
-    mask = { bg = "#101010" }
-    cand = { fg = "#DFDFDA" }
-    rest = { fg = "#ced4df" }
-    desc = { fg = "#DAD4C3" }
+    mask      = { bg = "#141617" }                                  # bg_dim
+    cand      = { fg = "#ddc7a1" }                                  # fg1
+    rest      = { fg = "#d4be98" }                                  # fg0
+    desc      = { fg = "#a89984" }                                  # gray2
     separator = " ➜ "
-    separator_style = { fg = "#838383" }
+    separator_style = { fg = "#928374" }                            # gray1
 
     # Confirm
     [confirm]
-    border = { fg = "#ced4df" }
-    title = { fg = "#859ba2" }
+    border  = { fg = "#d4be98" }                                    # fg0
+    title   = { fg = "#a89984" }                                    # gray2
     content = {}
-    list = {}
-    btn_yes = { bg = "#424242" }
-    btn_no = {}
+    list    = {}
+    btn_yes = { bg = "#3c3836" }                                    # bg3
+    btn_no  = {}
     btn_labels = ["  [Y]es  ", "  (N)o  "]
 
     # Spot
     [spot]
-    border = { fg = "#859ba2" }
-    title = { fg = "#859ba2" }
+    border = { fg = "#928374" }                                     # gray1
+    title  = { fg = "#928374" }                                     # gray1
 
     # Notify
     [notify]
-    title_info = { fg = "#ced4df" }
-    title_warn = { fg = "#859ba2" }
-    title_error = { fg = "#eee8d5" }
+    title_info  = { fg = "#d4be98" }                                # fg0
+    title_warn  = { fg = "#d8a657" }                                # yellow
+    title_error = { fg = "#ea6962" }                                # red
 
     icon_error = ""
-    icon_warn = ""
-    icon_info = ""
+    icon_warn  = ""
+    icon_info  = ""
 
     # Help
     [help]
-    on = { fg = "#7b9198" }
-    run = { fg = "#DAD4C3" }
-    hovered = { bg = "#424242" }
-    footer = { fg = "#c7cdd8", bg = "#101010" }
+    on      = { fg = "#89b482" }                                    # aqua
+    run     = { fg = "#ddc7a1" }                                    # fg1
+    hovered = { bg = "#3c3836" }                                    # bg3
+    footer  = { fg = "#d4be98", bg = "#1d2021" }                    # fg0 on bg0
 
     [filetype]
 
     rules = [
       # Images
-      { mime = "image/*", fg = "#859ba2" },
+      { mime = "image/*", fg = "#89b482" },                         # aqua
 
       # Media
-      { mime = "{audio,video}/*", fg = "#DAD4C3" },
+      { mime = "{audio,video}/*", fg = "#ddc7a1" },                 # fg1
 
       # Archives
-      { mime = "application/*zip", fg = "#838383" },
-      { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#838383" },
+      { mime = "application/*zip", fg = "#928374" },                # gray1
+      { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#928374" },
 
       # Documents
-      { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#DFDFDA" },
+      { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#a89984" }, # gray2
 
       # Empty files
       # { mime = "inode/x-empty", fg = "#eee8d5" },
 
       # Special files
-      { name = "*", is = "orphan", bg = "#eee8d5" },
-      { name = "*", is = "exec", fg = "#7b9198" },
+      { name = "*", is = "orphan", bg = "#ea6962" },                # red bg
+      { name = "*", is = "exec",  fg = "#a9b665" },                 # green
 
       # Fallback
-      { name = "*/", fg = "#ced4df" },
+      { name = "*/", fg = "#d4be98" },                              # fg0
     ]
   '';
 }
