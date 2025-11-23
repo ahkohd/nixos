@@ -4,8 +4,9 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "tty";
+      color_theme = "TTY";
       theme_background = false;
+      force_tty = true;
     };
   };
 }

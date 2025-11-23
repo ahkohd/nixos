@@ -4,13 +4,11 @@ let
   aliases = {
     a = "open -n -a Alacritty";
     c = "clear";
-    nixu = "sudo darwin-rebuild switch --flake ~/.dotfiles";
     gpg-check = "gpg --decrypt ~/test.gpg";
     dev = "~/developer/personal";
     grep = "grep --color=auto";
     gst = "git status";
     glg = "git log -n 10 --graph --decorate --oneline";
-    bat = "bat --theme=gruvbox-dark";
     cat = "bat";
     nv = "nvim";
     nvd = "neovide";
@@ -109,6 +107,27 @@ let
         file="$(fd -e md -e markdown | fzf)" || return 1
         [ -z "$file" ] && return 0
         gh markdown-preview "$file" &
+    }
+
+    nixu() {
+      local theme=""
+      while [[ $# -gt 0 ]]; do
+        case "$1" in
+          --theme=*) theme="''${1#*=}"; shift ;;
+          --theme) theme="$2"; shift 2 ;;
+          *) echo "Unknown option: $1"; return 1 ;;
+        esac
+      done
+      if [[ -z "$theme" ]]; then
+        if [[ $(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode') == "true" ]]; then
+          theme="dark"
+        else
+          theme="light"
+        fi
+      fi
+      echo "Applying theme: $theme"
+      echo "$theme" > ~/.dotfiles/.theme
+      sudo darwin-rebuild switch --flake ~/.dotfiles
     }
   '';
 

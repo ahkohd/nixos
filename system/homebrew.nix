@@ -61,12 +61,12 @@
       # "1password for Safari" = 1569813296;
       "Save to Raindrop.io" = 1549370672;
       "Save to Reader" = 1640236961;
-      "Cursor Pro" = 1447043133;
+      # "Cursor Pro" = 1447043133;
       "Keystroke Pro" = 1572206224;
       Couverture = 1552415914;
       # Xcode = 497799835;
-      HazeOver = 430798174;
-      Amphetamine = 937984704;
+      # HazeOver = 430798174;
+      # Amphetamine = 937984704;
       "Pixelmator Pro" = 1289583905;
     };
   };

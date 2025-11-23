@@ -8,20 +8,22 @@
     ./user/fonts.nix
     ./user/apps/terminals/alacritty/alacritty.nix
     ./user/apps/terminals/ghostty/ghostty.nix
+    ./user/cli/opencode/opencode.nix
     ./user/cli/claude.nix
     ./user/cli/tmux.nix
     ./user/cli/btop.nix
     ./user/cli/gh.nix
     ./user/cli/direnv.nix
-    ./user/cli/yazi.nix
+    ./user/cli/yazi/yazi.nix
     ./user/cli/git/git.nix
     ./user/cli/git/jj.nix
     ./user/cli/git/lazy.nix
-    ./user/cli/bat.nix
+    ./user/cli/bat/bat.nix
     ./user/cli/nvim.nix
     ./user/cli/bacon.nix
     ./user/cli/karabiner.nix
     ./user/cli/npm.nix
+    ./user/cli/neovide.nix
     ./user/go.nix
   ];
 

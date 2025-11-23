@@ -30,8 +30,13 @@
   outputs = { home-manager, darwin, nix-homebrew, homebrew-core, homebrew-cask
     , homebrew-bundle, ... }@inputs:
 
-    let system = "aarch64-darwin";
-
+    let
+      system = "aarch64-darwin";
+      themeFile = ./.theme;
+      colorscheme = if builtins.pathExists themeFile then
+        builtins.replaceStrings [ "\n" ] [ "" ] (builtins.readFile themeFile)
+      else
+        "dark";
     in {
       darwinConfigurations = {
         homestead-2 = darwin.lib.darwinSystem {
@@ -51,7 +56,7 @@
             home-manager.darwinModules.home-manager
             {
               home-manager = {
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = { inherit inputs colorscheme; };
                 users.var = import ./home.nix;
               };
               users.users.var.home = "/Users/var";

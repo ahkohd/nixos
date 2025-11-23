@@ -1,7 +1,12 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./system/darwin.nix ./system/homebrew.nix ./system/packages.nix ];
+  imports = [
+    ./system/darwin.nix
+    ./system/homebrew.nix
+    ./system/packages.nix
+    ./system/skhd.nix
+  ];
 
   environment.systemPackages = with pkgs; [ vim git home-manager ];
 

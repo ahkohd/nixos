@@ -55,6 +55,4 @@ with pkgs; [
   eslint
 
   stow
-
-  jjui
 ]
