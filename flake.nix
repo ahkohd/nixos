@@ -23,12 +23,20 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    homebrew-tw93 = {
+      url = "github:tw93/homebrew-tap";
+      flake = false;
+    };
+    homebrew-1jehuang = {
+      url = "github:1jehuang/homebrew-mmdr";
+      flake = false;
+    };
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { home-manager, darwin, nix-homebrew, homebrew-core, homebrew-cask
-    , homebrew-bundle, ... }@inputs:
+    , homebrew-bundle, homebrew-tw93, homebrew-1jehuang, ... }@inputs:
 
     let
       system = "aarch64-darwin";
@@ -46,6 +54,8 @@
             inherit homebrew-core;
             inherit homebrew-cask;
             inherit homebrew-bundle;
+            inherit homebrew-tw93;
+            inherit homebrew-1jehuang;
           };
 
           modules = [

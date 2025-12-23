@@ -1,4 +1,5 @@
-{ homebrew-core, homebrew-cask, homebrew-bundle, ... }:
+{ homebrew-core, homebrew-cask, homebrew-bundle, homebrew-tw93
+, homebrew-1jehuang, ... }:
 
 {
   nix-homebrew = {
@@ -9,6 +10,8 @@
       "homebrew/homebrew-core" = homebrew-core;
       "homebrew/homebrew-cask" = homebrew-cask;
       "homebrew/homebrew-bundle" = homebrew-bundle;
+      "tw93/homebrew-tap" = homebrew-tw93;
+      "1jehuang/homebrew-tap" = homebrew-1jehuang;
     };
     mutableTaps = false;
   };
@@ -22,12 +25,13 @@
       upgrade = true;
     };
 
+    brews = [ "tw93/tap/mole" "1jehuang/tap/mmdr" ];
+
     casks = [
       "1password"
       "obsidian"
       "raycast"
       "google-drive"
-      "polypane"
       "reader"
       "pixelsnap"
       "cleanmymac"
@@ -47,10 +51,10 @@
       "legcord"
       "google-chrome"
       "alacritty"
+      "kitty"
       "bettertouchtool"
       "docker-desktop"
       "linearmouse"
-      "localsend"
       "tailscale-app"
       "firefox"
       "whichspace"
@@ -63,9 +67,8 @@
       "Save to Reader" = 1640236961;
       # "Cursor Pro" = 1447043133;
       "Keystroke Pro" = 1572206224;
-      Couverture = 1552415914;
+      # Couverture = 1552415914;
       # Xcode = 497799835;
-      # HazeOver = 430798174;
       # Amphetamine = 937984704;
       "Pixelmator Pro" = 1289583905;
     };

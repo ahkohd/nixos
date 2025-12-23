@@ -1,22 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.gpg = {
-    enable = true;
-    settings = {
-      use-agent = true;
-      pinentry-mode = "loopback";
-    };
-  };
+  # GPG: install binary & launchd agent service.
+  # gpg.conf and gpg-agent.conf are managed by stow (~/dotfiles/gnupg).
 
-  services.gpg-agent = {
-    enable = true;
-    enableZshIntegration = true;
-    enableSshSupport = true;
-    defaultCacheTtl = 28800;
-    maxCacheTtl = 28800;
-    extraConfig = ''
-      allow-loopback-pinentry
-    '';
-  };
+  home.packages = [ pkgs.gnupg ];
 }

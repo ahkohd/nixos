@@ -1,1 +1,1 @@
-{ pkgs }: with pkgs; [ _1password-cli ffmpeg ]
+{ pkgs }: with pkgs; [ ffmpeg ]

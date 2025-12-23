@@ -1,58 +1,42 @@
 { pkgs }:
 with pkgs; [
   nodejs_24
-
   gcc
-
   tree-sitter
-
   lua51Packages.luacheck
-
   lua51Packages.luarocks-nix
-
   lua-language-server
-
   stylua
-
   ripgrep
-
   fd
-
   zoxide
-
   mprocs
-
   marksman
-
   nixfmt-classic
-
   nixd
-
   openssh
-
   libfido2
-
   yubikey-manager
-
   create-dmg
-
   difftastic
-
   moor
-
   uv
-
   github-mcp-server
-
   stylua
-
   lazyssh
-
   atuin
-
   python312
-
   eslint
-
   stow
+  prmt
+  fzf
+  bat
+  lazygit
+  gh
+  go
+  tmux
+  jujutsu
+  eza
+  yazi
+  mactop
 ]

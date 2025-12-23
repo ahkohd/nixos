@@ -1,31 +1,15 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    ./user/gpg.nix
-    ./user/ssh.nix
-    ./user/shell.nix
-    ./user/fonts.nix
-    ./user/apps/terminals/alacritty/alacritty.nix
-    ./user/apps/terminals/ghostty/ghostty.nix
-    ./user/cli/opencode/opencode.nix
-    ./user/cli/claude.nix
-    ./user/cli/tmux.nix
-    ./user/cli/btop.nix
-    ./user/cli/gh.nix
-    ./user/cli/direnv.nix
-    ./user/cli/yazi/yazi.nix
-    ./user/cli/git/git.nix
-    ./user/cli/git/jj.nix
-    ./user/cli/git/lazy.nix
-    ./user/cli/bat/bat.nix
-    ./user/cli/nvim.nix
-    ./user/cli/bacon.nix
-    ./user/cli/karabiner.nix
-    ./user/cli/npm.nix
-    ./user/cli/neovide.nix
-    ./user/go.nix
+    ./user/gpg.nix # gpg-agent service (config via stow)
+    ./user/shell.nix # program integrations: zsh, starship, fzf, atuin, eza, zoxide, direnv, etc.
+    ./user/fonts.nix # font packages (can't do with stow)
+    ./user/cli/nvim.nix # neovim nightly overlay
   ];
+
+  # All dotfile configs are managed by stow (~/dotfiles).
+  # HM only handles: package installation, program enablement, services.
 
   home.username = "var";
   home.homeDirectory = "/Users/var";
