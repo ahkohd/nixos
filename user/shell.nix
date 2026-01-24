@@ -3,25 +3,19 @@
 let
   aliases = {
     c = "clear";
-    w = "dbus-run-session -- gnome-shell --display-server --wayland";
     hmu = "home-manager switch --flake ~/.dotfiles";
-    nixu = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+    nixu = "sudo nixos-rebuild switch --flake ~/.dotfiles --impure";
     gpg-check = "gpg --decrypt ~/test.gpg";
-    dev = "~/developer/personal";
     grep = "grep --color=auto";
     gst = "git status";
     glg = "git log -n 10 --graph --decorate --oneline";
     cat = "bat";
     nv = "nvim";
-    nvc = "nvim-config";
     x = "exit";
-    lg = "lazygit";
     cd = "z";
     ls = "eza --tree --level=1";
     l = "eza -l --tree --level=1";
     zz = "z -";
-    pm = "pulsemixer";
-    p = "pnpm";
     y = "yy";
     speed = "speedtest-cli";
     jn = "jj new";
@@ -36,6 +30,7 @@ let
     jgp = ''
       j git push --bookmark=$(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
     jf = "jj git fetch --remote=origin";
+    jp = "jj git push";
     jb = ''
       j bookmark set $(j bookmark list --template 'name ++ "\n"' --no-pager | sort -u | fzf)'';
     jbi = "jbk --ignore-immutable";
@@ -47,13 +42,14 @@ let
     jlrb = "jj log -r 'remote_bookmarks()'";
     jlh = "jj log -r 'visible_heads()'";
     j = "jj";
+    oc = "podman exec openclaw npx openclaw";
   };
 
   initContent = ''
     export EDITOR=nvim
-    export PAGER=moar
-    export BACON_PREFS=~/.config/bacon/prefs.toml
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    export PAGER=moor
+    export GPG_TTY=$(tty)
+    export PATH=$HOME/.npm-packages/bin:$PATH
   '';
 in {
 

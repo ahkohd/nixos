@@ -4,16 +4,14 @@
   imports = [
     ./hardware-configuration.nix
     ./system/ssh.nix
-    # ./system/op.nix
     ./system/packages.nix
-    ./system/audio.nix
     ./system/services/audio/roon.nix
     ./system/services/smartcard.nix
     ./system/services/tailscale.nix
-    ./system/services/tailscale.nix
     ./system/services/glance.nix
     ./system/services/caddy.nix
-    ./system/services/golink.nix
+    ./system/services/podman.nix
+    ./system/services/hermes.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -72,6 +70,18 @@
   networking.firewall.allowedUDPPorts = [ ];
 
   networking.firewall.enable = true;
+
+  security.sudo.extraRules = [
+    {
+      users = [ "var" ];
+      commands = [
+        { command = "/run/current-system/sw/bin/systemctl restart podman-*"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/systemctl restart caddy"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/systemctl restart glance"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/systemctl restart roon-server"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
 
   system.stateVersion = "23.11";
 

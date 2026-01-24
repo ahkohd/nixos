@@ -6,13 +6,10 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # ghostty.url = "github:ghostty-org/ghostty";
-
-    yazi.url = "github:sxyazi/yazi";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
-  outputs = { nixpkgs, home-manager, ... # , ghostty
-    }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -23,13 +20,11 @@
         specialArgs = {
           inherit inputs;
           inherit system;
-          # inherit ghostty;
         };
 
         modules = [
           ./configuration.nix
-
-          ./overlays.nix
+          inputs.hermes-agent.nixosModules.default
         ];
       };
 
@@ -38,7 +33,7 @@
 
         extraSpecialArgs = { inherit inputs; };
 
-        modules = [ ./home.nix (import ./overlays.nix) ];
+        modules = [ ./home.nix ];
       };
     };
 }

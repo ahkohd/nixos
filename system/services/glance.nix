@@ -99,7 +99,6 @@
               location = "London, United Kingdom";
               units = "metric";
               hourFormat = "12h";
-              # hideLocation = true; # Uncomment if needed
             }
             {
               type = "markets";
@@ -133,7 +132,6 @@
             {
               type = "releases";
               cache = "1d";
-              # token = "..."; # Uncomment and set if needed
               repositories =
                 [ "glanceapp/glance" "neovim/neovim" "tauri-apps/tauri" ];
             }
@@ -141,24 +139,6 @@
         }
       ];
     }
-    # Add more pages here as needed
-    # {
-    #   name = "Your page name";
-    #   columns = [
-    #     {
-    #       size = "small";
-    #       widgets = [ /* ... */ ];
-    #     }
-    #     {
-    #       size = "full";
-    #       widgets = [ /* ... */ ];
-    #     }
-    #     {
-    #       size = "small";
-    #       widgets = [ /* ... */ ];
-    #     }
-    #   ];
-    # }
       ];
   };
 }

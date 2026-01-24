@@ -3,10 +3,7 @@
 {
   home.file.".ssh/config".text = ''
     Host github.com
-      IdentityFile ~/.ssh/id_yubikey.pub
-  '';
-
-  home.file.".ssh/id_yubikey.pub".text = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICdlwoU8zhVNLEB3WhE/2n+M6uPDxVmUbHF5X/OkdneT
+      IdentityFile ~/.ssh/id_ed25519
+      IdentitiesOnly yes
   '';
 }

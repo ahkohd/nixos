@@ -7,8 +7,8 @@
   services.caddy = {
     enable = true;
     package = pkgs.caddy.withPlugins {
-      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
-      hash = "sha256-S1JN7brvH2KIu7DaDOH1zij3j8hWLLc0HdnUc+L89uU=";
+      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.2" ];
+      hash = "sha256-7DGnojZvcQBZ6LEjT0e5O9gZgsvEeHlQP9aKaJIs/Zg=";
     };
     configFile = pkgs.writeText "Caddyfile" ''
       (cloudflare) {
@@ -19,6 +19,11 @@
 
       home.victor.computer {
         reverse_proxy http://100.85.46.63:8081
+        import cloudflare
+      }
+
+      charlotte.victor.computer {
+        reverse_proxy http://127.0.0.1:18789
         import cloudflare
       }
     '';
