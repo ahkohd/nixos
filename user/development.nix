@@ -38,5 +38,4 @@ with pkgs; [
   jujutsu
   eza
   yazi
-  mactop
 ]
