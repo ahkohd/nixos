@@ -34,8 +34,14 @@ with pkgs; [
   lazygit
   gh
   go
-  tmux
   jujutsu
   eza
   yazi
+  tart
+  (import ../packages/zmx.nix { inherit pkgs; })
+  (import ../packages/beads.nix {
+    inherit pkgs;
+  }) # pinned 0.62.0 (nixpkgs ships 0.27.2)
+  dolt
+  pass
 ]

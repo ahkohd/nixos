@@ -25,7 +25,7 @@
       upgrade = true;
     };
 
-    brews = [ "tw93/tap/mole" "1jehuang/tap/mmdr" ];
+    brews = [ "tw93/tap/mole" "1jehuang/tap/mmdr" "cmake" "mactop" ];
 
     casks = [
       "1password"
